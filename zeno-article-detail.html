@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#0a0c0e"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#0a0c0e"/><text x="100" y="115" font-family="sans-serif" font-size="64" font-weight="800" fill="#d38d29" text-anchor="middle">Z</text></svg></template>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article | ZENO Newsroom</title>
+<meta name="description" content="Property insight and analysis from the ZENO Newsroom.">
+<link rel="canonical" href="https://zeno-property-site.vercel.app/zeno-article-detail.html">
+<meta name="theme-color" content="#090a0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZENO Property">
+<meta property="og:title" content="Article | ZENO Newsroom">
+<meta property="og:description" content="Property insight and analysis from the ZENO Newsroom.">
+<meta property="og:url" content="https://zeno-property-site.vercel.app/zeno-article-detail.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="zeno-logo.svg">
+<!-- Zeno Property Design System — Dark Theme -->
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/colors.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/theme.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/typography.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/components/interactions.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/styles.css">
+<style>
+/* ── Zeno DS: dark theme token remapping ── */
+:root {
+  --bg:   #090a0a;
+  --bg2:  #202325;
+  --bg3:  #303437;
+  --pp:   #d38d29;
+  --pl:   #f1cb7c;
+  --pd:   #975614;
+  --gb:   rgba(255,255,255,0.06);
+  --pb:   rgba(211,141,41,0.22);
+  --gs:   rgba(255,255,255,0.03);
+  --tp:   #f7f9fa;
+  --tm:   #979c9e;
+  --td:   #50555c;
+  --green:#23c16b;
+  --teal: #9bdcfd;
+  --nav-h:72px;
+  --r:    16px; --r-sm:10px; --r-btn:9px;
+}
+/* Sora for all headings */
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+/* Gold focus ring */
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+/* ═══════════════════════════════
+   TOKENS
+═══════════════════════════════ */
+:root {
+  --bg:   #090a0a;
+  --bg2:  #202325;
+  --bg3:  #303437;
+  --pp:   #d38d29;
+  --pl:   #f1cb7c;
+  --pd:   #975614;
+  --gb:   rgba(255,255,255,0.06);
+  --pb:   rgba(211,141,41,0.22);
+  --gs:   rgba(255,255,255,0.03);
+  --tp:   #f7f9fa;
+  --tm:   #979c9e;
+  --td:   #50555c;
+  --green:#4ADE80;
+  --teal: #48a7f8;
+  --nav-h:72px;
+  --r:    16px;
+  --r-sm: 10px;
+  --r-btn:9px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--tp);
+  line-height:1.75;
+  overflow-x:hidden;
+}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;} .d2{transition-delay:.16s;}
+.d3{transition-delay:.24s;} .d4{transition-delay:.32s;}
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:200;
+  height:var(--nav-h);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:0 max(48px, calc((100% - 1200px) / 2));
+  transition: background .4s ease, backdrop-filter .4s ease;
+  background: rgba(9,10,10,0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: none;
+  box-shadow: none;
+}
+
+nav.scrolled{
+  background: rgba(9,10,10,0.97);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(211,141,41,0.10);
+}
+.nav-left,.nav-right-group{
+  display:flex;align-items:center;
+  list-style:none;
+}
+.nav-left{gap:28px;}
+.nav-right-group{gap:20px;justify-content:flex-end;}
+.nav-left a,.nav-right-group a:not(.nav-cta-btn){
+  font-size:16px;font-weight:500;
+  color:var(--tm);text-decoration:none;
+  letter-spacing:.01em;
+  transition:color .2s;
+  position:relative;padding-bottom:2px;
+}
+.nav-left a::after,.nav-right-group a:not(.nav-cta-btn)::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--pp);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s;
+}
+.nav-left a:hover,.nav-right-group a:not(.nav-cta-btn):hover{color:var(--tp);}
+.nav-left a:hover::after,.nav-right-group a:hover::after,
+.nav-left a.active::after{transform:scaleX(1);}
+.nav-left a.active{color:var(--tp);}
+.nav-logo{
+  font-size:18px;font-weight:700;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,#f1cb7c,#d38d29);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;text-decoration:none;
+}
+.nav-cta,.nav-cta-btn{
+  padding:8px 18px;
+  border:none;border-radius:var(--r-btn);
+  font-size:16px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg, #d38d29, #975614);
+  cursor:pointer;text-decoration:none;
+  box-shadow:0 0 20px rgba(211,141,41,0.28);
+  transition:all .2s;font-family:inherit;
+}
+.nav-cta:hover,.nav-cta-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(211,141,41,0.45);}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;
+  padding:calc(var(--nav-h) + 80px) 48px 100px;
+  background:linear-gradient(160deg,#0e1012 0%,#090a0a 55%,#090a0a 100%);
+  overflow:hidden;
+  min-height:100vh;
+  display:flex;align-items:center;
+}
+
+#light-rays-canvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  z-index:0;pointer-events:none;display:block;
+}
+.hero-orb{position:absolute
+;border-radius:50%;pointer-events:none;filter:blur(90px);animation:orbDrift 9s ease-in-out infinite alternate;}
+.hero-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(211,141,41,0.15) 0%,transparent 65%);top:-140px;left:-80px;}
+.hero-orb-2{width:340px;height:340px;background:radial-gradient(circle,rgba(211,141,41,.14) 0%,transparent 65%);bottom:-60px;right:200px;animation-delay:-4s;}
+@keyframes orbDrift{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,20px) scale(1.06);}}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr auto;
+  gap:60px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-breadcrumb{
+  display:flex;align-items:center;gap:8px;
+  font-size:14px;color:var(--tm);
+  margin-bottom:16px;
+}
+.hero-breadcrumb a{color:var(--pl);text-decoration:none;font-weight:700;transition:opacity .2s;}
+.hero-breadcrumb a:hover{opacity:.75;}
+.hero-breadcrumb span{color:var(--td);}
+.hero-breadcrumb .bc-cat{color:var(--tm);}
+#hero h1{
+  font-size:clamp(30px,4vw,52px);font-weight:700;
+  letter-spacing:-1.5px;line-height:1.1;
+  color:var(--tp);margin-bottom:16px;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  font-size:14px;color:var(--tm);
+}
+.hero-meta .dot{color:var(--td);}
+.hero-icon-box{
+  width:84px;height:84px;border-radius:18px;
+  background:rgba(211,141,41,.08);border:1px solid var(--pb);
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;flex-shrink:0;box-shadow:0 0 32px rgba(211,141,41,.15);
+}
+
+/* ─── FEATURED IMAGE ─── */
+#featured-image{
+  padding:48px 48px 0;
+  background:var(--bg);
+}
+.featured-img-wrap{
+  max-width:760px;margin:0 auto;
+  height:360px;
+  background:linear-gradient(145deg,#181a1b,var(--bg2));
+  border:1px solid var(--gb);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:12px;
+  position:relative;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.4),0 0 40px rgba(211,141,41,0.10);
+}
+.featured-img-wrap::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.featured-img-icon{font-size:48px;position:relative;z-index:1;opacity:.45;}
+.featured-img-caption{font-size:14px;color:var(--td);position:relative;z-index:1;}
+
+/* ─── ARTICLE BODY ─── */
+#article-body{
+  padding:56px 48px 0;
+  background:var(--bg);
+}
+.article-content{
+  max-width:760px;margin:0 auto;
+}
+.article-headline{
+  font-size:clamp(22px,3vw,34px);font-weight:700;
+  letter-spacing:-1px;line-height:1.25;
+  color:var(--pl);margin-bottom:24px;
+}
+.article-content p{
+  font-size:16px;color:var(--tm);
+  line-height:1.85;margin-bottom:18px;
+}
+.article-content h3{
+  font-size:18px;font-weight:700;color:var(--tp);
+  margin:36px 0 14px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.article-content ul{
+  padding-left:20px;
+  margin-bottom:18px;
+}
+.article-content ul li{
+  font-size:16px;color:var(--tm);
+  line-height:1.85;margin-bottom:10px;
+  padding-left:4px;
+}
+.article-content ul li::marker{
+  color:var(--pp);
+  font-size:12px;
+}
+.article-content a{
+  color:var(--pl);text-decoration:underline;cursor:pointer;
+}
+.article-content a:hover{text-decoration:none;opacity:.85;}
+.article-content blockquote{
+  border-left:3px solid var(--pp);
+  padding-left:16px;
+  font-style:italic;
+  color:var(--tm);
+  margin:24px 0;
+}
+
+/* ─── SHARE ROW ─── */
+.share-row{
+  max-width:760px;margin:0 auto;
+  padding:32px 0;
+  border-top:1px solid var(--gb);
+  margin-top:8px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.share-label{font-size:14px;color:var(--td);font-weight:500;}
+.share-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:0 14px;height:32px;
+  background:var(--gs);border:1px solid var(--gb);border-radius:8px;
+  font-size:12px;font-weight:700;color:var(--tm);
+  cursor:pointer;font-family:inherit;
+  transition:all .2s;text-decoration:none;
+}
+.share-btn:hover{border-color:var(--pb);color:var(--tp);transform:translateY(-2px);}
+
+/* ─── RELATED ARTICLES ─── */
+#related{
+  padding:72px 48px;
+  border-top:1px solid var(--gb);
+  background:var(--bg);
+}
+.related-inner{max-width:1200px;margin:0 auto;}
+.related-header{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;margin-bottom:24px;
+}
+.related-header h2{
+  font-size:26px;font-weight:700;letter-spacing:-.5px;color:var(--tp);
+}
+.see-all-link{
+  font-size:14px;font-weight:700;color:var(--pl);
+  text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+  transition:gap .2s;
+}
+.see-all-link:hover{gap:9px;}
+.related-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.art-card{
+  background:var(--bg2);border:1px solid var(--gb);
+  border-radius:var(--r);overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+  cursor:pointer;
+}
+.art-card:hover{transform:translateY(-5px);border-color:var(--pb);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 28px rgba(211,141,41,0.10);}
+.art-thumb{
+  height:180px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;
+}
+.art-thumb::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:20px 20px;
+}
+.art-thumb span{position:relative;z-index:1;opacity:.45;}
+.art-body{padding:18px 20px 22px;}
+.art-meta{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:var(--tm);margin-bottom:10px;
+}
+.art-meta .dot{color:var(--td);}
+.art-title{
+  font-size:20px;font-weight:700;color:var(--tp);
+  line-height:1.4;margin-bottom:14px;
+}
+.art-read{
+  font-size:16px;font-weight:700;color:var(--pl);
+  text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+  transition:gap .2s;
+}
+.art-card:hover .art-read{gap:9px;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--bg);border-top:1px solid var(--gb);padding:72px 48px 0;}
+.footer-offices{max-width:1200px;margin:0 auto 56px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.office-card{background:var(--bg2);border:1px solid var(--gb);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s;}
+.office-card:hover{border-color:var(--pb);}
+.office-icon{width:42px;height:42px;border-radius:var(--r-sm);background:rgba(211,141,41,0.10);border:1px solid var(--pb);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.office-name{font-size: 18px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tp);margin-bottom:6px;}
+.office-addr{font-size: 16px;color:var(--tm);line-height:1.65;}
+.office-tel{font-size: 16px;color:var(--pl);margin-top:4px;font-weight:500;}
+.footer-links {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-xl); margin-bottom: var(--space-4xl);
+}
+.footer-col-title {
+  font-family: var(--font-body); font-size:12px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand-primary); margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block;
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul a{font-size: 16px;color:var(--tm);text-decoration:none;transition:color .2s;}
+.footer-col ul a:hover{color:var(--tp);}
+.footer-brand-desc{font-size: 16px;color:var(--tm);line-height:1.7;max-width:220px;margin:10px 0 16px;}
+.footer-help-center-label{font-size:14px;font-weight:700;color:var(--tp);margin:16px 0 10px;}
+.footer-app-btns{display:flex;flex-direction:column;gap:8px;}
+.footer-app-badge{display:flex;align-items:center;gap:9px;padding:8px 14px;border-radius:10px;border:1px solid var(--gb);background:var(--gs);text-decoration:none;transition:all .2s;cursor:pointer;}
+.footer-app-badge:hover { border-color: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(211,141,41,0.15); }
+.fab-sm{font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;display:block;}
+.fab-lg{font-size: 12px;font-weight:700;color:var(--tp);display:block;}
+.footer-divider{max-width:1200px;margin:0 auto;height:1px;background:var(--gb);}
+.footer-legal-only{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px 0 28px;flex-wrap:wrap;gap:12px;}
+.footer-copyright{font-size: 10px;color:var(--td);}
+.footer-legal-links{display:flex;gap:20px;}
+.footer-legal-links a{font-size: 12px;color:var(--tm);text-decoration:none;transition:color .2s;}
+.footer-legal-links a:hover{color:var(--tp);}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .footer-links{grid-template-columns:repeat(3,1fr);gap:24px;}
+  footer{padding:56px 32px 24px;}
+  #related{padding:56px 32px;}
+}
+@media(max-width:768px){
+  #hero{padding:calc(var(--nav-h)+48px) 24px 64px;}
+  .hero-inner{grid-template-columns:1fr;}.hero-icon-box{display:none;}
+  #featured-image{padding:32px 24px 0;}
+  #article-body{padding:40px 24px 0;}
+  #related{padding:56px 24px;}
+  .related-grid{grid-template-columns:1fr;}
+  .footer-offices{grid-template-columns:1fr;}
+  .footer-links{grid-template-columns:1fr 1fr;}
+  footer{padding:48px 24px 0;}
+}
+
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--ink-darkest);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 72px max(var(--space-4xl), calc((100% - 1200px) / 2)) var(--space-xxl);
+}
+.footer-offices {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-md); margin-bottom: var(--space-5xl);
+}
+.office-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-l);
+  padding: var(--space-xl); display: flex; gap: var(--space-md);
+  align-items: flex-start; transition: border-color 0.2s;
+}
+.office-card:hover { border-color: rgba(211,141,41,0.35); }
+.office-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-m);
+  background: rgba(211,141,41,0.12); border: 1px solid rgba(211,141,41,0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.office-name { font-family: var(--font-body); font-size: 18px; font-weight: var(--weight-bold); color: var(--sky-white); margin-bottom: var(--space-2xs); }
+.office-addr { font-size: 16px; color: var(--ink-lightest); line-height: 1.65; }
+.office-tel { font-size: 16px; color: var(--primary-light); margin-top: 4px; font-weight: var(--weight-medium); }
+
+.footer-links {
+  display: grid; grid-template-columns: 2fr repeat(4, 1fr);
+  gap: var(--space-xxl); margin-bottom: var(--space-4xl);
+}
+.footer-brand-desc { font-size: 16px; color: var(--ink-lightest); line-height: 1.7; max-width: 220px; margin-top: var(--space-sm); }
+.footer-col-title {
+  font-family: var(--font-body); font-size: 10px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--sky-white); margin-bottom: var(--space-md);
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  font-size: 16px; color: var(--ink-lightest);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-col ul a:hover { color: var(--brand-primary); padding-left: 4px; }
+.footer-help-link { display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-md); padding: 10px 20px; border-radius: var(--radius-m); background: var(--brand-primary); color: var(--sky-white); font-size: 14px; font-weight: var(--weight-bold); text-decoration: none; transition: all 0.2s; }
+.footer-help-link:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(211,141,41,0.3); }
+.footer-help-label { font-size:12px; font-weight: var(--weight-bold); color: var(--brand-primary); margin: 0 0 var(--space-lg); text-transform: uppercase; letter-spacing: 0.12em; padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block; }
+.footer-app-btns { display: flex; flex-direction: column; gap: var(--space-xs); }
+.footer-app-badge {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 8px var(--space-md); border-radius: var(--radius-m);
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  text-decoration: none; transition: all 0.2s; width: 162px;
+}
+.footer-app-badge:hover { border-color: rgba(211,141,41,0.4); transform: translateY(-1px); }
+.fab-sm { font-size:10px; color: var(--ink-lightest); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+.fab-lg { font-size: 12px; font-weight: var(--weight-bold); color: var(--sky-white); display: block; }
+
+.footer-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: var(--space-xl); }
+.footer-legal-only {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+.footer-copyright { font-size: 10px; color: var(--ink-lightest); }
+.footer-legal-links { display: flex; gap: var(--space-xl); }
+.footer-legal-links a { font-size: 12px; color: var(--ink-lightest); text-decoration: none; transition: color 0.2s; }
+.footer-legal-links a:hover { color: var(--sky-white); }
+
+@media (max-width: 768px) {
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px var(--space-xl) var(--space-xl); }
+  .footer-legal-only { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Zeno DS: font overrides ── */
+body { font-family:var(--font-body)!important; }
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+.lang-dropdown{position:relative;}.lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:7px 14px;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--tm,#9a9488);cursor:pointer;transition:all .2s;font-family:inherit;}.lang-trigger:hover{color:var(--tp,#fff);border-color:var(--pb,#d38d29);}.lang-trigger svg{width:9px;height:9px;transition:transform .2s;}.lang-dropdown.open .lang-trigger svg{transform:rotate(180deg);}.lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--bg2,#12100d);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:130px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s;box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:200;}.lang-dropdown.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}.lang-menu button{background:none;border:none;text-align:left;padding:9px 12px;border-radius:7px;font-size:14px;color:var(--tm,#9a9488);cursor:pointer;transition:all .15s;font-family:inherit;width:100%;}.lang-menu button:hover{background:rgba(211,141,41,.08);color:var(--tp,#fff);}.lang-menu button.active{color:var(--pl,#d38d29);font-weight:700;}</style>
+<style>.nav-cta,.nav-cta-btn{white-space:nowrap}.nav-right-group{gap:14px}.lang-trigger{padding:6px 10px}</style><script src="assets/i18n.js" defer></script><script src="assets/nav-responsive.js" defer></script><style id="zeno-preloader-css">
+html.pl-lock,html.pl-lock body{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999;background:#090a0a;clip-path:inset(0 0 0 0);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+#preloader::before{content:'';position:absolute;top:44%;left:50%;width:min(900px,120vw);height:min(900px,120vw);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(211,141,41,.16) 0%,transparent 62%);pointer-events:none}
+.pl-logo{align-self:center;justify-self:center;position:relative;z-index:2}
+.pl-svg{width:clamp(210px,28vw,330px);height:auto;display:block;overflow:visible}
+.pl-flame{transform-box:fill-box;transform-origin:center;transform:scale(.18);opacity:0}
+.pl-word{clip-path:inset(0 100% 0 0)}
+.pl-foot{position:relative;z-index:2;display:flex;justify-content:flex-end;align-items:flex-end;padding:0 clamp(24px,5vw,64px) clamp(28px,5vh,56px)}
+.pl-eyebrow,.pl-slogan{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);white-space:nowrap;opacity:0}
+.pl-count{font-family:var(--font-display);font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.04em;line-height:.9;color:#d38d29;font-variant-numeric:tabular-nums;opacity:0;justify-self:end}
+.pl-rule{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1);z-index:3}
+.pl-rule span{display:block;height:100%;background:#d38d29;transform:scaleX(0);transform-origin:left}
+#preloader.pl-run .pl-flame{animation:plFlame .9s cubic-bezier(.16,1,.3,1) both}
+#preloader.pl-run .pl-word{animation:plWipe .75s cubic-bezier(.22,1,.36,1) .35s both}
+#preloader.pl-run .pl-eyebrow{animation:plUp .5s ease .3s both}
+#preloader.pl-run .pl-slogan{animation:plUp .5s ease .5s both}
+#preloader.pl-run .pl-count{animation:plUp .5s cubic-bezier(.16,1,.3,1) .35s both}
+#preloader.pl-run .pl-rule span{animation:plBar 1.75s cubic-bezier(.33,1,.68,1) .35s both}
+#preloader.pl-run .pl-logo{animation:plLift .34s cubic-bezier(.65,0,.35,1) 2.1s both}
+#preloader.pl-run .pl-foot{animation:plLift .3s cubic-bezier(.65,0,.35,1) 2.06s both}
+#preloader.pl-run{animation:plPanel .38s cubic-bezier(.76,0,.24,1) 2.32s both}
+@keyframes plFlame{from{transform:scale(.18);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes plWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes plUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes plBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes plLift{from{transform:translateY(0);opacity:1}to{transform:translateY(-52px);opacity:0}}
+@keyframes plPanel{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+
+</style>
+<link rel="stylesheet" href="assets/a11y.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- ══ PRELOADER ══ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pl-logo">
+    <svg class="pl-svg" viewBox="14 18 264 94" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="pl-flame"><path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="#fff"/></g>
+      <g class="pl-word"><path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="#fff"/><path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="#fff"/><path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="#fff"/><path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="#fff"/><path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="#fff"/><path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="#fff"/><path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="#fff"/><path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="#fff"/><path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="#fff"/><path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="#fff"/><path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="#fff"/><path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="#fff"/></g>
+    </svg>
+  </div>
+  <div class="pl-foot">
+    <span class="pl-count">000</span>
+  </div>
+  <div class="pl-rule"><span></span></div>
+</div>
+<script>
+(function(){
+  var pl=document.getElementById('preloader');if(!pl)return;
+  var root=document.documentElement;root.classList.add('pl-lock');
+  var count=pl.querySelector('.pl-count');
+  var TOTAL=2700,CS=350,CD=1750;
+  function finish(){root.classList.remove('pl-lock');pl.remove();}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){requestAnimationFrame(finish);return;}
+  pl.classList.add('pl-run');
+  var t0=performance.now();
+  (function tick(now){
+    var p=Math.min(1,Math.max(0,((now||performance.now())-t0-CS)/CD));
+    var e=1-Math.pow(1-p,3);
+    count.textContent=String(Math.round(e*100)).padStart(3,'0');
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(finish,TOTAL);
+})();
+</script>
+
+
+<!-- ══════════════════════════
+     01 NAVBAR
+══════════════════════════ -->
+<nav id="navbar" aria-label="Primary" style="opacity: 1">
+  <!-- Left: About Us · Products · Newsroom -->
+  <ul class="nav-left">
+    <li><a href="zeno-about.html">ABOUT US</a></li>
+    <li><a href="zeno-platform.html">PLATFORM</a></li>
+    <li><a href="zeno-newsroom.html" class="active">NEWSROOM</a></li>
+  </ul>
+
+  <!-- Center: Logo -->
+  <div class="nav-center">
+    <a href="zeno-landing.html" class="nav-logo-link" aria-label="ZENO Property home">
+      <svg style="display:block;" height="64" viewBox="0 0 290 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="white"></path>
+<path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="white"></path>
+<path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="white"></path>
+<path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="white"></path>
+<path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="white"></path>
+<path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="white"></path>
+<path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="white"></path>
+<path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="white"></path>
+<path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="white"></path>
+<path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="white"></path>
+<path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="white"></path>
+<path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="white"></path>
+<path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="white"></path>
+</svg>
+    </a>
+  </div>
+
+  <!-- Right: Careers · Contact · Get Zeno App -->
+  <ul class="nav-right-group">
+    <li><a href="zeno-careers.html" class="nav-link">CAREERS</a></li>
+    <li><a href="zeno-contact.html" class="nav-link">CONTACT</a></li>
+    <li><a href="#" class="nav-cta-btn">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+
+<!-- ══════════════════════════
+     HERO
+══════════════════════════ -->
+<section id="hero">
+  <canvas id="light-rays-canvas"></canvas>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div>
+      <a href="zeno-articles.html" class="back-btn" style="display:inline-flex;align-items:center;gap:7px;padding:7px 16px;margin-bottom:24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:9px;font-size:12px;font-weight:700;color:#979c9e;cursor:pointer;text-decoration:none;text-transform:uppercase;letter-spacing:.09em;width:fit-content;transition:all .2s;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Back to Articles
+      </a>
+      <h1 id="hero-title">Newsroom Detail</h1>
+      <div class="hero-meta">
+        <span id="hero-date">📅 Jan 24, 2026</span>
+        <span class="dot">·</span>
+        <span id="hero-category-meta">Newsroom</span>
+        <span class="dot">·</span>
+        <span id="hero-read-time">⏱ 11 min read</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     FEATURED IMAGE
+══════════════════════════ -->
+<div id="featured-image">
+  <div class="featured-img-wrap reveal" style="background-image:linear-gradient(rgba(11,11,18,0.35),rgba(11,11,18,0.35)),url(https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&h=480&fit=crop&auto=format&q=80);background-size:cover;background-position:center;">
+    <div class="featured-img-caption" style="position:relative;z-index:2;color:rgba(240,240,255,0.5);">Featured Image</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     ARTICLE BODY
+══════════════════════════ -->
+<div id="article-body">
+  <div class="article-content reveal" id="article-body-content">
+    <!-- Content loaded dynamically from article data store -->
+  </div>
+
+  <!-- Share Row -->
+  <div class="share-row reveal">
+    <span class="share-label">Share this article:</span>
+    <a href="#" class="share-btn" onclick="return false;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X / Twitter
+    </a>
+    <a href="#" class="share-btn" onclick="return false;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="#" class="share-btn" id="copyLinkBtn" onclick="copyLink(event);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+      Copy Link
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     RELATED ARTICLES
+══════════════════════════ -->
+<section id="related">
+  <div class="related-inner">
+    <div class="related-header reveal">
+      <h2>Related Articles</h2>
+      <a href="zeno-articles.html" class="see-all-link">See all →</a>
+    </div>
+    <div class="related-grid">
+      <div class="art-card reveal d1" onclick="openArticle('Web design best practices: Optimising speed','Jan 24, 2026','Proptech','5 min read')">
+        <div class="art-thumb" style="background-image:linear-gradient(rgba(8,10,12,0.45),rgba(8,10,12,0.45)),url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=420&fit=crop&auto=format&q=80);background-size:cover;background-position:center;">
+        </div>
+        <div class="art-body">
+          <div class="art-meta">
+            <span>📅 Jan 24, 2026</span>
+            <span class="dot">·</span>
+            <span>Proptech</span>
+            <span class="dot">·</span>
+            <span>⏱ 5 min read</span>
+          </div>
+          <h3 class="art-title">Web design best practices: Optimising speed</h3>
+          <a href="#" class="art-read" onclick="openArticle('Web design best practices: Optimising speed','Jan 24, 2026','Proptech','5 min read');return false;">Read more →</a>
+        </div>
+      </div>
+
+      <div class="art-card reveal d2" onclick="openArticle('User-Centric web design: Strategies for better UI/UX','Jan 24, 2026','Guides','8 min read')">
+        <div class="art-thumb" style="background-image:linear-gradient(rgba(8,10,12,0.45),rgba(8,10,12,0.45)),url(https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=420&fit=crop&auto=format&q=80);background-size:cover;background-position:center;">
+
+          <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+            <defs><pattern id="str-d2" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="20" stroke="rgba(72,167,248,0.07)" stroke-width="1"/></pattern></defs>
+            <rect width="600" height="240" fill="url(#str-d2)"/>
+            <circle cx="300" cy="76" r="26" stroke="rgba(72,167,248,0.48)" stroke-width="2.5" fill="rgba(72,167,248,0.06)"/>
+            <path d="M 262,148 Q 262,118 300,118 Q 338,118 338,148" stroke="rgba(72,167,248,0.48)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <line x1="276" y1="93" x2="170" y2="78" stroke="rgba(72,167,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="270" y1="122" x2="136" y2="148" stroke="rgba(72,167,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="324" y1="93" x2="430" y2="78" stroke="rgba(72,167,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="330" y1="122" x2="464" y2="148" stroke="rgba(72,167,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="300" y1="50" x2="300" y2="24" stroke="rgba(72,167,248,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <rect x="108" y="58" width="66" height="38" rx="5" stroke="rgba(72,167,248,0.35)" stroke-width="1.5" fill="rgba(72,167,248,0.05)"/>
+            <line x1="120" y1="74" x2="162" y2="74" stroke="rgba(72,167,248,0.3)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="120" y1="86" x2="150" y2="86" stroke="rgba(72,167,248,0.18)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="100" y="128" width="72" height="38" rx="5" stroke="rgba(72,167,248,0.35)" stroke-width="1.5" fill="rgba(72,167,248,0.05)"/>
+            <line x1="112" y1="144" x2="158" y2="144" stroke="rgba(72,167,248,0.3)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="112" y1="156" x2="144" y2="156" stroke="rgba(72,167,248,0.18)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="426" y="58" width="66" height="38" rx="5" stroke="rgba(72,167,248,0.35)" stroke-width="1.5" fill="rgba(72,167,248,0.05)"/>
+            <line x1="438" y1="74" x2="480" y2="74" stroke="rgba(72,167,248,0.3)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="438" y1="86" x2="468" y2="86" stroke="rgba(72,167,248,0.18)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="428" y="128" width="72" height="38" rx="5" stroke="rgba(72,167,248,0.35)" stroke-width="1.5" fill="rgba(72,167,248,0.05)"/>
+            <line x1="440" y1="144" x2="486" y2="144" stroke="rgba(72,167,248,0.3)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="440" y1="156" x2="470" y2="156" stroke="rgba(72,167,248,0.18)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="268" y="6" width="64" height="26" rx="5" stroke="rgba(72,167,248,0.35)" stroke-width="1.5" fill="rgba(72,167,248,0.05)"/>
+            <line x1="280" y1="18" x2="320" y2="18" stroke="rgba(72,167,248,0.3)" stroke-width="3" stroke-linecap="round"/>
+            <text x="300" y="230" font-family="monospace" font-size="10" fill="rgba(72,167,248,0.28)" text-anchor="middle">user journey map / UX diagram</text>
+          </svg>
+        </div>
+        <div class="art-body">
+          <div class="art-meta">
+            <span>📅 Jan 24, 2026</span>
+            <span class="dot">·</span>
+            <span>Guides</span>
+            <span class="dot">·</span>
+            <span>⏱ 8 min read</span>
+          </div>
+          <h3 class="art-title">User-Centric web design: Strategies for better UI/UX</h3>
+          <a href="#" class="art-read" onclick="openArticle('User-Centric web design: Strategies for better UI/UX','Jan 24, 2026','Guides','8 min read');return false;">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     FOOTER
+══════════════════════════ -->
+<!-- ══ FOOTER ══ -->
+</main>
+<footer>
+  <div class="footer-offices">
+    <div class="office-card reveal">
+      <div class="office-icon">🇹🇭</div>
+      <div>
+        <div class="office-name">Bangkok, Thailand</div>
+        <div class="office-addr"><div>11/2 P23 Building, 11th Floor, Soi Sukhumvit 23,</div><div>Sukhumvit Road, Khlong Toei Nuea, Watthana,</div><div>Bangkok, 10110, Thailand.</div><div>(Beside Asoke BTS / Sukhumvit MRT Station)</div></div>
+        <div class="office-tel">+66 87 691 9916, +66 99 838 8949</div>
+      </div>
+    </div>
+    <div class="office-card reveal" style="transition-delay:0.08s">
+      <div class="office-icon">🇲🇲</div>
+      <div>
+        <div class="office-name">Yangon, Myanmar</div>
+        <div class="office-addr"><div>G10-12, Building A/B, Ground Floor, Pearl Condo,</div><div>Kabaraye Pagoda and Sayarsan Road, Bahan</div><div>Township, Yangon.</div></div>
+        <div class="office-tel">+95 9 757 223 943</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-col reveal" style="transition-delay:0.06s">
+      <div class="footer-col-title">Platform</div>
+      <ul>
+        <li><a href="zeno-platform.html">Zeno Buy</a></li>
+        <li><a href="zeno-platform.html">Zeno Rent</a></li>
+        <li><a href="zeno-platform.html">Zeno Sell</a></li>
+        <li><a href="zeno-platform.html">Zeno Invest</a></li>
+        <li><a href="#">Mobile app</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.12s">
+      <div class="footer-col-title">Resources</div>
+      <ul>
+        <li><a href="zeno-articles.html">Newsroom</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.18s">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="zeno-about.html">About us</a></li>
+        <li><a href="zeno-jobs.html">Careers</a></li>
+        <li><a href="zeno-contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.24s">
+      <div class="footer-col-title">Partners</div>
+      <ul>
+        <li><a href="zeno-agents.html">For agents</a></li>
+        <li><a href="zeno-developers.html">For developers</a></li>
+        <li><a href="zeno-partners.html">Partner program</a></li>
+        
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.30s">
+      <div class="footer-help-label">Download</div>
+      <div class="footer-app-btns">
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+        </a>
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+          <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+        </a>
+      </div>
+      <a href="#" class="footer-help-link">Help Center <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+  <div class="footer-legal-only">
+    <span class="footer-copyright">Copyright © 2026 Zeno Property Co.,LTD. All Right Reserved.</span>
+    <div class="footer-legal-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy policy</a>
+      <a href="#">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ─── NAVBAR SCROLL ─── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ─── REVEAL ─── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ─── LOAD ARTICLE DATA ─── */
+const ARTICLES = {
+  default: {
+    title: 'Zeno Expands Verified Agency Partner Network to 300+ Agencies Across Thailand and Myanmar',
+    date: 'May 15, 2026', category: 'Newsroom', readTime: '11 min read',
+    icon: '🏙️',
+    html: `
+      <h2 class="article-headline">Zeno Expands Verified Agency Partner Network to 300+ Agencies Across Thailand and Myanmar</h2>
+      <p>For some, renting is a long-term choice. For others, it's a stepping stone to homeownership, and right now, conditions are more favourable than they've been in years for those hoping to make that leap.</p>
+      <p>Rent growth has cooled to its slowest pace since 2020, and with incomes rising faster than rent, the typical renter is coming out $2,318 ahead compared to last year — extra breathing room that can go a long way for those saving up to buy their first home.</p>
+      <h3>The numbers behind the relief</h3>
+      <p>According to <a href="#">Zeno's ASEAN 2026 Property Report</a>, the typical asking rent sits at $1,910, and for the first time in years, rent growth is running below income growth. This shift is being felt across the region, though the degree varies considerably by market. Bangkok renters are seeing the biggest savings at $3,182 more per year, followed by Yangon at $3,110 and Singapore at $3,002. Even in pricier markets, the relief is real — Kuala Lumpur renters are up $2,438 annually, and regional renters are ahead by $2,750.</p>
+      <p>But savings advantage is only part of the story. As more supply comes online, the balance is tilting toward renters, and property managers are responding with incentives to fill units. In Q1, two in five Zeno verified listings offered concessions — the highest share ever recorded for the quarter. These incentives can include a free month of rent, waived application or pet fees, or discounted parking.</p>
+      <h3>What those savings actually buy</h3>
+      <ul>
+        <li>For those hoping to make the jump, the financial hurdles are real. More than half of <a href="#">prospective buyers</a> have paused or delayed their property search at least once just to save for a down payment, and only 48% say they've saved enough. That extra $2,318 a year won't close the gap overnight, but every bit of breathing room counts.</li>
+        <li>For those who do make the jump, the for-sale market is more accessible than it was a year ago. The monthly mortgage payment on a typical ASEAN property is <a href="#">down 4.5% from last year</a> as rates have eased — a meaningful shift for renters who have felt homeownership slipping out of reach.</li>
+      </ul>
+      <h3>Renters gain leverage</h3>
+      <ul>
+        <li>The for-sale market still requires a household income of about $76,400 to comfortably afford a typical home, roughly 35% higher than pre-pandemic levels. But the window is beginning to open.</li>
+        <li>With rents cooling, concessions on the rise, and mortgage payments easing, the conditions for building toward homeownership are improving. Every Zeno verified listing highlights available <a href="#">down payment assistance programmes</a> they may qualify for.</li>
+      </ul>
+      <h3>What this means for the ASEAN market</h3>
+      <p>Zeno's expanded network of 300+ verified agencies across Thailand and Myanmar represents a fundamental shift in how property intelligence reaches the people who need it most. By embedding qualified advisors within a data-driven platform, we are closing the gap between insight and action — ensuring that every renter, buyer, and investor has access to the same quality of guidance that was previously reserved for the privileged few.</p>
+      <p>The next chapter of ASEAN real estate belongs to those who act with clarity. That is precisely what Zeno is built to deliver.</p>
+    `
+  },
+  outlook: {
+    title: 'The 2026 ASEAN Real Estate Outlook: Growth Hubs in Thailand and Myanmar',
+    date: 'April 28, 2026', category: 'Market Research', readTime: '9 min read',
+    icon: '📊',
+    html: `
+      <h2 class="article-headline">The 2026 ASEAN Real Estate Outlook: Growth Hubs in Thailand and Myanmar</h2>
+      <p>Southeast Asia's real estate markets are entering 2026 with a momentum that has not been seen since the pre-pandemic era. Across the region, transaction volumes are rising, infrastructure investment is accelerating, and a new generation of digitally-native buyers is reshaping the demand landscape.</p>
+      <p>For Thailand and Myanmar specifically, the convergence of political stabilisation, infrastructure development, and foreign capital inflows is creating a window of opportunity that well-positioned investors cannot afford to ignore.</p>
+      <h3>Thailand: Bangkok leads, the provinces follow</h3>
+      <p>Bangkok continues to anchor Thailand's property market, but the most compelling growth story in 2026 is happening in the outer corridors. The Eastern Economic Corridor — stretching from Bangkok to Chonburi, Rayong, and Chachoengsao — is absorbing significant manufacturing relocation from China and attracting multinational corporate campuses at a record pace.</p>
+      <p>This industrial migration is creating a secondary residential demand wave unlike anything the Thai market has seen in a decade. Average condominium prices in EEC gateway towns have risen 12.4% year-on-year, while rental yields in serviced apartment complexes adjacent to the new industrial estates are averaging 6.8% — well above the Bangkok CBD benchmark of 4.2%.</p>
+      <h3>Myanmar: Patience rewarded</h3>
+      <ul>
+        <li>Yangon's commercial real estate sector is showing early signs of institutional re-engagement, with three major Singapore-based REITs conducting due diligence on Grade-A office assets for the first time since 2021. Grade-A office vacancy has tightened to 18% — still elevated, but declining at a pace that suggests equilibrium by late 2027.</li>
+        <li>Residential demand in Yangon's established townships — particularly Bahan, Kamaryut, and Hlaing — remains driven by the diaspora returning for business and the growing domestic professional class. Zeno verified listing enquiries in these areas have increased 34% quarter-on-quarter.</li>
+      </ul>
+      <h3>The macro tailwinds in 2026</h3>
+      <p>Three macro forces are converging to support ASEAN real estate in 2026. First, the US Federal Reserve's pivot to rate cuts has materially reduced the cost of USD-denominated real estate financing across the region. Second, China's ongoing economic reconfiguration is redirecting manufacturing FDI into Southeast Asia at an accelerating pace. Third, regional tourism is recovering beyond pre-pandemic levels, underpinning short-term rental yields in resort and coastal markets.</p>
+      <p>For buyers, sellers, and investors navigating this landscape, the imperative is clear: data quality and regional intelligence have never mattered more. Zeno's 2026 Market Outlook report — available now through the Zeno platform — provides granular, market-by-market analysis across 14 ASEAN cities, updated in real time as new transaction data flows in.</p>
+    `
+  },
+  ai: {
+    title: "Beyond the Algorithm: How Zeno's AI Predicts the Best Time to Buy",
+    date: 'April 10, 2026', category: 'Proptech', readTime: '7 min read',
+    icon: '🤖',
+    html: `
+      <h2 class="article-headline">Beyond the Algorithm: How Zeno's AI Predicts the Best Time to Buy</h2>
+      <p>The most common question Zeno receives from prospective buyers is not "which property should I buy?" — it is "when?" Timing a real estate market is notoriously difficult. Unlike equities, properties are illiquid, transaction costs are high, and price signals are often delayed. But at Zeno, we have spent three years building a predictive intelligence layer that changes what is possible.</p>
+      <p>Our AI does not claim to predict the future. What it does — with remarkable precision — is identify the convergence of leading indicators that historically precede periods of value acceleration in specific micro-markets. The distinction matters enormously for the quality of the decisions it enables.</p>
+      <h3>The data infrastructure behind the prediction</h3>
+      <p>Zeno's predictive engine is trained on 14 years of verified transaction data across 14 ASEAN cities, encompassing more than 2.3 million individual property transactions. Layered onto this foundation are 47 additional data streams — including infrastructure project timelines, foreign direct investment announcements, tourism arrivals data, school enrollment trends, corporate relocation filings, and consumer confidence indices.</p>
+      <p>The model's architecture is a hybrid ensemble: gradient-boosted decision trees handle the structured tabular data, while a fine-tuned transformer model processes the unstructured signals — planning permission filings, news sentiment, and social media discourse around specific districts.</p>
+      <h3>How the signal works in practice</h3>
+      <ul>
+        <li>When a user sets up a property search on Zeno, our AI assigns each matching listing a Market Timing Score — a proprietary index from 0 to 100 that reflects the current opportunity quality in that specific micro-market. A score above 72 has historically preceded 12-month price appreciation of more than 8% in 76% of cases across our ASEAN dataset.</li>
+        <li>The model also surfaces a Momentum Alert when three or more leading indicators for a given district shift within the same 90-day window. This alert has historically preceded measurable price movement within six months in 82% of triggered instances — giving buyers a structured edge that previously only institutional investors possessed.</li>
+      </ul>
+      <h3>What the AI cannot do</h3>
+      <p>Responsible deployment of predictive AI in real estate requires intellectual honesty about its limits. Our model cannot account for sudden geopolitical shocks, natural disasters, or policy changes that have no historical precedent in the training data. It is a tool for improving the probability-weighted quality of decisions — not a guarantee.</p>
+      <p>This is precisely why every Zeno AI recommendation is paired with a human advisor who can contextualise the data signal within the current on-the-ground reality of the market. Intelligence without judgment is just information. Zeno provides both.</p>
+    `
+  },
+  bangkok: {
+    title: 'Bangkok Neighbourhood Guide',
+    date: 'March 22, 2026', category: 'Neighbourhood', readTime: '12 min read',
+    icon: '🗺️',
+    html: `
+      <h2 class="article-headline">Bangkok Neighbourhood Guide: Where to Live, Invest, and Explore in 2026</h2>
+      <p>Bangkok is one of the most layered cities in Southeast Asia — a place where a 10-minute drive can take you from a glass-and-steel financial district to a canal-side neighbourhood where time appears to move at a different pace entirely. For property buyers, renters, and investors, understanding this layering is the single most important factor in making the right decision.</p>
+      <p>This guide covers Bangkok's most significant residential and investment districts, with honest assessments of who each neighbourhood suits and what the data says about its trajectory through 2026 and beyond.</p>
+      <h3>Sukhumvit: The international spine</h3>
+      <p>Sukhumvit remains Bangkok's most internationally recognised address — and for good reason. The BTS Skytrain line runs its entire length, connecting residents to the CBD, Silom, and the airport link at Phaya Thai. The corridor from Asok (BTS Nana to Thonglor) represents Bangkok's most liquid residential market, with average condominium prices ranging from ฿120,000 to ฿320,000 per square metre depending on building vintage and distance from the station.</p>
+      <p>The outer Sukhumvit corridor — from Ekkamai through On Nut and Udomsuk — is where the most compelling value-growth story is unfolding in 2026. New BTS extensions and significant retail development are pushing quality of life indicators upward faster than prices have yet caught up.</p>
+      <h3>Silom and Sathorn: Where business meets lifestyle</h3>
+      <ul>
+        <li>Silom is Bangkok's traditional financial district and remains the address of choice for international corporations and expatriate professionals who value proximity to the central business core. Average rental yields for well-managed serviced apartments run at 5.2–6.1%, supported by consistent corporate demand that insulates the market from retail demand volatility.</li>
+        <li>Sathorn, directly adjacent, has evolved into one of Bangkok's most desirable residential neighbourhoods — combining easy access to the BTS and MRT networks with genuinely walkable streets, mature tree canopy, and an increasingly vibrant ground-floor restaurant and café culture that has transformed the after-work experience for residents.</li>
+      </ul>
+      <h3>Ari and Phahonyothin: The creative quarter</h3>
+      <p>No neighbourhood in Bangkok has transformed more dramatically in the past five years than the Ari–Phahonyothin corridor. What was once a quiet, middle-class residential area has become home to Bangkok's most dynamic café scene, independent retail, and creative industry cluster. Property prices have responded accordingly — but the corridor still offers meaningful value relative to Sukhumvit and Silom at comparable transit access levels.</p>
+      <h3>Thonglor and Ekkamai: Lifestyle premium</h3>
+      <p>Thonglor and Ekkamai command a lifestyle premium that is unique in the Bangkok market. These are neighbourhoods where residents choose to pay more not for commute convenience but for the quality of daily life — the density of excellent restaurants, the independent boutique scene, and the peer group that has organically congregated there. For investors, this lifestyle stickiness translates into rental stability that data consistently validates.</p>
+    `
+  },
+  investment: {
+    title: 'Navigating Cross-Border Investments: A Guide for International Buyers',
+    date: 'March 5, 2026', category: 'Investment', readTime: '14 min read',
+    icon: '🌏',
+    html: `
+      <h2 class="article-headline">Navigating Cross-Border Investments: A Guide for International Buyers in ASEAN</h2>
+      <p>Cross-border real estate investment in Southeast Asia offers some of the most compelling risk-adjusted returns available to internationally mobile capital — but it also presents a legal, structural, and operational complexity that can undermine even well-capitalised investors who approach the market without proper preparation.</p>
+      <p>This guide is designed to provide international buyers with a practical framework for understanding the key variables across Thailand and Myanmar — the two markets where Zeno operates most comprehensively — and how to structure their approach to maximise both returns and legal certainty.</p>
+      <h3>Thailand: What foreign buyers can own</h3>
+      <p>Thailand's foreign ownership framework is one of the most clearly defined in ASEAN. Under the Condominium Act, foreign nationals may own freehold condominium units up to a maximum of 49% of the total sellable area in any registered condominium development. This quota is tracked at the building level, and Zeno's platform automatically flags quota availability in real time for every listed development.</p>
+      <p>For land and landed property, the picture is more complex. Foreign nationals cannot own land in Thailand in their own name. The most common structures for accessing landed exposure include long-term leasehold arrangements (typically 30+30+30 years), BOI-promoted company structures for qualifying investors, and Thai Spouse structures — each with distinct risk profiles that require specialist legal advice.</p>
+      <h3>Myanmar: Emerging frameworks for foreign capital</h3>
+      <ul>
+        <li>Myanmar's foreign investment framework in real estate remains in active development. The Myanmar Investment Law provides a pathway for foreign capital into approved residential and commercial developments through the Myanmar Investment Commission, but the process requires engagement with qualified local legal counsel and a thorough understanding of the current regulatory environment.</li>
+        <li>The most common entry point for international investors in Myanmar is through joint venture structures with established local developers — an arrangement that provides both the local knowledge and the regulatory relationships necessary to navigate approvals efficiently. Zeno works with a curated network of vetted legal and structural advisors across both Thailand and Myanmar.</li>
+      </ul>
+      <h3>Due diligence: The non-negotiables</h3>
+      <p>Regardless of market, cross-border property investment requires a rigorous due diligence process that goes significantly beyond what domestic buyers typically conduct. Title verification, encumbrance searches, developer financial health assessment, construction permit validation, and regulatory compliance checks are all essential components of a defensible investment decision.</p>
+      <p>Zeno's Verified Listing standard requires all listed properties to pass a 14-point documentation review before appearing on the platform. For investment-grade assets, our advisory team conducts an additional layer of institutional-standard due diligence — the same framework applied by the Singapore-listed REITs and family offices that use Zeno as their primary sourcing platform in the region.</p>
+      <h3>Tax and structuring considerations</h3>
+      <p>Tax efficiency in cross-border ASEAN real estate investment is a function of both the holding structure and the investor's own residency and tax status. Thailand imposes withholding tax on rental income for non-residents at 15%, while capital gains on property sales are subject to specific duty structures that vary by holding period and entity type. Myanmar's tax framework for foreign property investors is evolving, and current advice should always be sought from qualified practitioners with active in-country practices.</p>
+      <p>The fundamental principle that applies across all cross-border investment scenarios is this: structure first, asset second. The most attractive property in the region will underperform if it is held in a structure that is tax-inefficient, legally fragile, or difficult to exit. Zeno's advisory team partners with specialist legal and tax advisors in each market to help investors get this foundation right before committing capital.</p>
+    `
+  }
+};
+
+function getArticle(title) {
+  if (!title) return ARTICLES.default;
+  const t = title.toLowerCase();
+  if (t.includes('2026 asean') || t.includes('real estate outlook') || t.includes('growth hub')) return ARTICLES.outlook;
+  if (t.includes('algorithm') || t.includes('ai predicts') || t.includes('best time to buy') || t.includes('zeno yby') || t.includes('ai property match') || t.includes('ai financial')) return ARTICLES.ai;
+  if (t.includes('bangkok') && (t.includes('neighbourhood') || t.includes('neighbor') || t.includes('guide'))) return ARTICLES.bangkok;
+  if (t.includes('cross-border') || t.includes('cross border') || t.includes('international buyer') || t.includes('navigating')) return ARTICLES.investment;
+  if (t.includes('stoic') || t.includes('portfolio diversif') || t.includes('yield forecast') || t.includes('investment corridor') || t.includes('market vs. time') || t.includes('neural')) return ARTICLES.investment;
+  if (t.includes('yangon') || t.includes('asean emerging') || t.includes('neighbourhood')) return ARTICLES.bangkok;
+  if (t.includes('market outlook') || t.includes('condo market') || t.includes('cross-border capital') || t.includes('phuket') || t.includes('koh samui')) return ARTICLES.outlook;
+  // Default for everything else
+  return { ...ARTICLES.default, title: title };
+}
+
+(function() {
+  const stored = localStorage.getItem('zeno_current_article');
+  const a = stored ? JSON.parse(stored) : window.currentArticle;
+  const data = a ? getArticle(a.title) : ARTICLES.default;
+  const title = (a && a.title) ? a.title : data.title;
+  const date = (a && a.date) ? a.date : data.date;
+  const category = (a && a.category) ? a.category : data.category;
+  const readTime = (a && a.readTime) ? a.readTime : data.readTime;
+
+  document.getElementById('hero-title').textContent = title;
+  document.getElementById('hero-date').textContent = '📅 ' + date;
+  if (document.getElementById('hero-category')) document.getElementById('hero-category').textContent = category;
+  document.getElementById('hero-category-meta').textContent = category;
+  document.getElementById('hero-read-time').textContent = '⏱ ' + readTime;
+  const iconEl = document.querySelector('.featured-img-icon');
+  if (iconEl) iconEl.textContent = data.icon || '🏙️';
+  document.title = 'ZENO — ' + title;
+  document.querySelector('.article-content').innerHTML = data.html;
+})();
+
+/* ─── OPEN RELATED ARTICLE ─── */
+function openArticle(title, date, category, readTime) {
+  localStorage.setItem('zeno_current_article', JSON.stringify({ title, date, category, readTime }));
+  window.location.href = 'zeno-article-detail.html';
+}
+
+/* ─── COPY LINK ─── */
+function copyLink(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText(window.location.href).catch(() => {});
+  const btn = document.getElementById('copyLinkBtn');
+  btn.textContent = '✓ Copied!';
+  setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg> Copy Link'; }, 2000);
+}
+</script>
+
+
+<script>
+(function(){
+  var VERT=[
+    'attribute vec2 position;',
+    'varying vec2 vUv;',
+    'void main(){vUv=position*0.5+0.5;gl_Position=vec4(position,0.0,1.0);}'
+  ].join('\n');
+  var FRAG=[
+    'precision highp float;',
+    'uniform float iTime;uniform vec2 iResolution;',
+    'uniform vec2 rayPos,rayDir;uniform vec3 raysColor;',
+    'uniform float raysSpeed,lightSpread,rayLength,pulsating,fadeDistance,saturation,mouseInfluence,noiseAmount,distortion;',
+    'uniform vec2 mousePos;varying vec2 vUv;',
+    'float noise(vec2 st){return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);}',
+    'float rayStrength(vec2 src,vec2 dir,vec2 coord,float sA,float sB,float spd){',
+    '  vec2 d=coord-src;vec2 dn=normalize(d);float ca=dot(dn,dir);',
+    '  float da=ca+distortion*sin(iTime*2.0+length(d)*0.01)*0.2;',
+    '  float sf=pow(max(da,0.0),1.0/max(lightSpread,0.001));',
+    '  float dist=length(d);float maxD=iResolution.x*rayLength;',
+    '  float lf=clamp((maxD-dist)/maxD,0.0,1.0);',
+    '  float ff=clamp((iResolution.x*fadeDistance-dist)/(iResolution.x*fadeDistance),0.5,1.0);',
+    '  float pulse=pulsating>0.5?(0.8+0.2*sin(iTime*spd*3.0)):1.0;',
+    '  float bs=clamp((0.45+0.15*sin(da*sA+iTime*spd))+(0.3+0.2*cos(-da*sB+iTime*spd)),0.0,1.0);',
+    '  return bs*lf*ff*sf*pulse;}',
+    'void main(){',
+    '  vec2 coord=vec2(gl_FragCoord.x,iResolution.y-gl_FragCoord.y);',
+    '  vec2 frd=rayDir;',
+    '  if(mouseInfluence>0.0){vec2 mp=mousePos*iResolution.xy;vec2 md=normalize(mp-rayPos);frd=normalize(mix(rayDir,md,mouseInfluence));}',
+    '  vec4 r1=vec4(1.0)*rayStrength(rayPos,frd,coord,36.2214,21.11349,1.5*raysSpeed);',
+    '  vec4 r2=vec4(1.0)*rayStrength(rayPos,frd,coord,22.3991,18.0234,1.1*raysSpeed);',
+    '  vec4 color=r1*0.5+r2*0.4;',
+    '  if(noiseAmount>0.0){float n=noise(coord*0.01+iTime*0.1);color.rgb*=(1.0-noiseAmount+noiseAmount*n);}',
+    '  float bri=1.0-(coord.y/iResolution.y);',
+    '  color.x*=0.1+bri*0.8;color.y*=0.3+bri*0.6;color.z*=0.5+bri*0.5;',
+    '  if(saturation!=1.0){float gray=dot(color.rgb,vec3(0.299,0.587,0.114));color.rgb=mix(vec3(gray),color.rgb,saturation);}',
+    '  color.rgb*=raysColor;gl_FragColor=color;}'
+  ].join('\n');
+  function hexToRgb(h){var m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return m?[parseInt(m[1],16)/255,parseInt(m[2],16)/255,parseInt(m[3],16)/255]:[1,1,1];}
+  function mkShader(gl,t,s){var sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+  function initLightRays(){
+    var canvas=document.getElementById('light-rays-canvas');
+    if(!canvas)return;
+    var gl=canvas.getContext('webgl')||canvas.getContext('experimental-webgl');
+    if(!gl)return;
+    var prog=gl.createProgram();
+    gl.attachShader(prog,mkShader(gl,gl.VERTEX_SHADER,VERT));
+    gl.attachShader(prog,mkShader(gl,gl.FRAGMENT_SHADER,FRAG));
+    gl.linkProgram(prog);gl.useProgram(prog);
+    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    var pl=gl.getAttribLocation(prog,'position');
+    gl.enableVertexAttribArray(pl);gl.vertexAttribPointer(pl,2,gl.FLOAT,false,0,0);
+    var U={};
+    ['iTime','raysSpeed','lightSpread','rayLength','pulsating','fadeDistance','saturation','mouseInfluence','noiseAmount','distortion'].forEach(function(n){U[n]=gl.getUniformLocation(prog,n);});
+    U.iResolution=gl.getUniformLocation(prog,'iResolution');
+    U.rayPos=gl.getUniformLocation(prog,'rayPos');
+    U.rayDir=gl.getUniformLocation(prog,'rayDir');
+    U.raysColor=gl.getUniformLocation(prog,'raysColor');
+    U.mousePos=gl.getUniformLocation(prog,'mousePos');
+    var color=hexToRgb('#D38D29');
+    var mouse={x:0.5,y:0.5},smooth={x:0.5,y:0.5};
+    function resize(){var p=canvas.parentElement;var w=p.clientWidth||window.innerWidth;var h=p.clientHeight||window.innerHeight;var dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;gl.viewport(0,0,canvas.width,canvas.height);}
+    resize();window.addEventListener('resize',resize);
+    new ResizeObserver(resize).observe(canvas.parentElement);
+    window.addEventListener('mousemove',function(e){var rect=canvas.parentElement.getBoundingClientRect();mouse.x=(e.clientX-rect.left)/rect.width;mouse.y=(e.clientY-rect.top)/rect.height;});
+    var raf;
+    function frame(t){
+      raf=requestAnimationFrame(frame);
+      smooth.x=smooth.x*0.92+mouse.x*0.08;smooth.y=smooth.y*0.92+mouse.y*0.08;
+      var w=canvas.width,h=canvas.height;
+      gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
+      gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.uniform1f(U.iTime,t*0.001);gl.uniform2f(U.iResolution,w,h);
+      gl.uniform2f(U.rayPos,0.5*w,-0.2*h);gl.uniform2f(U.rayDir,0.0,1.0);
+      gl.uniform3fv(U.raysColor,color);
+      gl.uniform1f(U.raysSpeed,1.5);gl.uniform1f(U.lightSpread,0.8);
+      gl.uniform1f(U.rayLength,1.2);gl.uniform1f(U.pulsating,0.0);
+      gl.uniform1f(U.fadeDistance,1.0);gl.uniform1f(U.saturation,1.0);
+      gl.uniform2f(U.mousePos,smooth.x,smooth.y);
+      gl.uniform1f(U.mouseInfluence,0.1);gl.uniform1f(U.noiseAmount,0.1);gl.uniform1f(U.distortion,0.05);
+      gl.drawArrays(gl.TRIANGLES,0,3);
+    }
+    raf=requestAnimationFrame(frame);
+    new IntersectionObserver(function(e){if(e[0].isIntersecting)raf=requestAnimationFrame(frame);else cancelAnimationFrame(raf);},{threshold:0.1}).observe(canvas.parentElement);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLightRays);else initLightRays();
+})();
+</script>
+<script src="assets/a11y.js"></script>
+</body>
+</html>

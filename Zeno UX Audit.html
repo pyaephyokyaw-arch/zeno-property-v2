@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX Audit | ZENO Property Website</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#090a0a;--card:#131516;--line:rgba(255,255,255,.09);--tp:#f7f9fa;--tm:#a4a9ab;--pl:#f1cb7c;--pp:#d38d29;--ok:#4ade80;--warn:#facc15;--bad:#f87171}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tp);font:16px/1.65 "Nunito Sans",system-ui,sans-serif}
+a{color:var(--pl)}a:hover{color:#fff}
+.wrap{max-width:1040px;margin:0 auto;padding:72px 32px 96px}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.15;margin:0}
+h1{font-size:clamp(32px,4vw,48px)}h2{font-size:26px;margin:64px 0 20px;padding-top:28px;border-top:1px solid var(--line)}h3{font-size:18px;margin:28px 0 12px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--pl);margin-bottom:14px}
+.meta{color:var(--tm);margin-top:12px}
+.verdict{margin-top:32px;padding:28px;border:1px solid rgba(211,141,41,.3);border-radius:14px;background:linear-gradient(145deg,rgba(211,141,41,.1),transparent 60%)}
+.verdict p{margin:0 0 10px}.verdict p:last-child{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tm);font-weight:800}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.s{display:inline-flex;align-items:center;gap:6px;font-weight:700;white-space:nowrap}
+.s::before{content:'';width:9px;height:9px;border-radius:50%;background:currentColor}
+.g{color:var(--ok)}.y{color:var(--warn)}.r{color:var(--bad)}
+.fixed{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(74,222,128,.12);color:var(--ok)}
+.open{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(250,204,21,.12);color:var(--warn)}
+ul,ol{padding-left:20px}li{margin-bottom:8px}
+code{font-family:"Roboto Mono",monospace;font-size:13px;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--line)}
+.approve li{list-style:none;margin-left:-20px}.approve input{margin-right:10px;width:18px;height:18px;vertical-align:-3px;accent-color:var(--pp)}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="eyebrow">UX Audit</div>
+<h1>ZENO Property website, all 16 pages</h1>
+<p class="meta">Stage: Pre-handoff · Date: 23 September 2026 · Scope: usability, visual hierarchy, consistency, SEO, semantic HTML and WCAG 2.1 AA</p>
+
+<div class="verdict">
+<p><strong>Ready with fixes.</strong> The site has a strong, consistent visual identity and clear page purposes. The biggest risk was accessibility: primary buttons, secondary text and body copy failed contrast, and there were no landmarks, skip link or labelled form fields. Those items are now fixed across every page.</p>
+<p>What remains is mostly content and product work: placeholder links, one misattributed quote, and a few long pages that would benefit from in-page navigation.</p>
+</div>
+
+<h2>7 Key Factors scorecard</h2>
+<div class="tw"><table>
+<thead><tr><th>Factor</th><th>Status</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Useful</td><td><span class="s g">Strong</span></td><td>Each page answers a clear audience need: buyers, agents, developers, partners, candidates, press.</td></tr>
+<tr><td>Usable</td><td><span class="s y">At risk</span></td><td>Many "Learn more", social and store links point to <code>#</code>. Long pages (Landing, About, Newsroom) have no in-page navigation.</td></tr>
+<tr><td>Findable</td><td><span class="s y">At risk</span></td><td>No meta descriptions, canonical URLs or social cards before this pass. Now added; a sitemap.xml and robots.txt are still needed.</td></tr>
+<tr><td>Credible</td><td><span class="s y">At risk</span></td><td>Placeholder QR code, a quote attributed to Ben Horowitz that doesn't appear to be his, and "The Zeno headquarters" caption on a stock photo.</td></tr>
+<tr><td>Desirable</td><td><span class="s g">Strong</span></td><td>Distinctive dark and gold system, editorial type and considered scroll motion.</td></tr>
+<tr><td>Accessible</td><td><span class="s g">Fixed</span></td><td>Was failing contrast, landmarks, labels and keyboard access. Remediated site-wide (see below).</td></tr>
+<tr><td>Valuable</td><td><span class="s g">Strong</span></td><td>Clear routes to app download, open roles and contact on every page.</td></tr>
+</tbody></table></div>
+
+<h2>Accessibility findings (WCAG 2.1 AA)</h2>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>Issue</th><th>Criterion</th><th>Severity</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>White text on gold primary buttons was 2.8:1. Now dark ink on gold (7.2:1).</td><td>1.4.3 Contrast</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>2</td><td>Secondary text token <code>--td</code> (#50555c) was 2.6:1 on the page background. Raised to #80868d (5.4:1).</td><td>1.4.3 Contrast</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>3</td><td>Body copy set in <code>--border-strong</code> (#6c7072) was 4.0:1. Raised to #898e91 (6.0:1) in dark theme.</td><td>1.4.3 Contrast</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>4</td><td>No <code>&lt;main&gt;</code> landmark, unlabelled navigation, no skip link. Added <code>&lt;main id="main"&gt;</code>, <code>aria-label="Primary"</code> and a "Skip to main content" link on every page.</td><td>1.3.1, 2.4.1</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>5</td><td>15 form fields (Contact, Jobs, Job detail, Newsroom) had placeholder text only. Each now has an accessible name; the CV upload is keyboard-operable.</td><td>3.3.2, 4.1.2</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>6</td><td>26 clickable article cards were <code>div</code>s with <code>onclick</code>, unreachable by keyboard. They now take focus, announce as links and respond to Enter and Space.</td><td>2.1.1 Keyboard</td><td><span class="s r">Critical</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>7</td><td>Logo link had no text alternative. Now "ZENO Property home".</td><td>2.4.4, 4.1.2</td><td><span class="s y">Moderate</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>8</td><td>No visible focus indicator on most controls. A 2px gold focus ring now appears on every link, button and field.</td><td>2.4.7 Focus visible</td><td><span class="s y">Moderate</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>9</td><td>Heading levels skipped from H1 to H3 on Contact and Job detail. Promoted to H2.</td><td>1.3.1</td><td><span class="s y">Moderate</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>10</td><td>Continuous animations (marquees, rotating headline, orbs, rings) ignored reduced-motion settings on some pages. All motion now stops when the user asks for less motion.</td><td>2.3.3, 2.2.2</td><td><span class="s y">Moderate</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>11</td><td>Emoji used as icons (flags, office and card icons) were read aloud. Now hidden from screen readers.</td><td>1.1.1</td><td><span class="s g">Minor</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>12</td><td>Buttons below 44px tall. Primary, ghost, nav, subscribe and pagination buttons now meet 44px.</td><td>2.5.5 Target size</td><td><span class="s g">Minor</span></td><td><span class="fixed">Fixed</span></td></tr>
+<tr><td>13</td><td>Links to <code>#</code> (social, store badges, "Read more") go nowhere. They no longer jump to the top, but need real URLs.</td><td>2.4.4</td><td><span class="s y">Moderate</span></td><td><span class="open">Needs content</span></td></tr>
+<tr><td>14</td><td>Gold outline headings (e.g. "Smarter.", principle names) rely on a 1px stroke. They pass as large text but read faintly at small widths.</td><td>1.4.3 (large)</td><td><span class="s g">Minor</span></td><td><span class="open">Review</span></td></tr>
+</tbody></table></div>
+
+<h3>Colour contrast (against #090a0a page background)</h3>
+<div class="tw"><table>
+<thead><tr><th>Element</th><th>Foreground</th><th>Ratio</th><th>Required</th><th>Pass</th></tr></thead>
+<tbody>
+<tr><td>Headings, primary text</td><td><span class="sw" style="background:#f7f9fa"></span>#f7f9fa</td><td>19.0:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+<tr><td>Muted text <code>--tm</code></td><td><span class="sw" style="background:#979c9e"></span>#979c9e</td><td>7.2:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+<tr><td>Body copy <code>--border-strong</code> (before)</td><td><span class="sw" style="background:#6c7072"></span>#6c7072</td><td>4.0:1</td><td>4.5:1</td><td class="r">No</td></tr>
+<tr><td>Body copy <code>--border-strong</code> (after)</td><td><span class="sw" style="background:#898e91"></span>#898e91</td><td>6.0:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+<tr><td>Dim text <code>--td</code> (before)</td><td><span class="sw" style="background:#50555c"></span>#50555c</td><td>2.6:1</td><td>4.5:1</td><td class="r">No</td></tr>
+<tr><td>Dim text <code>--td</code> (after)</td><td><span class="sw" style="background:#80868d"></span>#80868d</td><td>5.4:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+<tr><td>Gold accent text</td><td><span class="sw" style="background:#d38d29"></span>#d38d29</td><td>7.2:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+<tr><td>Primary button, white on gold (before)</td><td>#ffffff on #d38d29</td><td>2.8:1</td><td>4.5:1</td><td class="r">No</td></tr>
+<tr><td>Primary button, ink on gold (after)</td><td>#0b0c0d on #d38d29</td><td>7.2:1</td><td>4.5:1</td><td class="g">Yes</td></tr>
+</tbody></table></div>
+
+<h3>Keyboard navigation</h3>
+<div class="tw"><table>
+<thead><tr><th>Element</th><th>Tab order</th><th>Enter / Space</th><th>Escape</th></tr></thead>
+<tbody>
+<tr><td>Skip link</td><td>First stop on every page</td><td>Moves focus to main content</td><td>n/a</td></tr>
+<tr><td>Primary navigation</td><td>Logo, links, Get ZENO App, language</td><td>Follows link; current page marked with <code>aria-current</code></td><td>Mobile menu: verify it closes on Escape</td></tr>
+<tr><td>Article and report cards</td><td>Document order</td><td>Opens the article</td><td>n/a</td></tr>
+<tr><td>Forms</td><td>Field order matches visual order</td><td>Submit; CV upload opens file picker</td><td>n/a</td></tr>
+</tbody></table></div>
+
+<h2>SEO and semantic HTML</h2>
+<div class="tw"><table>
+<thead><tr><th>Item</th><th>Before</th><th>After</th></tr></thead>
+<tbody>
+<tr><td>Unique title per page</td><td>Generic ("ZENO | About Us")</td><td>Descriptive, keyword-led titles on all 16 pages</td></tr>
+<tr><td>Meta description</td><td>Missing on all pages</td><td>Written for each page, 120 to 160 characters</td></tr>
+<tr><td>Canonical URL</td><td>Missing</td><td>Points to the live Vercel URL; landing page resolves to <code>/</code></td></tr>
+<tr><td>Open Graph and Twitter cards</td><td>Missing</td><td>Title, description, URL and site name added. A 1200×630 share image is still needed.</td></tr>
+<tr><td>Landmarks</td><td>nav and footer only</td><td>nav (labelled), main, footer</td></tr>
+<tr><td>One H1 per page</td><td>Yes</td><td>Yes; heading order now has no skipped levels</td></tr>
+<tr><td>Image alt text</td><td>All images had alt</td><td>No change needed</td></tr>
+<tr><td>sitemap.xml and robots.txt</td><td>Missing</td><td><span class="open">To add at deploy</span></td></tr>
+</tbody></table></div>
+
+<h2>Usability findings</h2>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>Finding</th><th>Severity</th><th>Principle</th><th>Recommendation</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Landing, About and Newsroom run 9 to 12 sections with no way to jump between them.</td><td><span class="s y">Moderate</span></td><td>Miller's Law, progressive disclosure</td><td>Add a slim sticky section index or "On this page" menu on long pages.</td></tr>
+<tr><td>2</td><td>The Newsroom category bar has six tabs plus section-level "All Articles" links that go to the same place.</td><td><span class="s y">Moderate</span></td><td>Hick's Law</td><td>Keep the tabs as the single filter and point each section link at its filtered view.</td></tr>
+<tr><td>3</td><td>Several sections pair two equally weighted CTAs (e.g. "View Open Roles" and "Life at Zeno").</td><td><span class="s g">Minor</span></td><td>Von Restorff, visual hierarchy</td><td>Keep one filled primary and style the second as a text link.</td></tr>
+<tr><td>4</td><td>Contact form fields rely on placeholders as the only visible label.</td><td><span class="s y">Moderate</span></td><td>Recognition over recall</td><td>Add visible labels above each field; placeholders disappear once typing starts.</td></tr>
+<tr><td>5</td><td>The navigation matches common property-portal patterns (logo left, primary links, app CTA right).</td><td><span class="s g">Works</span></td><td>Jakob's Law</td><td>Keep.</td></tr>
+<tr><td>6</td><td>Paragraph widths on some hero and section intros exceed 80 characters per line on wide screens.</td><td><span class="s g">Minor</span></td><td>Readability</td><td>Cap body paragraphs at about 68ch.</td></tr>
+</tbody></table></div>
+
+<h2>Visual hierarchy</h2>
+<ul>
+<li><strong>What draws the eye first:</strong> the H1 on every page, set large in Sora with gold emphasis. This is the right element.</li>
+<li><strong>Reading flow:</strong> overline, heading, supporting paragraph, CTA, repeated consistently. Numbered rows and hairline dividers make scanning easy.</li>
+<li><strong>Emphasis:</strong> gold is used for one accent per block, which keeps it meaningful. On a few long-copy cards, bold and gold compete; keep one.</li>
+</ul>
+
+<h2>Consistency</h2>
+<div class="tw"><table>
+<thead><tr><th>Element</th><th>Issue</th><th>Recommendation</th></tr></thead>
+<tbody>
+<tr><td>Casing</td><td>Headings mix Title Case and sentence case; the design system specifies sentence case.</td><td>Pick one and apply site-wide.</td></tr>
+<tr><td>Gradient text</td><td><code>.grad-em</code>, <code>.h1-grad</code> and <code>.quote-gradient</code> do the same job with different stops.</td><td>Consolidate into one utility.</td></tr>
+<tr><td>Icons</td><td>Emoji are still used as icons on some cards and office blocks.</td><td>Replace with the design system's Icon set.</td></tr>
+<tr><td>Inline styles</td><td>Direct edits left many inline font sizes (e.g. 61.85px, 39.584px).</td><td>Map these to the type scale.</td></tr>
+</tbody></table></div>
+
+<h2>What works well</h2>
+<ul>
+<li>A clear, confident brand system: one accent colour, two type families, consistent spacing.</li>
+<li>Every page has exactly one H1 and all images have alt text.</li>
+<li>Strong, repeated conversion paths to app download, contact and open roles.</li>
+<li>Scroll motion is purposeful (reveals, drawn rules, sequential steps) rather than decorative.</li>
+</ul>
+
+<h2>Priority recommendations</h2>
+<ol>
+<li><strong>Replace every <code>#</code> link with a real destination</strong> (store badges, socials, "Read more"). Dead ends hurt trust and SEO. [AI-suggested]</li>
+<li><strong>Add visible form labels</strong> on Contact, Jobs and Job detail. Accessible names are in place, but sighted users still lose context once they start typing. [AI-suggested]</li>
+<li><strong>Remove or correct the Ben Horowitz quote and the "headquarters" photo caption</strong> so the credibility content is accurate. [AI-suggested]</li>
+<li><strong>Add sitemap.xml, robots.txt and a 1200×630 share image</strong> to complete the SEO setup. [AI-suggested]</li>
+<li><strong>Add in-page section navigation</strong> to Landing, About and Newsroom. [AI-suggested]</li>
+</ol>
+
+<h2>Designer-approved</h2>
+<ul class="approve">
+<li><label><input type="checkbox">Contrast changes (ink on gold buttons, lighter secondary text)</label></li>
+<li><label><input type="checkbox">Landmarks, skip link, labelled nav</label></li>
+<li><label><input type="checkbox">SEO titles and descriptions</label></li>
+<li><label><input type="checkbox">Replace placeholder links</label></li>
+<li><label><input type="checkbox">Visible form labels</label></li>
+<li><label><input type="checkbox">Section navigation on long pages</label></li>
+</ul>
+</main>
+</body>
+</html>

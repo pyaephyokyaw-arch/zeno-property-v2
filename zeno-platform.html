@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#0a0c0e"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#0a0c0e"/><text x="100" y="115" font-family="sans-serif" font-size="64" font-weight="800" fill="#d38d29" text-anchor="middle">Z</text></svg></template>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENO Platform | Buy, Rent, Sell, Invest and Grow</title>
+<meta name="description" content="Explore the ZENO platform: find homes to buy or rent, list and sell property, research investments and grow your property business in one place.">
+<link rel="canonical" href="https://zeno-property-site.vercel.app/zeno-platform.html">
+<meta name="theme-color" content="#090a0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZENO Property">
+<meta property="og:title" content="ZENO Platform | Buy, Rent, Sell, Invest and Grow">
+<meta property="og:description" content="Explore the ZENO platform: find homes to buy or rent, list and sell property, research investments and grow your property business in one place.">
+<meta property="og:url" content="https://zeno-property-site.vercel.app/zeno-platform.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="zeno-logo.svg">
+<!-- Zeno Property Design System — Dark Theme -->
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/colors.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/theme.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/typography.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/components/interactions.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/styles.css">
+<style>
+/* ── Zeno DS: dark theme token remapping ── */
+:root {
+  --bg:   #090a0a;
+  --bg2:  #202325;
+  --bg3:  #303437;
+  --pp:   #d38d29;
+  --pl:   #f1cb7c;
+  --pd:   #975614;
+  --gb:   rgba(255,255,255,0.06);
+  --pb:   rgba(211,141,41,0.22);
+  --gs:   rgba(255,255,255,0.03);
+  --tp:   #f7f9fa;
+  --tm:   #979c9e;
+  --td:   #50555c;
+  --green:#23c16b;
+  --teal: #9bdcfd;
+  --nav-h:72px;
+  --r:    16px; --r-sm:10px; --r-btn:9px;
+}
+/* Sora for all headings */
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+/* Gold focus ring */
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+/* ═══════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════ */
+:root {
+  --bg:    #090a0a;
+  --bg2:   #202325;
+  --bg3:   #303437;
+  --pp:    #d38d29;
+  --pl:    #f1cb7c;
+  --pd:    #975614;
+  --gb:    rgba(255,255,255,0.08);
+  --pb:    rgba(211,141,41,0.22);
+  --gs:    rgba(255,255,255,0.04);
+  --tp:    #f7f9fa;
+  --tm:    #979c9e;
+  --td:    #50555c;
+  --green: #4ADE80;
+  --teal:  #48a7f8;
+  --nav-h:72px;
+  --r:     16px;
+  --r-sm:  10px;
+  --r-btn: 9px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family:var(--font-body);
+  background: var(--bg);
+  color: var(--tp);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .08s; }
+.d2 { transition-delay: .16s; }
+.d3 { transition-delay: .24s; }
+.d4 { transition-delay: .32s; }
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:200;
+  height:var(--nav-h);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;
+  padding:0 max(48px, calc((100% - 1200px) / 2));
+  transition: background .4s ease, backdrop-filter .4s ease;
+  background: rgba(9,10,10,0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: none;
+  box-shadow: none;
+}
+
+nav.scrolled{
+  background: rgba(9,10,10,0.97);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(211,141,41,0.10);
+}
+.nav-left,.nav-right-group{
+  display:flex;align-items:center;
+  list-style:none;
+}
+.nav-left{gap:28px;}
+@media (max-width: 1080px){ .nav-left{gap:16px;} .nav-right-group{gap:12px;} .nav-left a,.nav-right-group a:not(.nav-cta-btn){font-size:14px;} nav{gap:14px;padding:0 20px;} .nav-center svg{height:44px;} }
+.nav-right-group{gap:20px;justify-content:flex-end;}
+.nav-left a,.nav-right-group a:not(.nav-cta-btn){
+  font-size:16px;font-weight:500;
+  color:var(--tm);text-decoration:none;
+  letter-spacing:.01em;
+  transition:color .2s;
+  position:relative;padding-bottom:2px;
+}
+.nav-left a::after,.nav-right-group a:not(.nav-cta-btn)::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--pp);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s;
+}
+.nav-left a:hover,.nav-right-group a:not(.nav-cta-btn):hover{color:var(--tp);}
+.nav-left a:hover::after,.nav-right-group a:hover::after,
+.nav-left a.active::after{transform:scaleX(1);}
+.nav-left a.active{color:var(--tp);}
+.nav-logo{
+  font-size:18px;font-weight:700;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,#f1cb7c,#d38d29);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;text-decoration:none;
+}
+.nav-cta,.nav-cta-btn{
+  padding:8px 18px;
+  border:none;border-radius:var(--r-btn);
+  font-size:16px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg, #d38d29, #975614);
+  cursor:pointer;text-decoration:none;
+  box-shadow:0 0 20px rgba(211,141,41,0.28);
+  transition:all .2s;font-family:inherit;
+}
+.nav-cta:hover,.nav-cta-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(211,141,41,0.45);}
+
+/* ═══════════════════════════════
+   SHARED PRIMITIVES
+═══════════════════════════════ */
+.overline {
+  display: flex; align-items: center; gap: 10px;
+  font-size:14px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--pl); margin-bottom: 14px;
+}
+.overline::before {
+  content: ''; display: none; width: 20px; height: 2px;
+  background: linear-gradient(90deg,#d38d29,#f1cb7c);
+  border-radius: 2px; flex-shrink: 0;
+}
+h2.sec {
+  font-size:clamp(26px,3.2vw,44px);
+  font-weight:700; letter-spacing: -1.5px; line-height: 1.1;
+  margin-bottom: 14px;
+}
+.sec-sub {
+  font-size: 16px; color: var(--tm);
+  max-width: 560px; line-height: 1.75; margin-bottom: 0;
+}
+section { padding: 96px 48px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+
+#join-cta { background: var(--bg); }
+.join-card { display: grid; grid-template-columns: 1.2fr auto; gap: 56px; align-items: center; background: var(--gs); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 56px; position: relative; overflow: hidden; }
+.join-card::before { content:''; position:absolute; right:-10%; top:-40%; width:520px; height:520px; border-radius:50%; background: radial-gradient(circle, rgba(211,141,41,.16) 0%, transparent 65%); pointer-events:none; }
+.join-copy h2.sec { margin-bottom: 16px; }
+.join-copy p { font-size: 16px; color: var(--tm); line-height: 1.75; max-width: 58ch; }
+.join-actions { display: flex; align-items: center; gap: 28px; position: relative; }
+.join-badges { display: flex; flex-direction: column; gap: 10px; }
+.join-qr { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.join-qr img { width: 104px; height: 104px; border-radius: 10px; background:#fff; padding: 7px; display:block; }
+.join-qr span { font-size:12px; color: var(--tm); text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 900px) { .join-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 24px; } .join-actions { flex-wrap: wrap; } }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #d38d29, #975614);
+  border: none; border-radius: var(--r-btn);
+  font-size:16px; font-weight: 700; color: #fff;
+  cursor: pointer; text-decoration: none; font-family: inherit;
+  box-shadow: 0 0 24px rgba(211,141,41,0.32);
+  transition: all .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(211,141,41,0.50); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px;
+  background: var(--gs);
+  border: 1px solid var(--gb); border-radius: var(--r-btn);
+  font-size:16px; font-weight:700; color: var(--tm);
+  cursor: pointer; text-decoration: none; font-family: inherit;
+  backdrop-filter: blur(8px);
+  transition: all .2s;
+}
+.btn-ghost:hover { border-color: var(--pb); color: var(--pl); transform: translateY(-2px); }
+
+/* Image placeholder */
+.img-placeholder {
+  background: linear-gradient(145deg, #181a1b, var(--bg2));
+  border: 1px solid var(--gb); border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; position: relative; overflow: hidden;
+  color: var(--td);
+}
+.img-placeholder::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.img-placeholder span { position: relative; z-index: 1; opacity: .5; }
+
+/* ── Feature card click interaction ── */
+.feature-row {
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.feature-row.active {
+  background: rgba(211,141,41,.08);
+  border-color: rgba(211,141,41,.35);
+}
+.feature-row:hover:not(.active) {
+  background: rgba(255,255,255,.03);
+  border-color: rgba(255,255,255,.1);
+}
+.active-bar {
+  width: 3px; height: 0; background: var(--pp);
+  border-radius: 3px; transition: height .3s ease;
+  flex-shrink: 0; margin-right: 4px;
+}
+.feature-row.active .active-bar { height: 100%; }
+
+/* Crossfade image wrap */
+.feature-img-wrap {
+  position: relative; border-radius: 16px; overflow: hidden;
+}
+.feature-img-wrap .fi {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: opacity .55s ease;
+  opacity: 0;
+}
+.feature-img-wrap .fi.active { opacity: 1; }
+.feature-list { display: flex; flex-direction: column; }
+.feature-row {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gb);
+  transition: background .2s;
+  cursor: default;
+}
+.feature-row:first-child { border-top: 1px solid var(--gb); }
+.feature-row:hover .frow-icon { transform: translateX(4px); border-color: var(--pb); box-shadow: 0 0 14px rgba(211,141,41,.2); }
+.frow-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: var(--r-sm);
+  background: rgba(211,141,41,.08);
+  border: 1px solid var(--gb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  transition: all .2s;
+}
+.frow-body {}
+.frow-title { font-size: 16px; font-weight: 700; color: var(--tp); margin-bottom: 4px; }
+.frow-desc { font-size:14px; color: var(--tm); line-height: 1.65; }
+
+/* 2-col feature layout */
+.feat-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-top: 48px;
+}
+.feat-img-sticky { position: sticky; top: calc(var(--nav-h) + 20px); }
+
+/* ═══════════════════════════════
+   01 HERO
+═══════════════════════════════ */
+#hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 48px 100px;
+  background: linear-gradient(160deg, #0a0c0e 0%, var(--bg) 60%, #090a0a 100%);
+  overflow: hidden;
+  min-height:100vh;
+  display: flex; align-items: center;
+}
+#light-rays-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  z-index:0;
+  pointer-events:none;
+  display:block;
+}
+.hero-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(80px);
+  animation: orbDrift 9s ease-in-out infinite alternate;
+  z-index:1;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(211,141,41,.2) 0%, transparent 70%);
+  top: -100px; left: -80px;
+}
+.hero-orb-2 {
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(211,141,41,.15) 0%, transparent 70%);
+  bottom: -40px; right: 180px; animation-delay: -4.5s;
+}
+@keyframes orbDrift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(30px,22px) scale(1.07); }
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 60px; align-items: start;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--pb); border-radius: 100px;
+  font-size: 12px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--pl); margin-bottom: 24px;
+  background: rgba(211,141,41,.06);
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0; animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+#hero h1 {
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight:700; letter-spacing: -2.5px; line-height: 1.06;
+  margin-bottom: 20px;
+}
+.hero-sub { font-size:18px; color: var(--tm); max-width: 500px; line-height: 1.8; }
+.hero-icon {
+  width: 84px; height: 84px; border-radius: 18px;
+  background: rgba(211,141,41,0.10); border: 1px solid var(--pb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; flex-shrink: 0; margin-top: 10px;
+  box-shadow: 0 0 30px rgba(211,141,41,.15);
+}
+
+/* ═══════════════════════════════
+   02 RENTERS INTRO
+═══════════════════════════════ */
+#renters { background: var(--bg2); }
+.renters-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.renters-left h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight:700; letter-spacing: -1.5px; line-height: 1.1;
+  margin-bottom: 20px;
+}
+.renters-left p { font-size: 16px; color: var(--tm); line-height: 1.8; margin-bottom: 32px; }
+.renters-qr { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 24px; }
+.renters-qr img { width: 100px; height: 100px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.15); }
+.renters-qr-label { font-size:12px; color: var(--tm); text-transform: uppercase; letter-spacing: 0.08em; }
+.renters-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.app-btn-wrap {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: 12px;
+  cursor: pointer; text-decoration: none; transition: all .3s; font-family: inherit;
+}
+.app-ios {
+  background: linear-gradient(135deg, #d38d29, #975614);
+  border: none; color: #fff;
+  box-shadow: 0 0 24px rgba(211,141,41,0.32);
+}
+.app-ios:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(211,141,41,0.45); }
+.app-android {
+  background: var(--gs); border: 1px solid var(--gb); color: var(--tm);
+  backdrop-filter: blur(8px);
+}
+.app-android:hover { border-color: var(--pb); color: var(--pl); transform: translateY(-2px); }
+.app-icon { font-size: 22px; }
+.app-small { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; opacity: .7; }
+.app-big { font-size: 16px; font-weight: 700; }
+.renters-img { height: 380px; }
+
+/* ═══════════════════════════════
+   03 BUY
+═══════════════════════════════ */
+#buy { background: var(--bg); position: relative; overflow: hidden; }
+#buy::before { content:''; position:absolute; top:-18%; left:-12%; width:720px; height:720px; border-radius:50%; background: radial-gradient(circle, rgba(211,141,41,.14) 0%, transparent 64%); pointer-events:none; }
+#buy .inner { position: relative; }
+#buy > .inner > .reveal:first-child { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 64px; align-items: end; }
+#buy .overline { grid-column: 1; }
+#buy h2.sec { grid-column: 1; margin-bottom: 0; max-width: 14ch; }
+#buy .sec-sub { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0; max-width: 46ch; border-left: 1px solid rgba(211,141,41,.4); padding-left: 32px; }
+#buy .feat-2col { grid-template-columns: 1.05fr 1fr; gap: 72px; margin-top: 72px; }
+#buy .feature-list { counter-reset: buyrow; }
+#buy .feature-row { position: relative; gap: 22px; padding: 26px 0 26px 4px; border-top: 1px solid rgba(255,255,255,.1); transition: padding-left .28s ease, background .28s ease; }
+#buy .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
+#buy .feature-row:hover { padding-left: 16px; }
+#buy .frow-icon { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(211,141,41,.35); background: rgba(211,141,41,.08); font-size: 0; position: relative; }
+#buy .frow-icon::after { counter-increment: buyrow; content: counter(buyrow, decimal-leading-zero); position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size:14px; font-weight:700; letter-spacing: .06em; color: var(--pp); }
+#buy .feature-row:hover .frow-icon { background: var(--pp); border-color: var(--pp); transform: none; box-shadow: 0 0 22px rgba(211,141,41,.3); }
+#buy .feature-row:hover .frow-icon::after { color: var(--bg); }
+#buy .frow-title { font-size: 19px; letter-spacing: -.2px; }
+#buy .feat-img-sticky { position: sticky; top: 120px; }
+#buy .feature-img-wrap { border-radius: 20px; overflow: hidden; position: relative; }
+#buy .feat-img-sticky::before { content:''; position:absolute; inset:0; border:1px solid rgba(211,141,41,.5); border-radius:20px; transform: translate(-16px,-16px); pointer-events:none; z-index:1; }
+@media (max-width: 900px) { #buy > .inner > .reveal:first-child { grid-template-columns: 1fr; row-gap: 20px; } #buy .sec-sub { grid-column: 1; grid-row: auto; border-left: none; padding-left: 0; max-width: none; } #buy h2.sec { max-width: none; } #buy .feat-2col { grid-template-columns: 1fr; gap: 40px; } #buy .feat-img-sticky::before { transform: translate(-8px,-8px); } }
+
+/* ═══════════════════════════════
+   05 APP DOWNLOAD BANNER
+═══════════════════════════════ */
+#app-banner {
+  background: var(--bg);
+  padding: 80px max(48px, calc((100% - 1200px) / 2));
+}
+.app-banner-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 340px; gap: 2px; border-radius: 16px; overflow: hidden;
+}
+.app-banner-half {
+  padding: 72px 64px; width: 100%;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.app-banner-half.left {
+  background: linear-gradient(160deg, #100e08 0%, #1c160a 60%, #231a0c 100%);
+  border-right: 1px solid rgba(211,141,41,0.12);
+}
+.app-banner-half.right {
+  background: linear-gradient(160deg, #0a0908 0%, #130f09 60%, #1a1309 100%);
+}
+.app-banner-orb {
+  position: absolute; width: 280px; height: 280px;
+  border-radius: 50%; filter: blur(70px); pointer-events: none;
+  bottom: -80px;
+}
+.app-banner-half.left .app-banner-orb {
+  background: radial-gradient(circle, rgba(211,141,41,.35) 0%, transparent 70%);
+  right: -60px;
+}
+.app-banner-half.right .app-banner-orb {
+  background: radial-gradient(circle, rgba(211,141,41,.18) 0%, transparent 70%);
+  left: -60px;
+}
+.app-banner-half h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight:700; letter-spacing: -.5px; margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.app-banner-half p {
+  font-size: 16px; color: var(--tm); margin-bottom: 28px;
+  max-width: 380px; line-height: 1.75;
+  position: relative; z-index: 1;
+}
+.app-banner-btn { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════
+   06 SELL
+═══════════════════════════════ */
+#sell { background: var(--bg2); position: relative; overflow: hidden; }
+#sell::before { content:''; position:absolute; bottom:-22%; right:-10%; width:680px; height:680px; border-radius:50%; background: radial-gradient(circle, rgba(211,141,41,.13) 0%, transparent 64%); pointer-events:none; }
+#sell .inner { position: relative; }
+#sell > .inner > .reveal:first-child { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 64px; align-items: end; text-align: left; }
+#sell .overline { grid-column: 1; }
+#sell h2.sec { grid-column: 1; margin-bottom: 0; max-width: 14ch; }
+#sell .sec-sub { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0; max-width: 46ch; border-left: 1px solid rgba(211,141,41,.4); padding-left: 32px; text-align: left; justify-self: start; }
+#sell .feat-2col { grid-template-columns: 1fr 1.05fr; gap: 72px; margin-top: 72px; }
+#sell .feature-list { counter-reset: sellrow; order: 2; }
+#sell .feature-row { position: relative; gap: 22px; padding: 26px 0 26px 4px; border-top: 1px solid rgba(255,255,255,.1); transition: padding-left .28s ease; }
+#sell .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
+#sell .feature-row:hover { padding-left: 16px; }
+#sell .frow-icon { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(211,141,41,.35); background: rgba(211,141,41,.08); font-size: 0; position: relative; }
+#sell .frow-icon::after { counter-increment: sellrow; content: counter(sellrow, decimal-leading-zero); position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size:14px; font-weight:700; letter-spacing: .06em; color: var(--pp); }
+#sell .feature-row:hover .frow-icon { background: var(--pp); border-color: var(--pp); transform: none; box-shadow: 0 0 22px rgba(211,141,41,.3); }
+#sell .feature-row:hover .frow-icon::after { color: var(--bg); }
+#sell .frow-title { font-size: 19px; letter-spacing: -.2px; }
+#sell .feat-img-sticky { position: sticky; top: 120px; order: 1; }
+#sell .feature-img-wrap { border-radius: 20px; overflow: hidden; position: relative; }
+#sell .feat-img-sticky::before { content:''; position:absolute; inset:0; border:1px solid rgba(211,141,41,.5); border-radius:20px; transform: translate(16px,-16px); pointer-events:none; z-index:1; }
+@media (max-width: 900px) { #sell > .inner > .reveal:first-child { grid-template-columns: 1fr; row-gap: 20px; } #sell .overline, #sell h2.sec { grid-column: 1; max-width: none; } #sell .sec-sub { grid-column: 1; grid-row: auto; border-left: none; padding-left: 0; max-width: none; } #sell .feat-2col { grid-template-columns: 1fr; gap: 40px; } #sell .feature-list { order: 2; } #sell .feature-row { flex-direction: row; text-align: left; } #sell .frow-desc { margin-left: 0; } #sell .feat-img-sticky { order: 1; } #sell .feat-img-sticky::before { transform: translate(8px,-8px); } }
+
+/* ═══════════════════════════════
+   07 INVEST
+═══════════════════════════════ */
+#invest { background: var(--bg); position: relative; overflow: hidden; }
+#invest::before { content:''; position:absolute; top:-14%; left:50%; transform:translateX(-50%); width:900px; height:640px; border-radius:50%; background: radial-gradient(ellipse, rgba(211,141,41,.12) 0%, transparent 66%); pointer-events:none; }
+#invest .inner { position: relative; }
+#invest > .inner > .reveal:first-child { max-width: 760px; }
+#invest h2.sec { margin-bottom: 16px; }
+#invest .sec-sub { max-width: 54ch; }
+#invest .invest-2col { grid-template-columns: 1.1fr 1fr; gap: 72px; margin-top: 72px; }
+#invest .feature-list { counter-reset: invrow; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+#invest .feature-row { position: relative; flex-direction: column; align-items: flex-start; gap: 14px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,.1); transition: transform .28s ease; }
+#invest .feature-row:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
+#invest .feature-row:hover { transform: translateY(-4px); }
+#invest .frow-icon { width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(211,141,41,.35); background: rgba(211,141,41,.08); font-size: 0; position: relative; }
+#invest .frow-icon::after { counter-increment: invrow; content: counter(invrow, decimal-leading-zero); position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 12px; font-weight:700; letter-spacing: .06em; color: var(--pp); }
+#invest .feature-row:hover .frow-icon { background: var(--pp); border-color: var(--pp); transform: none; box-shadow: 0 0 22px rgba(211,141,41,.3); }
+#invest .feature-row:hover .frow-icon::after { color: var(--bg); }
+#invest .frow-title { font-size:18px; letter-spacing: -.2px; margin-bottom: 8px; }
+#invest .invest-img { height: 200px; margin-top: 32px; border-radius: 16px; overflow: hidden; grid-column: 1 / -1; }
+#invest .human-card { border-radius: 24px; padding: 40px 36px; box-shadow: 0 24px 70px rgba(0,0,0,.45), 0 0 50px rgba(211,141,41,.12); }
+#invest .human-card h3 { font-size: clamp(22px,2.2vw,28px); letter-spacing: -.8px; line-height: 1.2; }
+#invest .human-card p { font-size: 14px; }
+#invest .check-list { gap: 12px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
+#invest .check-list li { font-size: 14px; }
+#invest .check-list li::before { color: var(--pp); }
+@media (max-width: 1024px) { #invest .feature-list { grid-template-columns: 1fr; } #invest .feature-row:nth-last-child(-n+2) { border-bottom: none; } #invest .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,.1); } }
+@media (max-width: 900px) { #invest .invest-2col { grid-template-columns: 1fr; gap: 40px; } }
+.invest-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start; margin-top: 48px;
+}
+.invest-left { display: flex; flex-direction: column; gap: 0; }
+.invest-img { height: 220px; margin-top: 24px; }
+.human-card {
+  position: sticky; top: calc(var(--nav-h) + 20px);
+  background: linear-gradient(145deg, rgba(211,141,41,.06), rgba(211,141,41,.04));
+  border: 1px solid var(--pb);
+  border-radius: var(--r);
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(211,141,41,0.10);
+}
+.human-tag {
+  display: inline-block; padding: 4px 12px;
+  background: rgba(211,141,41,0.10); border: 1px solid var(--pb);
+  border-radius: 100px; font-size: 12px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--pl);
+  margin-bottom: 16px;
+}
+.human-card h3 {
+  font-size: 20px; font-weight:700; letter-spacing: -.3px;
+  margin-bottom: 12px; line-height: 1.3;
+}
+.human-card p { font-size:14px; color: var(--tm); line-height: 1.7; margin-bottom: 20px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size:14px; color: var(--tm); line-height: 1.5;
+}
+.check-list li::before {
+  content: '✓';
+  color: var(--green); font-weight: 700; font-size:14px;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* ═══════════════════════════════
+   08 GROW
+═══════════════════════════════ */
+#grow { background: var(--bg2); position: relative; overflow: hidden; }
+#grow .inner { position: relative; }
+#grow > .inner > .reveal:first-child { max-width: 900px; }
+#grow h2.sec { margin-bottom: 16px; max-width: 24ch; }
+#grow .sec-sub { max-width: 58ch; }
+#grow .grow-2col { display: flex; flex-direction: column; align-items: stretch; gap: 0; margin-top: 56px; }
+#grow .grow-right { order: 1; gap: 0; }
+#grow .grow-right .feature-img-wrap { height: 380px !important; border-radius: 0 !important; clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); }
+#grow .feature-list { order: 2; counter-reset: growrow; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; margin-top: 0; border-top: 2px solid var(--pp); }
+#grow .feature-row { position: relative; flex-direction: column; align-items: flex-start; gap: 0; padding: 36px 28px 40px; border: none; border-right: 1px solid rgba(255,255,255,.1); border-radius: 0; background: transparent; transition: background .3s ease; }
+#grow .feature-row:last-child { border-right: none; }
+#grow .feature-row::before { counter-increment: growrow; content: counter(growrow, decimal-leading-zero); display: block; font-family: var(--font-display); font-size:14px; font-weight:700; letter-spacing: .18em; color: var(--pp); margin-bottom: 28px; }
+#grow .feature-row::after { content: ''; position: absolute; left: 0; top: -2px; height: 2px; width: 0; background: var(--sky-white, #fff); transition: width .4s ease; }
+#grow .feature-row:hover { background: rgba(211,141,41,.05); }
+#grow .feature-row:hover::after { width: 100%; }
+#grow .frow-icon { display: none; }
+#grow .active-bar { display: none; }
+#grow .frow-body { position: relative; z-index: 1; }
+#grow .frow-title { font-size: 20px; letter-spacing: -.4px; line-height: 1.25; margin-bottom: 14px; }
+#grow .frow-desc { font-size: 14px; line-height: 1.7; }
+@media (max-width: 1024px) { #grow .feature-list { grid-template-columns: repeat(2, minmax(0,1fr)); } #grow .feature-row:nth-child(2n) { border-right: none; } #grow .feature-row:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.1); } }
+@media (max-width: 680px) { #grow .feature-list { grid-template-columns: 1fr; } #grow .feature-row { border-right: none; padding: 30px 0 34px; } #grow .feature-row:nth-child(n+2) { border-top: 1px solid rgba(255,255,255,.1); } #grow .grow-right .feature-img-wrap { height: 240px !important; clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); } }
+.grow-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start; margin-top: 48px;
+}
+.grow-right { display: flex; flex-direction: column; gap: 20px; }
+.grow-img { height: 260px; }
+.work-together-card {
+  background: linear-gradient(145deg, rgba(211,141,41,.05), rgba(211,141,41,.03));
+  border: 1px solid var(--pb);
+  border-radius: var(--r); padding: 28px;
+  box-shadow: 0 0 30px rgba(211,141,41,.08);
+}
+.work-together-card h4 {
+  font-size: 18px; font-weight:700; letter-spacing: -.2px;
+  margin-bottom: 10px;
+}
+.work-together-card p {
+  font-size:14px; color: var(--tm); line-height: 1.7; margin-bottom: 20px;
+}
+.work-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ═══════════════════════════════
+   09 FAQ
+═══════════════════════════════ */
+#faq { background: var(--bg); text-align: center; }
+.faq-header { margin-bottom: 48px; }
+.faq-header .overline { justify-content: center; }
+.faq-header .overline::before { display: none; }
+.faq-list {
+  max-width: 720px; margin: 0 auto; text-align: left;
+}
+.faq-item {
+  border-bottom: 1px solid var(--gb);
+  overflow: hidden;
+}
+.faq-item:first-child { border-top: 1px solid var(--gb); }
+.faq-q {
+  width: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  padding: 20px 4px;
+  background: transparent; border: none;
+  font-family: inherit; font-size: 16px; font-weight:700;
+  color: var(--tp); cursor: pointer; text-align: left;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--pl); }
+.faq-chevron {
+  font-size: 20px; color: var(--tm); flex-shrink: 0;
+  transition: transform .3s; display: inline-block;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-a {
+  font-size: 16px; color: var(--tm); line-height: 1.75;
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+  padding: 0 4px;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding: 0 4px 20px;
+}
+
+/* old footer block removed — using unified footer styles below */
+.footer-brand-desc { font-size: 16px; color: var(--tm); line-height: 1.7; max-width: 220px; }
+.footer-col-title {
+  font-family: var(--font-body); font-size:12px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand-primary); margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: 16px; color: var(--tm); text-decoration: none; transition: color .2s; }
+.footer-col ul a:hover { color: var(--tp); }
+.footer-divider { max-width: 1200px; margin: 0 auto 28px; height: 1px; background: var(--gb); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-help { display: flex; align-items: center; gap: 12px; }
+.help-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border: 1px solid var(--gb); border-radius: var(--r-btn);
+  background: var(--bg2); color: var(--tm); font-size:14px; font-weight:700;
+  cursor: pointer; transition: all .2s; font-family: inherit;
+}
+.help-btn:hover { border-color: var(--pb); color: var(--pl); }
+.footer-legal { display: flex; gap: 20px; align-items: center; }
+.footer-legal span { font-size:14px; color: var(--td); }
+.footer-legal a { font-size:14px; color: var(--tm); text-decoration: none; transition: color .2s; }
+.footer-legal a:hover { color: var(--tp); }
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  section { padding: 72px 32px; }
+  .feat-2col, .invest-2col, .grow-2col { gap: 40px; }
+  .renters-grid { gap: 40px; }
+  .footer-links { grid-template-columns: repeat(3,1fr); gap: 24px; }
+  footer { padding: 56px 32px 32px; }
+}
+@media (max-width: 900px) {
+  .app-banner-grid { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-icon { display: none; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  nav .nav-group:first-child { display: none; }
+  section { padding: 72px 24px; }
+  #hero { padding: calc(var(--nav-h) + 48px) 24px 80px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-icon { display: none; }
+  .renters-grid, .feat-2col, .invest-2col, .grow-2col { grid-template-columns: 1fr; }
+  .feat-img-sticky, .human-card { position: relative; top: auto; }
+  .app-banner-grid { grid-template-columns: 1fr; }
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px 24px 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+  /* ─ Footer col-1 help + app badges ─ */
+  .footer-help-center-label {
+    font-size:14px; font-weight: 700; color: var(--tp);
+    margin: 16px 0 10px;
+  }
+  .footer-app-btns { display: flex; flex-direction: column; gap: 8px; }
+  .footer-app-badge {
+    display: flex; align-items: center; gap: 9px;
+    padding: 8px 14px; border-radius: 10px;
+    border: 1px solid var(--gb); background: var(--gs);
+    text-decoration: none; transition: all .2s; cursor: pointer;
+  }
+  .footer-app-badge:hover { border-color: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(211,141,41,0.15); }
+  .fab-sm { font-size:10px; color: var(--tm); text-transform: uppercase; letter-spacing: .06em; display: block; }
+  .fab-lg { font-size: 12px; font-weight: 700; color: var(--tp); display: block; }
+
+
+  .footer-legal-only {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0 28px; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copyright { font-size: 10px; color: var(--td); }
+  .footer-legal-links { display: flex; gap: 20px; }
+  .footer-legal-links a { font-size: 12px; color: var(--tm); text-decoration: none; transition: color .2s; }
+  .footer-legal-links a:hover { color: var(--tp); }
+
+
+  
+
+
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--ink-darkest);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 72px 48px var(--space-xxl);
+}
+.footer-offices {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg); margin-bottom: var(--space-5xl);
+  max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+.footer-links {
+  max-width: 1200px; margin: 0 auto var(--space-4xl);
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-xl);
+}
+.office-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-l);
+  padding: 24px 28px; display: grid; grid-template-columns: 40px 1fr;
+  gap: 16px; align-items: start; transition: border-color 0.2s;
+}
+.office-card:hover { border-color: rgba(211,141,41,0.35); }
+.office-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-m);
+  background: rgba(211,141,41,0.12); border: 1px solid rgba(211,141,41,0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.office-name { font-family: var(--font-body); font-size: 14px; font-weight: var(--weight-bold); color: var(--sky-white); margin-bottom: var(--space-2xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.office-addr { font-size:14px; color: var(--ink-lightest); line-height: 1.65; }
+.office-tel { font-size:14px; color: var(--primary-light); margin-top: 4px; font-weight: var(--weight-medium); }
+
+
+.footer-brand-desc { font-size: 16px; color: var(--ink-lightest); line-height: 1.7; max-width: 220px; margin-top: var(--space-sm); }
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  font-size: 16px; color: var(--ink-lightest);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-col ul a:hover { color: var(--brand-primary); padding-left: 4px; }
+.footer-help-link { display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-md); padding: 10px 20px; border-radius: var(--radius-m); background: var(--brand-primary); color: var(--sky-white); font-size: 14px; font-weight: var(--weight-bold); text-decoration: none; transition: all 0.2s; }
+.footer-help-link:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(211,141,41,0.3); }
+.footer-help-label { font-size:12px; font-weight: var(--weight-bold); color: var(--brand-primary); margin: 0 0 var(--space-lg); text-transform: uppercase; letter-spacing: 0.12em; padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block; }
+.footer-app-btns { display: flex; flex-direction: column; gap: var(--space-xs); }
+.footer-app-badge {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 8px var(--space-md); border-radius: var(--radius-m);
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  text-decoration: none; transition: all 0.2s; width: 162px;
+}
+
+.fab-sm { font-size:10px; color: var(--ink-lightest); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+.fab-lg { font-size: 12px; font-weight: var(--weight-bold); color: var(--sky-white); display: block; }
+
+.footer-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: var(--space-xl); }
+.footer-legal-only {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+.footer-copyright { font-size: 10px; color: var(--ink-lightest); }
+.footer-legal-links { display: flex; gap: var(--space-xl); }
+.footer-legal-links a { font-size: 12px; color: var(--ink-lightest); text-decoration: none; transition: color 0.2s; }
+.footer-legal-links a:hover { color: var(--sky-white); }
+
+@media (max-width: 768px) {
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px var(--space-xl) var(--space-xl); }
+  .footer-legal-only { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Zeno DS: font overrides ── */
+body { font-family:var(--font-body)!important; }
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+.lang-dropdown{position:relative;}.lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:7px 14px;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--tm,#9a9488);cursor:pointer;transition:all .2s;font-family:inherit;}.lang-trigger:hover{color:var(--tp,#fff);border-color:var(--pb,#d38d29);}.lang-trigger svg{width:9px;height:9px;transition:transform .2s;}.lang-dropdown.open .lang-trigger svg{transform:rotate(180deg);}.lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--bg2,#12100d);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:130px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s;box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:200;}.lang-dropdown.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}.lang-menu button{background:none;border:none;text-align:left;padding:9px 12px;border-radius:7px;font-size:14px;color:var(--tm,#9a9488);cursor:pointer;transition:all .15s;font-family:inherit;width:100%;}.lang-menu button:hover{background:rgba(211,141,41,.08);color:var(--tp,#fff);}.lang-menu button.active{color:var(--pl,#d38d29);font-weight:700;}</style>
+<style>.nav-cta,.nav-cta-btn{white-space:nowrap}.nav-right-group{gap:14px}.lang-trigger{padding:6px 10px}</style><script src="assets/i18n.js" defer></script><script src="assets/nav-responsive.js" defer></script><style id="zeno-preloader-css">
+html.pl-lock,html.pl-lock body{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999;background:#090a0a;clip-path:inset(0 0 0 0);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+#preloader::before{content:'';position:absolute;top:44%;left:50%;width:min(900px,120vw);height:min(900px,120vw);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(211,141,41,.16) 0%,transparent 62%);pointer-events:none}
+.pl-logo{align-self:center;justify-self:center;position:relative;z-index:2}
+.pl-svg{width:clamp(210px,28vw,330px);height:auto;display:block;overflow:visible}
+.pl-flame{transform-box:fill-box;transform-origin:center;transform:scale(.18);opacity:0}
+.pl-word{clip-path:inset(0 100% 0 0)}
+.pl-foot{position:relative;z-index:2;display:flex;justify-content:flex-end;align-items:flex-end;padding:0 clamp(24px,5vw,64px) clamp(28px,5vh,56px)}
+.pl-eyebrow,.pl-slogan{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);white-space:nowrap;opacity:0}
+.pl-count{font-family:var(--font-display);font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.04em;line-height:.9;color:#d38d29;font-variant-numeric:tabular-nums;opacity:0;justify-self:end}
+.pl-rule{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1);z-index:3}
+.pl-rule span{display:block;height:100%;background:#d38d29;transform:scaleX(0);transform-origin:left}
+#preloader.pl-run .pl-flame{animation:plFlame .9s cubic-bezier(.16,1,.3,1) both}
+#preloader.pl-run .pl-word{animation:plWipe .75s cubic-bezier(.22,1,.36,1) .35s both}
+#preloader.pl-run .pl-eyebrow{animation:plUp .5s ease .3s both}
+#preloader.pl-run .pl-slogan{animation:plUp .5s ease .5s both}
+#preloader.pl-run .pl-count{animation:plUp .5s cubic-bezier(.16,1,.3,1) .35s both}
+#preloader.pl-run .pl-rule span{animation:plBar 1.75s cubic-bezier(.33,1,.68,1) .35s both}
+#preloader.pl-run .pl-logo{animation:plLift .34s cubic-bezier(.65,0,.35,1) 2.1s both}
+#preloader.pl-run .pl-foot{animation:plLift .3s cubic-bezier(.65,0,.35,1) 2.06s both}
+#preloader.pl-run{animation:plPanel .38s cubic-bezier(.76,0,.24,1) 2.32s both}
+@keyframes plFlame{from{transform:scale(.18);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes plWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes plUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes plBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes plLift{from{transform:translateY(0);opacity:1}to{transform:translateY(-52px);opacity:0}}
+@keyframes plPanel{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+
+</style>
+<link rel="stylesheet" href="assets/a11y.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- ══ PRELOADER ══ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pl-logo">
+    <svg class="pl-svg" viewBox="14 18 264 94" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="pl-flame"><path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="#fff"/></g>
+      <g class="pl-word"><path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="#fff"/><path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="#fff"/><path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="#fff"/><path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="#fff"/><path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="#fff"/><path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="#fff"/><path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="#fff"/><path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="#fff"/><path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="#fff"/><path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="#fff"/><path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="#fff"/><path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="#fff"/></g>
+    </svg>
+  </div>
+  <div class="pl-foot">
+    <span class="pl-count">000</span>
+  </div>
+  <div class="pl-rule"><span></span></div>
+</div>
+<script>
+(function(){
+  var pl=document.getElementById('preloader');if(!pl)return;
+  var root=document.documentElement;root.classList.add('pl-lock');
+  var count=pl.querySelector('.pl-count');
+  var TOTAL=2700,CS=350,CD=1750;
+  function finish(){root.classList.remove('pl-lock');pl.remove();}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){requestAnimationFrame(finish);return;}
+  pl.classList.add('pl-run');
+  var t0=performance.now();
+  (function tick(now){
+    var p=Math.min(1,Math.max(0,((now||performance.now())-t0-CS)/CD));
+    var e=1-Math.pow(1-p,3);
+    count.textContent=String(Math.round(e*100)).padStart(3,'0');
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(finish,TOTAL);
+})();
+</script>
+
+
+<!-- ══════════════════════════
+     01 NAVBAR
+══════════════════════════ -->
+<nav id="navbar" aria-label="Primary" style="opacity: 1">
+  <!-- Left: About Us · Products · Newsroom -->
+  <ul class="nav-left">
+    <li><a href="zeno-about.html">ABOUT US</a></li>
+    <li><a href="zeno-platform.html" class="active">PLATFORM</a></li>
+    <li><a href="zeno-newsroom.html">NEWSROOM</a></li>
+  </ul>
+
+  <!-- Center: Logo -->
+  <div class="nav-center">
+    <a href="zeno-landing.html" class="nav-logo-link" aria-label="ZENO Property home">
+      <svg style="display:block;" height="64" viewBox="0 0 290 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="white"></path>
+<path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="white"></path>
+<path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="white"></path>
+<path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="white"></path>
+<path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="white"></path>
+<path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="white"></path>
+<path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="white"></path>
+<path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="white"></path>
+<path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="white"></path>
+<path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="white"></path>
+<path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="white"></path>
+<path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="white"></path>
+<path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="white"></path>
+</svg>
+    </a>
+  </div>
+
+  <!-- Right: Careers · Contact · Get Zeno App -->
+  <ul class="nav-right-group">
+    <li><a href="zeno-careers.html" class="nav-link">CAREERS</a></li>
+    <li><a href="zeno-contact.html" class="nav-link">CONTACT</a></li>
+    <li><a href="#" class="nav-cta-btn">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+
+<!-- ══════════════════════════════════
+     01 HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <canvas id="light-rays-canvas"></canvas>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        ZENO PLATFORM
+      </div>
+      <h1>Leading the way in property innovation.</h1>
+      <p class="hero-sub" style="width: 500px">
+        Zeno is the all-in-one property platform, on the web for Browsing and Continuing all the functions in the app. Buyers, renters, sellers, and investors all get the tools they need in one unified ecosystem that is built for Southeast Asia.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  var VERT=[
+    'attribute vec2 position;',
+    'varying vec2 vUv;',
+    'void main(){vUv=position*0.5+0.5;gl_Position=vec4(position,0.0,1.0);}'
+  ].join('\n');
+  var FRAG=[
+    'precision highp float;',
+    'uniform float iTime;',
+    'uniform vec2 iResolution;',
+    'uniform vec2 rayPos,rayDir;',
+    'uniform vec3 raysColor;',
+    'uniform float raysSpeed,lightSpread,rayLength,pulsating,fadeDistance,saturation,mouseInfluence,noiseAmount,distortion;',
+    'uniform vec2 mousePos;',
+    'varying vec2 vUv;',
+    'float noise(vec2 st){return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);}',
+    'float rayStrength(vec2 src,vec2 dir,vec2 coord,float sA,float sB,float spd){',
+    '  vec2 d=coord-src;vec2 dn=normalize(d);float ca=dot(dn,dir);',
+    '  float da=ca+distortion*sin(iTime*2.0+length(d)*0.01)*0.2;',
+    '  float sf=pow(max(da,0.0),1.0/max(lightSpread,0.001));',
+    '  float dist=length(d);float maxD=iResolution.x*rayLength;',
+    '  float lf=clamp((maxD-dist)/maxD,0.0,1.0);',
+    '  float ff=clamp((iResolution.x*fadeDistance-dist)/(iResolution.x*fadeDistance),0.5,1.0);',
+    '  float pulse=pulsating>0.5?(0.8+0.2*sin(iTime*spd*3.0)):1.0;',
+    '  float bs=clamp((0.45+0.15*sin(da*sA+iTime*spd))+(0.3+0.2*cos(-da*sB+iTime*spd)),0.0,1.0);',
+    '  return bs*lf*ff*sf*pulse;}',
+    'void main(){',
+    '  vec2 coord=vec2(gl_FragCoord.x,iResolution.y-gl_FragCoord.y);',
+    '  vec2 frd=rayDir;',
+    '  if(mouseInfluence>0.0){vec2 mp=mousePos*iResolution.xy;vec2 md=normalize(mp-rayPos);frd=normalize(mix(rayDir,md,mouseInfluence));}',
+    '  vec4 r1=vec4(1.0)*rayStrength(rayPos,frd,coord,36.2214,21.11349,1.5*raysSpeed);',
+    '  vec4 r2=vec4(1.0)*rayStrength(rayPos,frd,coord,22.3991,18.0234,1.1*raysSpeed);',
+    '  vec4 color=r1*0.5+r2*0.4;',
+    '  if(noiseAmount>0.0){float n=noise(coord*0.01+iTime*0.1);color.rgb*=(1.0-noiseAmount+noiseAmount*n);}',
+    '  float bri=1.0-(coord.y/iResolution.y);',
+    '  color.x*=0.1+bri*0.8;color.y*=0.3+bri*0.6;color.z*=0.5+bri*0.5;',
+    '  if(saturation!=1.0){float gray=dot(color.rgb,vec3(0.299,0.587,0.114));color.rgb=mix(vec3(gray),color.rgb,saturation);}',
+    '  color.rgb*=raysColor;gl_FragColor=color;}'
+  ].join('\n');
+  function hexToRgb(h){var m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return m?[parseInt(m[1],16)/255,parseInt(m[2],16)/255,parseInt(m[3],16)/255]:[1,1,1];}
+  function mkShader(gl,t,s){var sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+  function initLightRays(){
+    var canvas=document.getElementById('light-rays-canvas');
+    if(!canvas)return;
+    var gl=canvas.getContext('webgl')||canvas.getContext('experimental-webgl');
+    if(!gl)return;
+    var prog=gl.createProgram();
+    gl.attachShader(prog,mkShader(gl,gl.VERTEX_SHADER,VERT));
+    gl.attachShader(prog,mkShader(gl,gl.FRAGMENT_SHADER,FRAG));
+    gl.linkProgram(prog);gl.useProgram(prog);
+    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    var pl=gl.getAttribLocation(prog,'position');
+    gl.enableVertexAttribArray(pl);gl.vertexAttribPointer(pl,2,gl.FLOAT,false,0,0);
+    var U={};
+    ['iTime','raysSpeed','lightSpread','rayLength','pulsating','fadeDistance','saturation','mouseInfluence','noiseAmount','distortion'].forEach(function(n){U[n]=gl.getUniformLocation(prog,n);});
+    U.iResolution=gl.getUniformLocation(prog,'iResolution');
+    U.rayPos=gl.getUniformLocation(prog,'rayPos');
+    U.rayDir=gl.getUniformLocation(prog,'rayDir');
+    U.raysColor=gl.getUniformLocation(prog,'raysColor');
+    U.mousePos=gl.getUniformLocation(prog,'mousePos');
+    var color=hexToRgb('#D38D29');
+    var mouse={x:0.5,y:0.5},smooth={x:0.5,y:0.5};
+    function resize(){var p=canvas.parentElement;var w=p.clientWidth||window.innerWidth;var h=p.clientHeight||window.innerHeight;var dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;gl.viewport(0,0,canvas.width,canvas.height);}
+    resize();window.addEventListener('resize',resize);
+    new ResizeObserver(resize).observe(canvas.parentElement);
+    window.addEventListener('mousemove',function(e){var rect=canvas.parentElement.getBoundingClientRect();mouse.x=(e.clientX-rect.left)/rect.width;mouse.y=(e.clientY-rect.top)/rect.height;});
+    var raf;
+    function frame(t){
+      raf=requestAnimationFrame(frame);
+      smooth.x=smooth.x*0.92+mouse.x*0.08;smooth.y=smooth.y*0.92+mouse.y*0.08;
+      var w=canvas.width,h=canvas.height;
+      gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
+      gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.uniform1f(U.iTime,t*0.001);gl.uniform2f(U.iResolution,w,h);
+      gl.uniform2f(U.rayPos,0.5*w,-0.2*h);gl.uniform2f(U.rayDir,0.0,1.0);
+      gl.uniform3fv(U.raysColor,color);
+      gl.uniform1f(U.raysSpeed,1.5);gl.uniform1f(U.lightSpread,0.8);
+      gl.uniform1f(U.rayLength,1.2);gl.uniform1f(U.pulsating,0.0);
+      gl.uniform1f(U.fadeDistance,1.0);gl.uniform1f(U.saturation,1.0);
+      gl.uniform2f(U.mousePos,smooth.x,smooth.y);
+      gl.uniform1f(U.mouseInfluence,0.1);gl.uniform1f(U.noiseAmount,0.1);gl.uniform1f(U.distortion,0.05);
+      gl.drawArrays(gl.TRIANGLES,0,3);
+    }
+    raf=requestAnimationFrame(frame);
+    new IntersectionObserver(function(e){if(e[0].isIntersecting)raf=requestAnimationFrame(frame);else cancelAnimationFrame(raf);},{threshold:0.1}).observe(canvas.parentElement);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLightRays);else initLightRays();
+})();
+</script>
+
+<!-- ══════════════════════════════════
+     02 RENTERS INTRO
+══════════════════════════════════ -->
+<section id="renters">
+  <div class="inner">
+    <div class="renters-grid">
+      <div class="renters-left reveal">
+        <h2 >Property seekers are speaking up, and the data proves it.</h2>
+        <p>
+          47% nationally still do not own a home, and the gap between what they expect and what they get keeps growing wider. We are building the infrastructure to close that gap, so every property seeker, no matter their budget or timeline, gets the same level of guidance and service once reserved for the privileged few.
+        </p>
+        <div class="renters-qr">
+          <img src="assets/qr-placeholder.svg" alt="Scan to download">
+          <span class="renters-qr-label">Scan to download</span>
+        </div>
+        <div class="renters-btns">
+          <a href="#" class="app-btn-wrap app-ios">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div>
+              <div class="app-small">Download on the</div>
+              <div class="app-big">App Store</div>
+            </div>
+          </a>
+          <a href="#" class="app-btn-wrap app-android">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+            <div>
+              <div class="app-small">Get it on</div>
+              <div class="app-big">Google Play</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="renters-img reveal d1" style="background:linear-gradient(rgba(8,10,12,0.25),rgba(8,10,12,0.25)),url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&h=760&fit=crop&auto=format&q=80');background-size:cover;background-position:center;border-radius:16px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     03 BUY WITH ZENO
+══════════════════════════════════ -->
+<section id="buy">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Zeno Buy</div>
+      <h2 class="sec">Deal with Zeno</h2>
+      <p class="sec-sub">Every home here is matched to your needs, your budget, and the location you want. Smart filters, virtual tours, and instant alerts help you find the right one, faster.</p>
+    </div>
+    <div class="feat-2col">
+      <div class="feature-list reveal d1">
+        <div class="feature-row" data-img-wrap="buy-img-wrap" data-img-idx="0">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🤖</div>
+          <div class="frow-body">
+            <div class="frow-title">AI Property Match</div>
+            <div class="frow-desc" style="font-size: 14px">AI learns from your saves, searches, and shortlists to find homes that genuinely fit, and our local team checks every match before it reaches you. The more you search, the sharper it gets, always grounded in real market knowledge.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="buy-img-wrap" data-img-idx="1">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🧮</div>
+          <div class="frow-body">
+            <div class="frow-title">Affordability Calculator</div>
+            <div class="frow-desc" style="font-size: 14px">The calculator factors in your loan type, interest rate, down payment, and market conditions to show your real buying power, updated in real time, all in one tool.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="buy-img-wrap" data-img-idx="2">
+          <div class="active-bar"></div>
+          <div class="frow-icon">⚖️</div>
+          <div class="frow-body">
+            <div class="frow-title">Property Comparison</div>
+            <div class="frow-desc" style="font-size: 14px">Compare up to five properties side by side, price, location, amenities, and investment potential. Backed by real price history, so you can decide with confidence.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="buy-img-wrap" data-img-idx="3">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🥽</div>
+          <div class="frow-body">
+            <div class="frow-title">Virtual Tours</div>
+            <div class="frow-desc" style="font-size: 14px">See every room before you visit in person. 3D walkthroughs and clear photos give you a real feel for the space. Walk through at your own pace, anytime, from anywhere.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="buy-img-wrap" data-img-idx="4">
+          <div class="active-bar"></div>
+          <div class="frow-icon">📐</div>
+          <div class="frow-body">
+            <div class="frow-title">Zeno Simulator</div>
+            <div class="frow-desc"><div>Try every scenario before you commit. See your mortgage payments, rental income, resale timing, and long-term growth, all in seconds.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-img-sticky reveal d2">
+        <div class="feature-img-wrap" id="buy-img-wrap" style="height:480px;">
+          <div class="fi active" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=960&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&h=960&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=960&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=960&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&h=960&fit=crop&auto=format&q=80');"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     05 APP DOWNLOAD BANNER
+══════════════════════════════════ -->
+
+
+<!-- ══════════════════════════════════
+     06 SELL WITH ZENO
+══════════════════════════════════ -->
+<section id="sell">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Zeno Sell</div>
+      <h2 class="sec">Earn with Zeno</h2>
+      <div class="sec-sub"><div>Your home is matched to buyers who are ready to act, at the price and timeline that work for you. Smart pricing tools, verified leads, and instant alerts help you sell the right way, faster.</div></div>
+    </div>
+    <div class="feat-2col">
+      <div class="feature-list reveal d1">
+        <div class="feature-row" data-img-wrap="sell-img-wrap" data-img-idx="0">
+          <div class="active-bar"></div>
+          <div class="frow-icon">📊</div>
+          <div class="frow-body">
+            <div class="frow-title">Zeno Fund Valuation</div>
+            <div class="frow-desc">Get an instant AI price estimate based on real sales nearby, local demand, and current market trends, accurate to within 2.4% of the final sale price.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="sell-img-wrap" data-img-idx="1">
+          <div class="active-bar"></div>
+          <div class="frow-icon">📈</div>
+          <div class="frow-body">
+            <div class="frow-title">Market Comparison Report</div>
+            <div class="frow-desc">See how your property compares to similar listings on the market right now. Know your pricing gap, buyer demand, and where you stand.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="sell-img-wrap" data-img-idx="2">
+          <div class="active-bar"></div>
+          <div class="frow-icon">📡</div>
+          <div class="frow-body">
+            <div class="frow-title">Listing Performance Dashboard</div>
+            <div class="frow-desc">See how your listing is doing in one view, visits, enquiries, saves, and conversions, all in real time. Catch issues early with AI tips to boost your results.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="sell-img-wrap" data-img-idx="3">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🧑‍💼</div>
+          <div class="frow-body">
+            <div class="frow-title">Listing Specialist Match</div>
+            <div class="frow-desc">Get matched with a verified agent whose experience and buyer network fit your property type, location, and price range.</div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-img-sticky reveal d2">
+        <div class="feature-img-wrap" id="sell-img-wrap" style="height:440px;">
+          <div class="fi active" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&h=880&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=880&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=880&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.15),rgba(8,10,12,0.15)),url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&h=880&fit=crop&auto=format&q=80');"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     07 INVEST WITH ZENO
+══════════════════════════════════ -->
+<section id="invest">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Zeno Invest</div>
+      <h2 class="sec">Invest with Zeno</h2>
+      <p class="sec-sub">Professional-level insight, open to every investor. Track ASEAN's fastest-moving real estate markets and make every decision backed by data, not guesswork.</p>
+    </div>
+    <div class="invest-2col">
+      <!-- Left: features + image -->
+      <div class="invest-left">
+        <div class="feature-list reveal d1">
+          <div class="feature-row">
+            <div class="frow-icon">🎯</div>
+            <div class="frow-body">
+              <div class="frow-title">AI Selection Tool</div>
+              <div class="frow-desc">Set your investment goals, and let AI scan thousands of properties to find the best matches for your budget and risk level.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="frow-icon">🧠</div>
+            <div class="frow-body">
+              <div class="frow-title">Neural Yield Forecasting</div>
+              <div class="frow-desc">See forecasts for rental income and property value growth, powered by AI trained on 14 years of ASEAN market data.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="frow-icon">📁</div>
+            <div class="frow-body">
+              <div class="frow-title">Portfolio Tracker</div>
+              <div class="frow-desc">See your entire property Investment in one place. Track rental income, value growth, vacancy rates, and compare against market benchmarks.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="frow-icon">🗺️</div>
+            <div class="frow-body">
+              <div class="frow-title">Market Comparison</div>
+              <div class="frow-desc">Compare performance across ASEAN markets, Bangkok, Yangon, Singapore, Kuala Lumpur, and Ho Chi Minh City. Find the best-performing areas and time for your investment with confidence.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Right: sticky human touch card -->
+      <div>
+        <div class="human-card reveal d2">
+          <div class="human-tag">✦ ZENO ADVISOR</div>
+          <h3>The human touch behind digital discovery</h3>
+          <p>AI is powerful, but it cannot replace a trusted advisor who understands your goals. Our ASEAN investment specialists work directly in every major market, backing up the data with real, local insights. (Whether you are an independent)</p>
+          <ul class="check-list">
+            <li>Access to off-market and pre-launch properties</li>
+            <li>A dedicated advisor for your portfolio</li>
+            <li>Support with cross-border legal and tax matters</li>
+            <li>Quarterly portfolio reviews to keep you on track</li>
+          </ul>
+          <a href="#" class="btn-primary">Speak to an Advisor →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     08 GROW YOUR BUSINESS
+══════════════════════════════════ -->
+<section id="grow">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">For Professionals</div>
+      <h2 class="sec">Grow your business on ASEAN's smartest property platform.</h2>
+      <p class="sec-sub">No matter if you're an independent agent or a regional agency network, Zeno gives you the opportunities, the reach, and the credibility to compete at the highest level.</p>
+    </div>
+    <div class="grow-2col">
+      <div class="feature-list reveal d1">
+        <div class="feature-row" data-img-wrap="grow-img-wrap" data-img-idx="0">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🏢</div>
+          <div class="frow-body">
+            <div class="frow-title">Agency Setup</div>
+            <div class="frow-desc">Set up your agency in minutes. Get a verified badge, your own branded profile page, and full access to Zeno's listing and lead management solutions from day one.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="grow-img-wrap" data-img-idx="1">
+          <div class="active-bar"></div>
+          <div class="frow-icon">💼</div>
+          <div class="frow-body">
+            <div class="frow-title">Agency Networking</div>
+            <div class="frow-desc">Expand your reach across ASEAN by co-broking with a verified agency network. Share listings and split commissions seamlessly, all on a single platform.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="grow-img-wrap" data-img-idx="2">
+          <div class="active-bar"></div>
+          <div class="frow-icon">🔗</div>
+          <div class="frow-body">
+            <div class="frow-title">Agent Portal</div>
+            <div class="frow-desc">One portal for everything: listings, leadings, client communication, performance, and commissions, designed around your daily agent workflow.</div>
+          </div>
+        </div>
+        <div class="feature-row" data-img-wrap="grow-img-wrap" data-img-idx="3">
+          <div class="active-bar"></div>
+          <div class="frow-icon">⭐</div>
+          <div class="frow-body">
+            <div class="frow-title">Agent Reputation</div>
+            <div class="frow-desc">Build a verified public profile with your sales history, client reviews, and performance score. A transparent system that rewards based on consistency and hard work.</div>
+          </div>
+        </div>
+      </div>
+      <div class="grow-right">
+        <div class="feature-img-wrap" id="grow-img-wrap" style="height:260px;border-radius:16px;">
+          <div class="fi active" style="background-image:linear-gradient(rgba(8,10,12,0.2),rgba(8,10,12,0.2)),url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=520&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.2),rgba(8,10,12,0.2)),url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=520&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.2),rgba(8,10,12,0.2)),url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&h=520&fit=crop&auto=format&q=80');"></div>
+          <div class="fi" style="background-image:linear-gradient(rgba(8,10,12,0.2),rgba(8,10,12,0.2)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=520&fit=crop&auto=format&q=80');"></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     08b JOIN CTA
+══════════════════════════════════ -->
+<section id="join-cta">
+  <div class="inner">
+    <div class="join-card reveal">
+      <div class="join-copy">
+        <h2 class="sec">Join Zeno and start growing today.</h2>
+        <p>IF you start to grow a boutique agency or scale a regional enterprise, the Zeno app gives you the intelligence, opportunities, and market access to accelerate your business across ASEAN Countries.</p>
+      </div>
+      <div class="join-actions">
+        <div class="join-badges">
+          <a href="#" class="app-btn-wrap app-ios">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div><div class="app-small">Download on the</div><div class="app-big">App Store</div></div>
+          </a>
+          <a href="#" class="app-btn-wrap app-android">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+            <div><div class="app-small">Get it on</div><div class="app-big">Google Play</div></div>
+          </a>
+        </div>
+        <div class="join-qr">
+          <img src="assets/qr-placeholder.svg" alt="Scan to download">
+          <span>Scan to download</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     09 FAQ
+══════════════════════════════════ -->
+<section id="faq">
+  <div class="inner">
+    <div class="faq-header reveal">
+      <div class="overline">Support</div>
+      <h2 class="sec">Frequently Asked Questions (FAQs)</h2>
+      <p class="sec-sub" style="margin:0 auto;">Whatever you want to know about Zeno, our platform, or how to get started, you'll find it here.</p>
+    </div>
+    <div class="faq-list reveal d1">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What types of properties can I find on Zeno?
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-a">Zeno hosts a comprehensive range of property types across ASEAN, including residential condominiums, villas, townhouses, commercial spaces, land plots, and off-plan developer projects. Every listing is verified by our quality assurance team before going live on the platform.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does Zeno's AI matching work?
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-a">Our AI matching engine looks at what you search, save, and prefer, your budget, and your lifestyle, to show you the most relevant properties in real time. The more you use Zeno, the smarter and more accurate your matches become.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is Zeno available outside of Thailand and Myanmar?
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-a">Zeno is currently operating in Thailand and Myanmar. It will launch soon in Singapore, Malaysia, Vietnam, and Cambodia. We're working toward full ASEAN coverage by 2027. No matter where you're from, you can start searching for properties in our current markets today.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I post my property?
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-a">Posting your property on Zeno takes less than 10 minutes. Create a free account, add your property details and photos, and our team will review and publish it within 24 hours. Want it done for you? Our premium package matches you with an agent who handles the entire process.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you accept new development projects?
+          <span class="faq-chevron">⌄</span>
+        </button>
+        <div class="faq-a">Yes. We partner with trusted developers to showcase new and off-plan projects on Zeno. Partners get better listing visibility, AI-powered buyer matching, and their own dedicated project page. Contact our partnerships team to get started.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<!-- ══ FOOTER ══ -->
+</main>
+<footer>
+  <div class="footer-offices">
+    <div class="office-card reveal">
+      <div class="office-icon">🇹🇭</div>
+      <div>
+        <div class="office-name">Bangkok, Thailand</div>
+        <div class="office-addr">11/2 P23 Building, 11th Floor, Soi Sukhumvit 23, Sukhumvit Road, Khlong Toei Nuea, Watthana, Bangkok, 10110, Thailand. (Beside Asoke BTS / Sukhumvit MRT Station)</div>
+        <div class="office-tel">+66 87 691 9916, +66 99 838 8949</div>
+      </div>
+    </div>
+    <div class="office-card reveal" style="transition-delay:0.08s">
+      <div class="office-icon">🇲🇲</div>
+      <div>
+        <div class="office-name">Yangon, Myanmar</div>
+        <div class="office-addr">G10-12, Building A/B, Ground Floor, Pearl Condo, Kabaraye Pagoda and Sayarsan Road, Bahan Township, Yangon.</div>
+        <div class="office-tel">+95 9 757 223 943</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-col reveal" style="transition-delay:0.06s">
+      <div class="footer-col-title">Platform</div>
+      <ul>
+        <li><a href="zeno-platform.html">Zeno Buy</a></li>
+        <li><a href="zeno-platform.html">Zeno Rent</a></li>
+        <li><a href="zeno-platform.html">Zeno Sell</a></li>
+        <li><a href="zeno-platform.html">Zeno Invest</a></li>
+        <li><a href="#">Mobile app</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.12s">
+      <div class="footer-col-title">Resources</div>
+      <ul>
+        <li><a href="zeno-articles.html">Newsroom</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.18s">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="zeno-about.html">About us</a></li>
+        <li><a href="zeno-jobs.html">Careers</a></li>
+        <li><a href="zeno-contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.24s">
+      <div class="footer-col-title">Partners</div>
+      <ul>
+        <li><a href="zeno-agents.html">For agents</a></li>
+        <li><a href="zeno-developers.html">For developers</a></li>
+        <li><a href="zeno-partners.html">Partner program</a></li>
+        
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.30s">
+      <div class="footer-help-label">Download</div>
+      <div class="footer-app-btns">
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+        </a>
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+          <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+        </a>
+      </div>
+      <a href="#" class="footer-help-link">Help Center <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+  <div class="footer-legal-only">
+    <span class="footer-copyright">Copyright © 2026 Zeno Property Co.,LTD. All Right Reserved.</span>
+    <div class="footer-legal-links">
+      <a href="zeno-terms.html">Terms</a>
+      <a href="zeno-privacy.html">Privacy policy</a>
+      <a href="zeno-cookies.html">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ── FEATURE CARD CLICK ── */
+document.querySelectorAll('.feature-row[data-img-wrap]').forEach(function(row) {
+  row.addEventListener('click', function() {
+    var wrapId = this.dataset.imgWrap;
+    var idx = parseInt(this.dataset.imgIdx);
+    var wrap = document.getElementById(wrapId);
+    if (!wrap) return;
+    /* deactivate siblings in same section */
+    var section = this.closest('section');
+    section.querySelectorAll('.feature-row[data-img-wrap]').forEach(function(r) { r.classList.remove('active'); });
+    wrap.querySelectorAll('.fi').forEach(function(fi) { fi.classList.remove('active'); });
+    this.classList.add('active');
+    var fis = wrap.querySelectorAll('.fi');
+    if (fis[idx]) fis[idx].classList.add('active');
+  });
+});
+/* activate first row of each interactive section */
+document.querySelectorAll('section').forEach(function(sec) {
+  var first = sec.querySelector('.feature-row[data-img-wrap]');
+  if (first) { first.classList.add('active'); }
+});
+
+/* ── NAVBAR SCROLL ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ── REVEAL ON SCROLL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  // Open clicked if it was closed
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+<script src="assets/a11y.js"></script>
+</body>
+</html>

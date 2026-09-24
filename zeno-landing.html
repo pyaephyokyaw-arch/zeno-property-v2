@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#0a0c0e"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#0a0c0e"/><text x="100" y="115" font-family="sans-serif" font-size="64" font-weight="800" fill="#d38d29" text-anchor="middle">Z</text></svg></template>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENO Property | High Tech. Full Trust. Own Property.</title>
+<meta name="description" content="Search, compare and act on property across Southeast Asia. ZENO brings verified listings, market insights, digital tools and professional support into one app.">
+<link rel="canonical" href="https://zeno-property-site.vercel.app/">
+<meta name="theme-color" content="#090a0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZENO Property">
+<meta property="og:title" content="ZENO Property | High Tech. Full Trust. Own Property.">
+<meta property="og:description" content="Search, compare and act on property across Southeast Asia. ZENO brings verified listings, market insights, digital tools and professional support into one app.">
+<meta property="og:url" content="https://zeno-property-site.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="zeno-logo.svg">
+
+
+
+<!-- Zeno Property Design System -->
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/colors.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/theme.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/typography.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/components/interactions.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/styles.css">
+
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface-page);
+  color: var(--content-primary);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+}
+
+/* ── Shadows (DS guide: low-opacity neutral, 5-step) ── */
+:root {
+  --shadow-xs: 0 1px 2px rgba(9,10,10,0.04);
+  --shadow-sm: 0 2px 8px rgba(9,10,10,0.07);
+  --shadow-md: 0 4px 16px rgba(9,10,10,0.10);
+  --shadow-lg: 0 8px 32px rgba(9,10,10,0.12);
+  --shadow-xl: 0 16px 48px rgba(9,10,10,0.15);
+  --nav-h: 72px;
+  --tp: var(--sky-white);
+  --tm: rgba(255,255,255,0.72);
+  --pp: var(--brand-primary);
+  --primary-gold: var(--brand-primary);
+  --r-btn: var(--radius-full);
+  --bg: var(--ink-darkest);
+  --bg2: var(--neutral-25);
+  --pb: var(--brand-dark);
+  --pl: rgba(211,141,41,0.12);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.visible { opacity: 1; transform: translate3d(0, 0, 0); }
+.reveal.done { will-change: auto; }
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:200;
+  height:var(--nav-h);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;
+  padding:0 max(48px, calc((100% - 1200px) / 2));
+  transition: background-color .35s ease, border-color .35s ease;
+  background: rgba(9,10,10,0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: none;
+  box-shadow: none;
+}
+
+nav.scrolled{
+  background: rgba(9,10,10,0.97);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(211,141,41,0.10);
+}
+.nav-left,.nav-right-group{
+  display:flex;align-items:center;
+  list-style:none;
+}
+.nav-left{gap:28px;}
+@media (max-width: 1080px){ .nav-left{gap:16px;} .nav-right-group{gap:12px;} .nav-left a,.nav-right-group a:not(.nav-cta-btn){font-size:14px;} nav{gap:14px;padding:0 20px;} .nav-center svg{height:44px;} }
+.nav-right-group{gap:20px;justify-content:flex-end;}
+.nav-left a,.nav-right-group a:not(.nav-cta-btn){
+  font-size:16px;font-weight:500;
+  color:var(--tm);text-decoration:none;
+  letter-spacing:.01em;
+  transition:color .2s;
+  position:relative;padding-bottom:2px;
+}
+.nav-left a::after,.nav-right-group a:not(.nav-cta-btn)::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--pp);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s;
+}
+.nav-left a:hover,.nav-right-group a:not(.nav-cta-btn):hover{color:var(--tp);}
+.nav-left a:hover::after,.nav-right-group a:hover::after,
+.nav-left a.active::after{transform:scaleX(1);}
+.nav-left a.active{color:var(--tp);}
+.nav-logo{
+  font-size:18px;font-weight:700;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,#f1cb7c,#d38d29);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;text-decoration:none;
+}
+.nav-cta,.nav-cta-btn{
+  padding:8px 18px;
+  border:none;border-radius:var(--r-btn);
+  font-size:16px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg, #d38d29, #975614);
+  cursor:pointer;text-decoration:none;
+  box-shadow:0 0 20px rgba(211,141,41,0.28);
+  transition:all .2s;font-family:inherit;
+}
+.nav-cta:hover,.nav-cta-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(211,141,41,0.45);}
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 80px) max(var(--space-4xl), calc((100% - 1200px) / 2)) 100px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ── Day/Night scene layers ── */
+#hero{
+  --hero-title: var(--content-primary);
+  --hero-body: #e3e7e8;
+  transition: none;
+}
+#hero.is-day{
+  --hero-title: #171310;
+  --hero-body: #2b2621;
+}
+#hero h1{ color: var(--hero-title); transition: color .8s ease; }
+#hero .hero-sub{ color: var(--hero-body); transition: color .8s ease; }
+#hero.is-day .btn-outline{ border-color: rgba(23,19,16,.35); color: #171310; }
+#hero.is-day .hero-badge{ color: #8a5a12; background: rgba(211,141,41,.10); }
+#hero .btn-outline{ transition: all .8s ease; }
+#hero .hero-badge{ transition: color .8s ease, background .8s ease; }
+
+.hero-bg{
+  position: absolute; inset: 0;
+  z-index: 0; pointer-events: none;
+  overflow: hidden;
+}
+.hero-bg img{
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.hero-bg::after{
+  content:''; position:absolute; inset:0;
+}
+/* Day: light wash, dark text sits on top */
+.hero-bg-day::after{
+  background: linear-gradient(100deg,
+    rgba(247,249,250,.70) 0%, rgba(247,249,250,.50) 38%,
+    rgba(247,249,250,.35) 68%, rgba(247,249,250,.15) 100%);
+}
+/* Night: real twilight photograph — already lit; only a left text wash */
+.hero-bg-night img{
+  filter: none;
+}
+.hero-bg-night::after{
+  background:
+    linear-gradient(100deg,
+    rgba(7,10,22,.88) 0%, rgba(7,10,22,.60) 38%,
+    rgba(8,12,28,.16) 68%, rgba(10,14,34,.04) 100%);
+}
+/* Moon — soft glow in the night sky */
+.hero-moon{
+  position:absolute;
+  left:38%; top:16%;
+  width:26px; height:26px; border-radius:50%;
+  background: radial-gradient(circle, rgba(245,240,228,.95) 0%, rgba(235,230,215,.55) 55%, transparent 75%);
+  box-shadow: 0 0 30px 12px rgba(230,225,210,.25), 0 0 80px 34px rgba(210,215,235,.10);
+  opacity:0; pointer-events:none; z-index:1;
+}
+.hero-bg-night{ opacity: 0; }
+
+/* Ken Burns idle drift — disabled to prevent zoom mismatch between day/night */
+/*
+@media (prefers-reduced-motion: no-preference){
+  .hero-bg img{ animation: heroKenBurns 20s ease-in-out infinite alternate; will-change: transform; backface-visibility: hidden; }
+}
+@keyframes heroKenBurns{
+  from{ transform: scale(1); }
+  to{ transform: scale(1.01); }
+}
+*/
+
+/* Window glows — warm interior light fitted to the real window panes (night state) */
+.hero-light{
+  position: absolute;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(255,214,140,.85) 0%, rgba(255,183,77,.65) 55%, rgba(200,120,40,.45) 100%);
+  box-shadow: 0 0 34px 12px rgba(255,190,90,.28), 0 0 90px 30px rgba(211,141,41,.12);
+  filter: blur(2px);
+  mix-blend-mode: screen;
+  opacity: 0; pointer-events: none; z-index: 1;
+}
+/* Soft pool reflection — cool aqua like a lit pool at dusk */
+.hero-light.hero-glow-pool{
+  background: radial-gradient(ellipse at center, rgba(90,200,235,.40) 0%, rgba(60,160,210,.18) 60%, transparent 100%);
+  box-shadow: none;
+  filter: blur(10px);
+  border-radius: 50%;
+}
+/* Wall sconces — small warm points on the facade */
+.hero-light.hero-sconce{
+  width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,228,170,1) 0%, rgba(255,196,94,.8) 40%, transparent 75%);
+  box-shadow: 0 0 18px 7px rgba(255,190,90,.5), 0 0 46px 18px rgba(211,141,41,.2);
+  filter: none;
+}
+
+/* Toggle pill group */
+.hero-toggle-wrap{
+  margin-top: 56px;
+  z-index: 3;
+  display: flex; flex-direction: column; gap: 12px;
+  animation: fadeUp 0.5s ease 0.6s both;
+}
+.hero-toggle{
+  position: relative;
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
+  width: fit-content;
+}
+#hero.is-day .hero-toggle{
+  background: rgba(255,255,255,.45);
+  border-color: rgba(23,19,16,.12);
+  box-shadow: 0 8px 32px rgba(23,19,16,.12);
+}
+.hero-toggle-thumb{
+  position: absolute;
+  top: 4px; left: 4px;
+  height: calc(100% - 8px);
+  border-radius: 12px;
+  background: #f7f9fa;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  z-index: 0;
+}
+.hero-toggle-btn{
+  position: relative; z-index: 1;
+  min-width: 96px; min-height: 44px;
+  padding: 0 26px;
+  border: none; background: transparent;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 16px; font-weight:700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(247,249,250,.65);
+  cursor: pointer;
+  transition: color .3s ease;
+}
+#hero.is-day .hero-toggle-btn{ color: rgba(23,19,16,.55); }
+.hero-toggle-btn[aria-pressed="true"]{ color: #171310; }
+.hero-toggle-caption{
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--hero-body);
+  transition: color .8s ease;
+  max-width: 360px;
+}
+@media (max-width: 768px){
+  .hero-toggle-wrap{ margin-top: 40px; }
+}
+
+/* ── Liquid Glass ── */
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 580px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 5px 14px;
+  border: 1px solid rgba(211,141,41,0.28);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size:12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-light);
+  margin-bottom: var(--space-xxl);
+  background: rgba(211,141,41,0.10);
+  animation: fadeUp 0.5s ease 0.1s both;
+}
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green-base);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(40px, 5vw, 68px);
+  letter-spacing: -2px;
+  line-height: var(--leading-tight);
+  color: var(--content-primary);
+  margin-bottom: var(--space-xl);
+}
+.h1-accent { color: var(--brand-primary); }
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size:18px;
+  color: var(--content-secondary);
+  max-width: 460px;
+  margin-bottom: var(--space-xxl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  animation: fadeUp 0.5s ease 0.45s both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  padding: 13px 24px;
+  background: var(--brand-primary);
+  color: var(--sky-white);
+  border: none; border-radius: var(--radius-m);
+  font-family: var(--font-body); font-size:16px; font-weight: var(--weight-bold);
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 2px 12px rgba(211,141,41,0.30);
+  transition: all 0.15s ease;
+}
+.btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(211,141,41,0.40); }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  padding: 13px 24px;
+  background: transparent;
+  color: var(--content-primary);
+  border: 1.5px solid var(--border-default); border-radius: var(--radius-m);
+  font-family: var(--font-body); font-size: var(--text-body-sm); font-weight: var(--weight-bold);
+  cursor: pointer; text-decoration: none;
+  transition: all 0.15s ease;
+}
+.btn-outline:hover { border-color: var(--brand-primary); color: var(--brand-primary); transform: translateY(-2px); }
+
+.hero-trust {
+  display: none;
+  margin-top: var(--space-xxl);
+  animation: fadeUp 0.5s ease 0.6s both;
+}
+.trust-sep { color: var(--border-default); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  #hero { padding: calc(var(--nav-h) + 48px) var(--space-xl) 72px; }
+}
+
+/* ══════════════════════════════════
+   STATS BAR
+══════════════════════════════════ */
+#stats {
+  background: var(--neutral-25);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-4xl) max(var(--space-4xl), calc((100% - 1200px) / 2));
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  text-align: center;
+  padding: var(--space-lg) var(--space-xxl);
+  border-right: 1px solid var(--border-subtle);
+}
+.stat-item:first-child { border-left: none; }
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-display); font-weight: var(--weight-bold);
+  font-size: 40px; letter-spacing: -1.5px;
+  color: var(--brand-primary); font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-body); font-size: 14px;
+  font-weight: var(--weight-bold); text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--content-secondary); margin-top: var(--space-xs);
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+}
+
+/* ══════════════════════════════════
+   SECTION COMMONS
+══════════════════════════════════ */
+.section-pad { padding: 96px max(var(--space-4xl), calc((100% - 1200px) / 2)); }
+.section-header { text-align: center; margin-bottom: var(--space-5xl); }
+.overline {
+  display: block; font-family: var(--font-body);
+  font-size: 14px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--brand-primary); margin-bottom: var(--space-md);
+}
+h2 {
+  font-family: var(--font-display); font-weight: var(--weight-bold);
+  font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -1.2px;
+  line-height: var(--leading-tight); color: var(--content-primary);
+  margin-bottom: var(--space-md);
+}
+.section-sub {
+  font-family: var(--font-body); font-size: var(--text-body); color: var(--content-secondary);
+  max-width: 560px; margin: 0 auto; line-height: var(--leading-normal);
+}
+@media (max-width: 768px) {
+  .section-pad { padding: 72px var(--space-xl); }
+}
+
+/* ══════════════════════════════════
+   APP SECTION
+══════════════════════════════════ */
+#purpose-section { background: #12181c; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+#purpose-section .purpose-header h2, #purpose-section .purpose-title { color: #fff; }
+#purpose-section .purpose-desc { color: rgba(255,255,255,0.7); }
+#purpose-section .purpose-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+.purpose-inner { max-width: 1200px; margin: 0 auto; padding: var(--space-4xl) var(--space-xl); }
+.purpose-header { text-align: center; max-width: 640px; margin: 0 auto var(--space-4xl); }
+.purpose-header .overline { justify-content: center; display: flex; }
+.purpose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+.purpose-card { background: var(--surface-page); border: 1px solid var(--border-subtle); border-radius: var(--radius-l); padding: var(--space-xxl); display: flex; flex-direction: column; gap: var(--space-md); transition: all 0.25s ease; }
+.purpose-card:hover { border-color: var(--brand-primary); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
+.purpose-icon { width: 52px; height: 52px; border-radius: var(--radius-m); background: rgba(211,141,41,0.1); border: 1px solid rgba(211,141,41,0.28); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size:18px; font-weight: var(--weight-bold); color: var(--brand-primary); letter-spacing: 0.02em; }
+.purpose-tag { font-family: var(--font-body); font-size: var(--text-caption-sm); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-primary); }
+.purpose-title { font-family: var(--font-display); font-size: var(--text-title3); font-weight: var(--weight-bold); color: var(--content-primary); letter-spacing: -0.5px; }
+.purpose-desc { font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); }
+@media (max-width: 780px) { .purpose-grid { grid-template-columns: 1fr; } }
+#app-section { background: var(--surface-page); }
+.app-inner {
+  max-width: 1200px; margin: 0 auto;
+}
+.app-header { margin-bottom: 48px; }
+.app-header h2 { text-align: left; }
+.app-sub {
+  font-size: var(--text-body); color: var(--content-secondary);
+  line-height: var(--leading-normal); margin-bottom: var(--space-xxl);
+}
+.app-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start;
+}
+.app-feature-list { display: flex; flex-direction: column; }
+.app-frow {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.2s; cursor: pointer;
+}
+.app-frow:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+.app-frow:hover .app-frow-icon, .app-frow.active .app-frow-icon { transform: translateX(4px); border-color: var(--brand-primary); box-shadow: 0 0 14px rgba(211,141,41,.2); }
+.app-frow.active { background: rgba(211,141,41,0.04); margin: 0 -12px; padding: 20px 12px; border-radius: 8px; }
+.app-frow.active .app-frow-title { color: var(--brand-primary); }
+.app-frow-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; transition: all 0.2s;
+}
+.app-frow-body {}
+.app-frow-title { font-size: 16px; font-weight: 700; color: var(--sky-white); margin-bottom: 4px; }
+.app-frow-desc { font-size:14px; color: var(--content-secondary); line-height: 1.65; }
+.app-img-sticky {
+  position: sticky; top: 100px;
+  display: flex; justify-content: center; align-items: flex-start;
+}
+.app-btns-wrap { margin-top: 32px; }
+@media (max-width: 768px) {
+  .app-2col { grid-template-columns: 1fr; }
+  .app-img-sticky { position: relative; top: auto; order: -1; margin-bottom: 32px; }
+}
+.app-text {
+  gap: 80px; align-items: center;
+}
+.app-text h2 { text-align: left; }
+.app-sub {
+  font-size: var(--text-body); color: var(--content-secondary);
+  line-height: var(--leading-normal); margin-bottom: var(--space-xxl);
+}
+.app-btns { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+.app-btn {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 11px var(--space-lg);
+  border: 1.5px solid var(--border-default); border-radius: var(--radius-l);
+  background: var(--surface-page); color: var(--content-primary);
+  text-decoration: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: var(--shadow-xs);
+}
+.app-btn:hover { border-color: var(--brand-primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.app-btn.ios { background: var(--brand-primary); border-color: var(--brand-primary); color: var(--sky-white); box-shadow: 0 2px 12px rgba(211,141,41,0.28); }
+.app-btn.ios:hover { background: var(--brand-dark); border-color: var(--brand-dark); box-shadow: 0 4px 20px rgba(211,141,41,0.4); }
+.app-btn-icon { font-size: 22px; line-height: 1; }
+.app-btn-text { display: flex; flex-direction: column; }
+.app-btn-small { font-size:12px; color: inherit; opacity: 0.75; font-weight: var(--weight-medium); }
+.app-btn-big { font-size:16px; font-weight: var(--weight-bold); }
+
+.app-phone {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  aspect-ratio: auto;
+  max-height: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  box-shadow: none;
+}
+
+#app-phone-container {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* iOS Phone Frame */
+.ios-phone {
+  width: 100%;
+  aspect-ratio: 9/20;
+  background: #1a1a1a;
+  border-radius: 50px;
+  padding: 14px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ios-phone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 26px;
+  background: #1a1a1a;
+  border-radius: 0 0 20px 20px;
+  z-index: 20;
+}
+
+.ios-phone::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+  z-index: 20;
+}
+
+.ios-phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #090a0a;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex: 1;
+}
+
+.ios-phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-phone-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  opacity: 0.5;
+}
+.app-phone-icon {
+  font-size: 56px;
+}
+.app-phone-label {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: var(--content-secondary);
+}
+
+@media (max-width: 768px) {
+  .app-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.app-features { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+.app-feat { display: flex; align-items: flex-start; gap: 14px; }
+.app-feat-num { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--brand-primary); display: flex; align-items: center; justify-content: center; font-size:14px; font-weight: 700; color: var(--brand-primary); font-family: var(--font-display); flex-shrink: 0; margin-top: 1px; }
+.app-feat-text { font-size:16px; color: var(--content-secondary); line-height: 1.5; }
+.app-feat-text strong { color: var(--sky-white); font-weight:700; }
+
+/* ══════════════════════════════════
+   FEATURES
+══════════════════════════════════ */
+#features {
+  background: #07080a;
+  position: relative;
+  overflow: hidden;
+}
+#features spline-viewer {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  transform: scale(5);
+  transform-origin: center center;
+  z-index: 0; pointer-events: none;
+  transition: opacity .4s ease;
+}
+#features spline-viewer.paused { visibility: hidden; }
+#features .features-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: rgba(7,8,10,0.68);
+  pointer-events: none;
+}
+#features .features-intro,
+#features .features-grid { position: relative; z-index: 2; }
+.features-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: start; margin-bottom: 56px;
+}
+.features-intro h2 { text-align: left; }
+.features-desc {
+  font-size: var(--text-body); color: var(--content-secondary);
+  line-height: var(--leading-normal); padding-top: 52px;
+}
+.features-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md);
+}
+.feature-card {
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-l);
+  padding: var(--space-xxl) var(--space-xl);
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s ease; cursor: default;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+.feature-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-m);
+  background: rgba(211,141,41,0.10);
+  border: 1px solid rgba(211,141,41,0.20);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: var(--space-lg);
+  transition: all 0.25s;
+}
+.feature-card:hover .feature-icon { background: rgba(211,141,41,0.18); }
+.feature-title {
+  font-family: var(--font-body); font-size: 20px;
+  font-weight: var(--weight-bold); color: var(--content-primary); margin-bottom: var(--space-xs);
+}
+.feature-desc { font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); }
+
+@media (max-width: 900px) {
+  .features-intro { grid-template-columns: 1fr; gap: 16px; }
+  .features-desc { padding-top: 0; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* ══════════════════════════════════
+   PLATFORM
+══════════════════════════════════ */
+#platform { background: var(--surface-page); }
+#discovery { background: var(--neutral-25); }
+.discovery-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-xxl); }
+.discovery-chip { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); background: var(--surface-page); font-size:16px; font-weight: var(--weight-bold); color: var(--content-primary); transition: all 0.2s ease; }
+.discovery-chip:hover { border-color: var(--brand-primary); color: var(--brand-primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+#slogan-section { background: var(--ink-darkest); }
+.learnact-slogan { text-align: center; font-family: var(--font-display); font-size: clamp(32px, 5vw, 60px); font-weight: var(--weight-bold); color: var(--sky-white); letter-spacing: -1.5px; line-height: 1.12; }
+.learnact-slogan .slogan-word:last-child, .slogan-accent { color: var(--brand-primary); }
+.discovery-rule { width: 120px; height: 2px; background: var(--brand-primary); margin: var(--space-lg) auto var(--space-xl); transform: scaleX(0); }
+.slogan-word { display: inline-block; will-change: transform, opacity; }
+.scroll-progress { position: fixed; top: var(--nav-h); left: 0; right: 0; height: 2px; background: var(--brand-primary); transform: scaleX(0); transform-origin: left; z-index: 201; pointer-events: none; }
+.learnact-card, .platform-card, .purpose-card, .insight-card { will-change: transform; }
+.discovery-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.discovery-inner p { font-size: var(--text-body); color: var(--content-secondary); line-height: var(--leading-normal); margin: 0; }
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-md);
+  margin-top: var(--space-5xl);
+}
+.platform-card {
+  background: var(--neutral-25);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: var(--space-xxl);
+  transition: all 0.25s ease; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  display: flex; flex-direction: column;
+}
+.platform-card:hover { border-color: var(--primary-light); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.platform-card.tall { grid-row: span 2; min-height: 0; }
+.platform-card-img-wrapper { display: none; }
+.platform-card-content { display: contents; }
+.platform-card-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  font-size: var(--text-caption-sm); font-weight: var(--weight-bold);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-md);
+  width: fit-content;
+}
+.tag-buy   { background: rgba(211,141,41,0.12); color: var(--brand-light); border: 1px solid rgba(211,141,41,0.25); }
+.tag-rent  { background: rgba(211,141,41,0.12); color: var(--brand-light); border: 1px solid rgba(211,141,41,0.25); }
+.tag-sell  { background: rgba(211,141,41,0.12); color: var(--brand-light); border: 1px solid rgba(211,141,41,0.25); }
+.platform-card-title {
+  font-family: var(--font-display); font-size: var(--text-title3); font-weight: var(--weight-bold);
+  color: var(--content-primary); margin-bottom: var(--space-xs); letter-spacing: -0.5px;
+}
+.platform-card-desc { font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); }
+.platform-card-soon { display:inline-flex; align-items:center; align-self:flex-start; padding: 4px 12px; border-radius: var(--radius-full); font-size:12px; font-weight: var(--weight-bold); letter-spacing: 1.2px; text-transform: uppercase; background: rgba(211,141,41,0.12); color: var(--brand-light); border: 1px solid rgba(211,141,41,0.25); margin-bottom: var(--space-xs); }
+
+/* ── Realistic iPhone 14 Pro Mockups ── */
+.iphone-stage {
+  flex: 1; display: flex; align-items: flex-end; justify-content: center;
+  margin-top: var(--space-xl); position: relative;
+  min-height: 300px; overflow: hidden;
+}
+.iphone-stage.solo { min-height: 240px; }
+.iphone {
+  position: relative; flex-shrink: 0; width: 148px;
+  border-radius: 36px;
+  background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 40%, #2c2c2e 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.13),
+    0 0 0 2.5px #1c1c1e,
+    0 0 0 4px rgba(255,255,255,0.07),
+    0 32px 64px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.iphone::before {
+  content: ''; position: absolute; right: -4px; top: 80px;
+  width: 3px; height: 36px;
+  background: linear-gradient(to bottom, #3a3a3c, #2c2c2e);
+  border-radius: 0 2px 2px 0;
+}
+.iphone::after {
+  content: ''; position: absolute; left: -4px; top: 70px;
+  width: 3px; height: 60px;
+  background: linear-gradient(to bottom,
+    #3a3a3c 0%, #3a3a3c 40%,
+    transparent 40%, transparent 55%,
+    #3a3a3c 55%, #3a3a3c 100%);
+  border-radius: 2px 0 0 2px;
+}
+.iphone-screen-wrap {
+  margin: 4px; border-radius: 33px; overflow: hidden;
+  background: #000; position: relative; display: flex; flex-direction: column;
+}
+.iphone-di {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  width: 90px; height: 28px;
+  background: #000; border-radius: 20px; z-index: 10;
+}
+.iphone-app {
+  width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+}
+.iphone-bar {
+  position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  width: 40px; height: 4px;
+  background: rgba(255,255,255,0.5); border-radius: 3px; z-index: 10;
+}
+.iphone-duo {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: flex-end; justify-content: center; height: 100%;
+}
+.iphone-duo .iphone:first-child {
+  transform: perspective(800px) rotateY(18deg) rotate(-4deg) translateX(20px);
+  z-index: 1;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 0 0 2.5px #1c1c1e, -12px 32px 64px rgba(0,0,0,0.7);
+}
+.iphone-duo .iphone:last-child {
+  transform: perspective(800px) rotateY(-12deg) rotate(3deg) translateX(-16px);
+  z-index: 2;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.13), 0 0 0 2.5px #1c1c1e, 12px 32px 64px rgba(0,0,0,0.65);
+}
+.iphone-solo {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+}
+.iphone-solo .iphone {
+  transform: perspective(600px) rotateY(-8deg) rotate(2deg);
+}
+
+@media (max-width: 768px) {
+  .platform-grid { grid-template-columns: 1fr; }
+  .platform-card.tall { grid-row: span 1; }
+}
+
+/* ══════════════════════════════════
+   INSIGHTS
+══════════════════════════════════ */
+#insights { background: var(--neutral-25); }
+.insights-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-md); }
+.insight-card {
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-l);
+  overflow: hidden; transition: all 0.25s ease; cursor: pointer;
+  box-shadow: var(--shadow-xs);
+}
+.insight-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+.insight-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--neutral-25), var(--neutral-50));
+  display: flex; align-items: center; justify-content: center; font-size: 40px;
+}
+.insight-category {
+  font-family: var(--font-body); font-size: var(--text-caption-sm); font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-primary);
+  padding: var(--space-lg) var(--space-xl) 0;
+}
+.insight-body { padding: var(--space-sm) var(--space-xl) var(--space-xl); }
+.insight-title {
+  font-family: var(--font-body); font-size: 18px; font-weight: var(--weight-bold);
+  color: var(--content-primary); line-height: var(--leading-normal);
+  margin-bottom: var(--space-xs);
+}
+.insight-excerpt { font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); margin-bottom: var(--space-md); }
+.read-more {
+  font-size: 16px; font-weight: var(--weight-bold);
+  color: var(--brand-primary); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: gap 0.2s;
+}
+.insight-card:hover .read-more { gap: 8px; }
+
+@media (max-width: 768px) { .insights-grid { grid-template-columns: 1fr; } }
+
+#learn-act { background: var(--surface-page); }
+.learnact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-4xl); }
+.learnact-card { border-radius: var(--radius-l); padding: var(--space-xxl); display: flex; flex-direction: column; gap: var(--space-lg); border: 1px solid var(--border-subtle); background: var(--neutral-25); }
+.learnact-card.dark { background: var(--ink-darkest); border-color: rgba(255,255,255,0.08); }
+.learnact-tag { font-family: var(--font-body); font-size: var(--text-caption-sm); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-primary); }
+.learnact-card h3 { font-family: var(--font-display); font-size: var(--text-title3); font-weight: var(--weight-bold); color: var(--content-primary); letter-spacing: -0.5px; margin: 0; }
+.learnact-card.dark h3 { color: var(--sky-white); }
+.learnact-list { display: flex; flex-direction: column; gap: var(--space-sm); list-style: none; padding: 0; margin: 0; }
+.learnact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); }
+.learnact-card.dark .learnact-list li { color: rgba(255,255,255,0.75); }
+.learnact-list li::before { content: '✓'; color: var(--brand-primary); font-weight: var(--weight-bold); flex-shrink: 0; }
+.learnact-download { display: flex; gap: var(--space-sm); margin-top: var(--space-sm); flex-wrap: wrap; }
+.learnact-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-4xl); }
+.learnact-block .overline { display: block; }
+.learnact-block h3 { font-family: var(--font-display); font-size: var(--text-title3); font-weight: var(--weight-bold); color: var(--content-primary); letter-spacing: -0.5px; margin: 0 0 var(--space-sm); }
+.learnact-block p { font-size: 16px; color: var(--content-secondary); line-height: var(--leading-normal); margin: 0; }
+.learnact-slogan { text-align: center; font-family: var(--font-display); font-size: var(--text-title2); font-weight: var(--weight-bold); color: var(--content-primary); letter-spacing: -0.5px; }
+#slogan-section { background: var(--neutral-25); }
+@media (max-width: 780px) { .learnact-grid, .learnact-bottom { grid-template-columns: 1fr; } }
+
+
+#testimonial { background: var(--surface-page); }
+.testimonial-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.stars {
+  color: var(--yellow-base); font-size: 18px;
+  letter-spacing: 3px; margin-bottom: var(--space-xl);
+}
+.testimonial-quote {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+  color: var(--content-primary);
+  margin-bottom: var(--space-xxl);
+  font-style: italic; position: relative;
+}
+.testimonial-quote::before {
+  content: '\201C'; position: absolute; top: -10px; left: -14px;
+  font-size: 72px; color: var(--brand-primary); opacity: 0.18;
+  font-style: normal; line-height: 1;
+}
+.reviewer { display: flex; align-items: center; gap: var(--space-md); }
+.reviewer-avatar {
+  width: 48px; height: 48px; border-radius: var(--radius-full);
+  background: var(--brand-primary); color: var(--sky-white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 18px; font-weight: var(--weight-bold); flex-shrink: 0;
+  overflow: hidden;
+}
+.reviewer-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reviewer-name { font-family: var(--font-body); font-size: var(--text-body-sm); font-weight: var(--weight-bold); color: var(--content-primary); }
+.reviewer-title { font-size: var(--text-caption); color: var(--content-secondary); }
+.testimonial-dots { display: flex; gap: var(--space-xs); margin-top: var(--space-xxl); }
+.t-fade { transition: opacity .45s ease, transform .45s ease; }
+.t-fade.out { opacity: 0; transform: translateY(10px); }
+.dot { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--border-default); cursor: pointer; transition: all 0.2s; }
+.dot.active { background: var(--brand-primary); width: 24px; border-radius: var(--radius-s); }
+.testimonial-vis {
+  background: var(--neutral-25);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xxxl);
+  height: 360px; display: flex; align-items: center; justify-content: center;
+  font-size: 72px; box-shadow: var(--shadow-lg);
+  overflow: hidden; position: relative;
+}
+.testimonial-vis-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(211,141,41,0.12) 0%, transparent 65%);
+}
+
+@media (max-width: 768px) {
+  .testimonial-inner { grid-template-columns: 1fr; gap: 40px; }
+  .testimonial-vis { display: none; }
+}
+
+/* ══════════════════════════════════
+   CTA
+══════════════════════════════════ */
+#cta {
+  background: var(--ink-darkest);
+  padding: 96px max(var(--space-4xl), calc((100% - 1200px) / 2));
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: var(--space-4xl);
+}
+#cta::before {
+  content: ''; position: absolute; top: -60px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(211,141,41,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-inner { max-width: 460px; position: relative; z-index: 1; }
+.cta-text-col { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
+.cta-logo { height: 40px; width: auto; }
+.cta-subtitle { font-family: var(--font-body); font-size: var(--text-caption-sm); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-darkest); }
+.cta-title { font-family: var(--font-display); font-size: var(--text-title2); font-weight: var(--weight-bold); color: var(--ink-darkest); letter-spacing: -0.5px; margin: 0; }
+.cta-body { font-size: 16px; color: var(--ink-darkest); line-height: var(--leading-normal); margin: 0; }
+.cta-qr-card { background: var(--sky-white); border-radius: var(--radius-l); padding: var(--space-lg); display: inline-flex; }
+.cta-qr-card img { width: 140px; height: 140px; display: block; }
+.cta-qr-row { display: flex; align-items: center; gap: var(--space-md); }
+.cta-qr-arrow { flex-shrink: 0; opacity: 0.7; }
+.cta-qr-label { font-size: 16px; font-weight: var(--weight-bold); color: var(--ink-darkest); line-height: var(--leading-tight); }
+.cta-btns { display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center; }
+.cta-tagline { display: flex; align-items: center; gap: var(--space-md); color: rgba(255,255,255,0.5); font-size: var(--text-caption-sm); text-transform: uppercase; letter-spacing: 0.18em; width: 100%; }
+.cta-tagline::before, .cta-tagline::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.2); }
+.cta-btn {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 12px var(--space-xl);
+  border-radius: var(--radius-l); cursor: pointer; text-decoration: none;
+  transition: all 0.2s;
+}
+.cta-btn.dark {
+  background: rgba(255,255,255,0.06); color: var(--sky-white); border: 1.5px solid rgba(255,255,255,0.25);
+}
+.cta-btn.dark:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+.cta-btn.light {
+  background: rgba(255,255,255,0.06); color: var(--sky-white);
+  border: 1.5px solid rgba(255,255,255,0.25);
+}
+.cta-btn.light:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+.cta-btn-icon { font-size: 22px; }
+.cta-text-sm { font-size: var(--text-caption-sm); opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; text-align: left; }
+.cta-text-lg { font-size: var(--text-body-sm); font-weight: var(--weight-bold); text-align: left; }
+.cta-img-col {
+  max-width: 640px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+@media (max-width: 900px) {
+  #cta { grid-template-columns: 1fr; }
+  .cta-img-col { order: -1; max-width: 420px; }
+}
+@media (max-width: 768px) {
+  #cta { padding: 72px var(--space-xl); }
+}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--ink-darkest);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 72px max(var(--space-4xl), calc((100% - 1200px) / 2)) var(--space-xxl);
+}
+.footer-offices {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-md); margin-bottom: var(--space-5xl);
+}
+.office-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-l);
+  padding: var(--space-xl); display: flex; gap: var(--space-md);
+  align-items: flex-start; transition: border-color 0.2s;
+}
+.office-card:hover { border-color: rgba(211,141,41,0.35); }
+.office-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-m);
+  background: rgba(211,141,41,0.12); border: 1px solid rgba(211,141,41,0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.office-name { font-family: var(--font-body); font-size: 18px; font-weight: var(--weight-bold); color: var(--sky-white); margin-bottom: var(--space-2xs); }
+.office-addr { font-size: 16px; color: var(--ink-lightest); line-height: 1.65; }
+.office-tel { font-size: 16px; color: var(--primary-light); margin-top: 4px; font-weight: var(--weight-medium); }
+
+.footer-links {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-xl); margin-bottom: var(--space-4xl);
+}
+.footer-brand-desc { font-size: 16px; color: var(--ink-lightest); line-height: 1.7; max-width: 220px; margin-top: var(--space-sm); }
+.footer-col-title {
+  font-family: var(--font-body); font-size:12px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand-primary); margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  font-size:16px; color: var(--ink-lightest);
+  text-decoration: none; transition: color 0.2s, padding-left 0.2s;
+}
+.footer-col ul a:hover { color: var(--brand-primary); padding-left: 4px; }
+.footer-help-label { font-size:12px; font-weight: var(--weight-bold); color: var(--brand-primary); margin: 0 0 var(--space-lg); text-transform: uppercase; letter-spacing: 0.12em; padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block; }
+.footer-help-link { display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-md); padding: 10px 20px; border-radius: var(--radius-m); background: var(--brand-primary); color: var(--sky-white); font-size: 14px; font-weight: var(--weight-bold); text-decoration: none; transition: all 0.2s; }
+.footer-help-link:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(211,141,41,0.3); }
+.footer-app-btns { display: flex; flex-direction: column; gap: var(--space-xs); }
+.footer-app-badge {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 8px var(--space-md); border-radius: var(--radius-m);
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  text-decoration: none; transition: all 0.2s; width: 162px;
+}
+.footer-app-badge:hover { border-color: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(211,141,41,0.15); }
+.fab-sm { font-size:10px; color: var(--ink-lightest); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+.fab-lg { font-size: 12px; font-weight: var(--weight-bold); color: var(--sky-white); display: block; }
+
+.footer-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: var(--space-xl); }
+.footer-legal-only {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+.footer-copyright { font-size: 10px; color: var(--ink-lightest); }
+.footer-legal-links { display: flex; gap: var(--space-xl); }
+.footer-legal-links a { font-size: 12px; color: var(--ink-lightest); text-decoration: none; transition: color 0.2s; }
+.footer-legal-links a:hover { color: var(--sky-white); }
+
+@media (max-width: 768px) {
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px var(--space-xl) var(--space-xl); }
+  .footer-legal-only { flex-direction: column; align-items: flex-start; }
+}
+.art-read{font-size:16px;font-weight:700;color:var(--primary-gold, #d38d29);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .2s;}
+.lang-dropdown{position:relative;}.lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:7px 14px;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--tm,#9a9488);cursor:pointer;transition:all .2s;font-family:inherit;}.lang-trigger:hover{color:var(--tp,#fff);border-color:var(--pb,#d38d29);}.lang-trigger svg{width:9px;height:9px;transition:transform .2s;}.lang-dropdown.open .lang-trigger svg{transform:rotate(180deg);}.lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--bg2,#12100d);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:130px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s;box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:200;}.lang-dropdown.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}.lang-menu button{background:none;border:none;text-align:left;padding:9px 12px;border-radius:7px;font-size:14px;color:var(--tm,#9a9488);cursor:pointer;transition:all .15s;font-family:inherit;width:100%;}.lang-menu button:hover{background:rgba(211,141,41,.08);color:var(--tp,#fff);}.lang-menu button.active{color:var(--pl,#d38d29);font-weight:700;}</style>
+<style>.nav-cta,.nav-cta-btn{white-space:nowrap}.nav-right-group{gap:14px}.lang-trigger{padding:6px 10px}/* ══════════ LAYOUT REDESIGN v2 ══════════ */
+#stats{background:var(--ink-darkest);border-top:none;border-bottom:none;padding:var(--space-xxl) max(var(--space-4xl), calc((100% - 1200px) / 2))}
+.stats-grid{grid-template-columns:repeat(4,1fr);gap:0}
+.stat-item{text-align:left;padding:var(--space-lg) var(--space-xl);border-right:1px solid rgba(255,255,255,.1)}
+.stat-item:last-child{border-right:none}
+.stat-item:first-child{padding-left:0}
+.stat-num{font-size:clamp(34px,3.6vw,54px)!important;letter-spacing:-2px}
+.stat-label{color:rgba(255,255,255,.55)!important;font-size:12px!important}
+@media (max-width:768px){.stat-item{padding:var(--space-md)}.stat-item:nth-child(2n){border-right:none}}
+.purpose-inner{padding:0}
+#purpose-section .purpose-inner{display:grid;grid-template-columns:5fr 7fr;gap:var(--space-4xl);align-items:start;max-width:1200px}
+.purpose-header{text-align:left!important;margin:0!important;max-width:none!important;position:sticky;top:120px}
+.purpose-header .overline{justify-content:flex-start!important;display:block!important}
+.purpose-grid{grid-template-columns:1fr!important;gap:0!important}
+#purpose-section .purpose-card{background:transparent!important;border:none!important;border-top:1px solid rgba(255,255,255,.12)!important;border-radius:0!important;padding:var(--space-xxl) 0!important;display:grid!important;grid-template-columns:auto 1fr;column-gap:var(--space-xl);row-gap:var(--space-xs);align-items:start}
+#purpose-section .purpose-card:hover{transform:none!important;box-shadow:none!important}
+#purpose-section .purpose-card:last-child{border-bottom:1px solid rgba(255,255,255,.12)!important}
+.purpose-icon{grid-row:1 / span 3;background:transparent!important;border:none!important;width:auto!important;height:auto!important;font-size:14px!important;letter-spacing:.14em!important;opacity:.7;padding-top:4px}
+.purpose-tag{grid-column:2}
+.purpose-title{grid-column:2;font-size:clamp(22px,2.4vw,30px)!important}
+.purpose-desc{grid-column:2;max-width:46ch}
+.purpose-dl{grid-column:2;display:flex;align-items:center;gap:var(--space-lg);margin-top:var(--space-lg);flex-wrap:wrap}
+.purpose-qr{width:104px;height:104px;border-radius:var(--radius-m);background:var(--sky-white);padding:8px;display:block}
+.purpose-dl-btns{display:flex;flex-direction:column;gap:var(--space-xs)}
+@media (max-width:860px){#purpose-section .purpose-inner{grid-template-columns:1fr;gap:var(--space-xxl)}.purpose-header{position:static}}
+.app-2col{display:grid;grid-template-columns:1fr auto 1fr;gap:56px;align-items:start}
+.app-feature-list{display:contents}
+.app-frow{border-top:1px solid rgba(255,255,255,.08)}
+.app-frow:nth-child(-n+3){grid-column:1}
+.app-frow:nth-child(n+4){grid-column:3}
+.app-frow:nth-child(1),.app-frow:nth-child(4){grid-row:1}
+.app-frow:nth-child(2),.app-frow:nth-child(5){grid-row:2}
+.app-frow:nth-child(3),.app-frow:nth-child(6){grid-row:3}
+.app-frow:nth-child(-n+3){flex-direction:row-reverse;text-align:right}
+.app-img-sticky{grid-column:2;grid-row:1 / span 3;order:0;justify-content:center;align-self:start}
+.app-header{max-width:720px}
+@media (max-width:1000px){.app-2col{grid-template-columns:1fr;gap:32px}.app-feature-list{display:flex}.app-frow,.app-frow:nth-child(-n+3),.app-frow:nth-child(n+4){grid-column:1;grid-row:auto;flex-direction:row;text-align:left}.app-img-sticky{grid-column:1;grid-row:auto;order:-1}}
+.features-grid{gap:var(--space-lg)}
+.feature-card{background:transparent!important;border:none!important;border-top:2px solid var(--brand-primary)!important;border-radius:0!important;padding:var(--space-xl) 0 0!important}
+.feature-card:nth-child(even){margin-top:56px}
+.feature-card:hover{transform:translateY(-4px)!important;box-shadow:none!important}
+@media (max-width:900px){.feature-card:nth-child(even){margin-top:0}}
+.platform-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
+.platform-card.tall{grid-row:auto!important;grid-column:1 / -1;display:grid!important;grid-template-columns:1fr 1.15fr;column-gap:var(--space-4xl);align-items:center}
+.platform-card.tall .platform-card-tag,.platform-card.tall .platform-card-title,.platform-card.tall .platform-card-desc{grid-column:1;align-self:start}
+
+.platform-card.tall .iphone-stage{grid-column:2;grid-row:1 / span 4;min-height:420px!important;margin-top:0!important}
+@media (max-width:860px){.platform-card.tall{grid-template-columns:1fr}.platform-card.tall .iphone-stage{grid-column:1;grid-row:auto;min-height:320px!important}}
+#discovery{background:var(--ink-darkest);position:relative;overflow:hidden}
+#discovery .discovery-inner{max-width:1080px;margin:0 auto;text-align:left;position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,72px);align-items:end;border:none;border-radius:0;background:transparent;padding:clamp(40px,5vw,72px) clamp(28px,4vw,56px)}
+#discovery .discovery-inner::before{content:'';position:absolute;inset:0;border:1px solid rgba(211,141,41,.45);border-radius:var(--radius-l);transform:translate(-14px,-14px);pointer-events:none}
+#discovery .discovery-inner::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-l);z-index:-1}
+#discovery .overline{position:static;transform:none;background:transparent;padding:0;grid-column:1;grid-row:1;display:block!important;margin:0 0 var(--space-md)!important;color:var(--brand-primary)}
+#discovery h2{grid-column:1;grid-row:2;text-align:left;color:var(--sky-white);font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-2px;max-width:12ch}
+.discovery-rule{grid-column:1;grid-row:3;width:64px!important;height:4px!important;margin:var(--space-lg) 0 0!important;background:var(--brand-primary)!important;border-radius:2px}
+#discovery p{grid-column:2;grid-row:1 / span 3;margin:0!important;max-width:44ch;font-size:18px;line-height:1.75;color:rgba(255,255,255,.72);border-left:1px solid rgba(211,141,41,.4);padding-left:clamp(20px,2.4vw,32px);align-self:end}
+@media (max-width:860px){#discovery .discovery-inner{grid-template-columns:1fr;row-gap:var(--space-lg);padding:36px 24px}#discovery .overline,#discovery h2,.discovery-rule,#discovery p{grid-column:1;grid-row:auto;max-width:none}#discovery p{border-left:none;padding-left:0}#discovery .discovery-inner::before{transform:translate(-8px,-8px)}}
+#insights{background:var(--ink-darkest)}
+#insights .section-header{text-align:left;max-width:760px;margin-left:0}
+#insights .overline{display:block!important;text-align:left}
+#insights .section-sub{margin-left:0;text-align:left;color:rgba(255,255,255,.7)}
+#insights h2{text-align:left;color:var(--sky-white)}
+.insights-grid{display:flex!important;flex-direction:column;gap:0}
+.insight-card,.insight-card:first-child{display:grid!important;grid-template-columns:200px 1fr auto;column-gap:var(--space-xxl);align-items:center;background:transparent!important;border:none!important;border-top:1px solid rgba(255,255,255,.12)!important;border-radius:0!important;padding:var(--space-xl) 0!important;grid-column:auto!important}
+.insights-grid .insight-card:last-child{border-bottom:1px solid rgba(255,255,255,.12)!important}
+.insight-card:hover{transform:none!important;box-shadow:none!important}
+.insight-card .insight-img,.insight-card:first-child .insight-img{grid-column:1;grid-row:1 / span 2!important;height:130px!important;min-height:0!important;border-radius:var(--radius-m);overflow:hidden}
+.insight-card .insight-category{grid-column:2;grid-row:1;padding:0!important;align-self:end}
+.insight-card .insight-body{grid-column:2;grid-row:2;padding:var(--space-xs) 0 0!important}
+.insight-card .insight-title,.insight-card:first-child .insight-title{color:var(--sky-white);font-size:clamp(20px,2vw,26px)!important;margin-bottom:var(--space-xs)}
+.insight-card .insight-excerpt{color:rgba(255,255,255,.68);max-width:62ch;margin-bottom:0!important}
+.insight-card .read-more{grid-column:3;grid-row:1 / span 2;align-self:center;white-space:nowrap}
+@media (max-width:860px){.insight-card,.insight-card:first-child{grid-template-columns:1fr;row-gap:var(--space-sm)}.insight-card .insight-img,.insight-card:first-child .insight-img{grid-column:1;grid-row:auto!important;height:180px!important}.insight-card .insight-category,.insight-card .insight-body,.insight-card .read-more{grid-column:1;grid-row:auto;align-self:start}}
+.learnact-grid{grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:start}
+.learnact-card.dark{margin-top:56px}
+.learnact-qr{width:104px;height:104px;border-radius:var(--radius-m);background:var(--sky-white);padding:8px;display:block;flex-shrink:0}
+.learnact-dl-btns{display:flex;flex-direction:column;gap:var(--space-xs)}
+.learnact-download{align-items:center;gap:var(--space-lg)}
+.learnact-bottom{gap:var(--space-4xl)}
+.learnact-block{border-top:2px solid var(--brand-primary);padding-top:var(--space-lg)}
+@media (max-width:780px){.learnact-card.dark{margin-top:0}}
+#slogan-section{padding-top:calc(var(--space-5xl) * 1.5);padding-bottom:calc(var(--space-5xl) * 1.5);position:relative;overflow:hidden}
+#slogan-section::before{content:'';position:absolute;top:50%;left:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(211,141,41,.16) 0%,transparent 62%);pointer-events:none}
+.learnact-slogan{position:relative;z-index:1;display:flex;flex-direction:column;gap:0;text-align:left!important;max-width:1180px;margin:0 auto}
+.slogan-line{display:flex;align-items:center;gap:var(--space-md);font-size:84px;line-height:.96;letter-spacing:-3.5px;white-space:nowrap}
+.slogan-line:nth-child(1){justify-content:flex-start}
+.slogan-line:nth-child(2){justify-content:center;color:transparent;-webkit-text-stroke:1.5px var(--brand-primary)}
+.slogan-line:nth-child(3){justify-content:flex-end}
+.slogan-line.accent{color:var(--brand-primary)}
+.learnact-slogan .slogan-word:last-child{color:inherit}
+@media (max-width:700px){.slogan-line{font-size:34px;letter-spacing:-1.5px}.slogan-line,.slogan-line:nth-child(2),.slogan-line:nth-child(3){justify-content:flex-start}}
+.testimonial-vis{order:-1}
+@media (max-width:768px){.testimonial-vis{order:0}}
+.office-card{border-radius:0}
+/* CTA — option A: arc-cradled phone, ribbon of actions */
+#cta{background:var(--ink-darkest)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);grid-template-rows:auto auto;column-gap:clamp(32px,4.5vw,56px);align-items:end;position:relative;overflow:hidden;padding:clamp(56px,7vw,110px) max(var(--space-4xl), calc((100% - 1240px)/2)) 0!important}
+#cta .cta-inner{grid-column:1;grid-row:1;max-width:620px;padding-bottom:40px;background:none;box-shadow:none;border-radius:0}
+.cta-text-col{display:flex!important;flex-direction:column;gap:var(--space-lg);align-items:flex-start}
+.cta-subtitle{color:var(--brand-primary)!important;font-size:14px!important;letter-spacing:.14em!important;margin-bottom:0}
+.cta-title{color:var(--sky-white)!important;letter-spacing:-1.2px;line-height:var(--leading-tight);max-width:16ch;margin-bottom:0}
+.cta-body{color:rgba(255,255,255,.72)!important;max-width:560px;line-height:var(--leading-normal)}
+.cta-img-col{grid-column:2;grid-row:1 / span 2;align-self:stretch;max-width:none!important;display:flex;justify-content:center;align-items:flex-end;position:relative}
+.cta-arc{position:absolute;bottom:-14%;left:50%;transform:translateX(-50%);width:min(500px,42vw);height:min(500px,42vw);border-radius:50%;background:var(--brand-primary);opacity:.94}
+.cta-img-col img,.cta-img-col canvas{position:relative;z-index:1;width:min(560px,48vw)!important;height:auto!important;filter:drop-shadow(0 40px 90px rgba(0,0,0,.6))!important}
+.cta-ribbon{grid-column:1;grid-row:2;display:flex;align-items:center;justify-content:flex-start;gap:var(--space-xl);padding:32px 0 72px;flex-wrap:wrap}
+.cta-ribbon .cta-qr-card{padding:8px;border-radius:12px;margin:0}
+.cta-ribbon .cta-qr-card img{width:104px!important;height:104px!important}
+.cta-qr-row{color:rgba(255,255,255,.8)}
+.cta-qr-label{color:rgba(255,255,255,.85)!important;max-width:9ch;line-height:1.3}
+.cta-ribbon .cta-btns{display:flex;gap:var(--space-sm);flex-wrap:wrap}
+@media (max-width:900px){#cta{grid-template-columns:1fr;padding-bottom:0!important}#cta .cta-inner{grid-row:1;padding-bottom:16px}.cta-img-col{grid-column:1;grid-row:2;min-height:420px}.cta-arc{width:min(400px,76vw);height:min(400px,76vw)}.cta-img-col img,.cta-img-col canvas{width:min(340px,66vw)!important}.cta-ribbon{grid-column:1;grid-row:3}}
+</style>
+<script src="assets/i18n.js" defer></script><script src="assets/nav-responsive.js" defer></script><style id="zeno-preloader-css">
+html.pl-lock,html.pl-lock body{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999;background:#090a0a;clip-path:inset(0 0 0 0);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+#preloader::before{content:'';position:absolute;top:44%;left:50%;width:min(900px,120vw);height:min(900px,120vw);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(211,141,41,.16) 0%,transparent 62%);pointer-events:none}
+.pl-logo{align-self:center;justify-self:center;position:relative;z-index:2}
+.pl-svg{width:clamp(210px,28vw,330px);height:auto;display:block;overflow:visible}
+.pl-flame{transform-box:fill-box;transform-origin:center;transform:scale(.18);opacity:0}
+.pl-word{clip-path:inset(0 100% 0 0)}
+.pl-foot{position:relative;z-index:2;display:flex;justify-content:flex-end;align-items:flex-end;padding:0 clamp(24px,5vw,64px) clamp(28px,5vh,56px)}
+.pl-eyebrow,.pl-slogan{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);white-space:nowrap;opacity:0}
+.pl-count{font-family:var(--font-display);font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.04em;line-height:.9;color:#d38d29;font-variant-numeric:tabular-nums;opacity:0;justify-self:end}
+.pl-rule{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1);z-index:3}
+.pl-rule span{display:block;height:100%;background:#d38d29;transform:scaleX(0);transform-origin:left}
+#preloader.pl-run .pl-flame{animation:plFlame .9s cubic-bezier(.16,1,.3,1) both}
+#preloader.pl-run .pl-word{animation:plWipe .75s cubic-bezier(.22,1,.36,1) .35s both}
+#preloader.pl-run .pl-eyebrow{animation:plUp .5s ease .3s both}
+#preloader.pl-run .pl-slogan{animation:plUp .5s ease .5s both}
+#preloader.pl-run .pl-count{animation:plUp .5s cubic-bezier(.16,1,.3,1) .35s both}
+#preloader.pl-run .pl-rule span{animation:plBar 1.75s cubic-bezier(.33,1,.68,1) .35s both}
+#preloader.pl-run .pl-logo{animation:plLift .34s cubic-bezier(.65,0,.35,1) 2.1s both}
+#preloader.pl-run .pl-foot{animation:plLift .3s cubic-bezier(.65,0,.35,1) 2.06s both}
+#preloader.pl-run{animation:plPanel .38s cubic-bezier(.76,0,.24,1) 2.32s both}
+@keyframes plFlame{from{transform:scale(.18);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes plWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes plUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes plBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes plLift{from{transform:translateY(0);opacity:1}to{transform:translateY(-52px);opacity:0}}
+@keyframes plPanel{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+
+</style>
+<link rel="stylesheet" href="assets/a11y.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- ══ PRELOADER ══ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pl-logo">
+    <svg class="pl-svg" viewBox="14 18 264 94" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="pl-flame"><path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="#fff"/></g>
+      <g class="pl-word"><path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="#fff"/><path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="#fff"/><path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="#fff"/><path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="#fff"/><path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="#fff"/><path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="#fff"/><path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="#fff"/><path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="#fff"/><path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="#fff"/><path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="#fff"/><path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="#fff"/><path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="#fff"/></g>
+    </svg>
+  </div>
+  <div class="pl-foot">
+    <span class="pl-count">000</span>
+  </div>
+  <div class="pl-rule"><span></span></div>
+</div>
+<script>
+(function(){
+  var pl=document.getElementById('preloader');if(!pl)return;
+  var root=document.documentElement;root.classList.add('pl-lock');
+  var count=pl.querySelector('.pl-count');
+  var TOTAL=2700,CS=350,CD=1750;
+  function finish(){root.classList.remove('pl-lock');pl.remove();}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){requestAnimationFrame(finish);return;}
+  pl.classList.add('pl-run');
+  var t0=performance.now();
+  (function tick(now){
+    var p=Math.min(1,Math.max(0,((now||performance.now())-t0-CS)/CD));
+    var e=1-Math.pow(1-p,3);
+    count.textContent=String(Math.round(e*100)).padStart(3,'0');
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(finish,TOTAL);
+})();
+</script>
+
+
+
+<!-- ══ NAVBAR ══ -->
+<!-- ══════════════════════════
+     01 NAVBAR
+══════════════════════════ -->
+<nav id="navbar" aria-label="Primary" style="opacity: 1">
+  <!-- Left: About Us · Products · Newsroom -->
+  <ul class="nav-left">
+    <li><a href="zeno-about.html">ABOUT US</a></li>
+    <li><a href="zeno-platform.html">PLATFORM</a></li>
+    <li><a href="zeno-newsroom.html">NEWSROOM</a></li>
+  </ul>
+
+  <!-- Center: Logo -->
+  <div class="nav-center">
+    <a href="zeno-landing.html" class="nav-logo-link" aria-label="ZENO Property home">
+      <svg style="display:block;" height="64" viewBox="0 0 290 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="white"></path>
+<path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="white"></path>
+<path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="white"></path>
+<path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="white"></path>
+<path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="white"></path>
+<path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="white"></path>
+<path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="white"></path>
+<path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="white"></path>
+<path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="white"></path>
+<path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="white"></path>
+<path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="white"></path>
+<path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="white"></path>
+<path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="white"></path>
+</svg>
+    </a>
+  </div>
+
+  <!-- Right: Careers · Contact · Get Zeno App -->
+  <ul class="nav-right-group">
+    <li><a href="zeno-careers.html" class="nav-link">CAREERS</a></li>
+    <li><a href="zeno-contact.html" class="nav-link">CONTACT</a></li>
+    <li><a href="#" class="nav-cta-btn" style="border-radius: 9px">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+
+<!-- ══ HERO ══ -->
+<section id="hero" class="is-day" data-screen-label="Hero — Day/Night">
+  <!-- LAYER 1: image crossfade scene (GSAP). LAYER 2 (Three.js) can mount into #hero-webgl-slot and hide .hero-bg layers without touching the rest. -->
+  <div class="hero-bg hero-bg-day" aria-hidden="true">
+    <img src="uploads/image 2-df10015e.png" alt="">
+  </div>
+  <div class="hero-bg hero-bg-night" aria-hidden="true">
+    <img src="uploads/photo-1600596542815-ffad4c1539a9 1-4fe29ab2.png" alt="">
+  </div>
+  <div id="hero-webgl-slot" aria-hidden="true"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="word" style="animation: fadeUp .5s ease .1s both; display:inline-block;">Empowering</span>
+      <span class="word" style="animation: fadeUp .5s ease .18s both; display:inline-block;"> Your</span><br>
+      <span class="word" style="animation: fadeUp .5s ease .26s both; display:inline-block;">Property <span class="h1-accent">Journey</span></span><br>
+      <span class="word" style="animation: fadeUp .5s ease .42s both; display:inline-block;">Across</span>
+      <span class="word" style="animation: fadeUp .5s ease .5s both; display:inline-block;"> ASEAN</span>
+    </h1>
+    <p class="hero-sub">
+      Southeast Asia's real estate market offers vast opportunities for those equipped with the right market insights. ZENO began in Myanmar with a vision to expand across Thailand and the wider ASEAN region, unifying property information, market knowledge, and trusted opportunities into a single platform.
+    </p>
+    <div class="hero-toggle-wrap">
+      <div class="hero-toggle" role="group" aria-label="Hero scene: day or night">
+        <span class="hero-toggle-thumb" aria-hidden="true"></span>
+        <button type="button" class="hero-toggle-btn" data-mode="day" aria-pressed="true">Day</button>
+        <button type="button" class="hero-toggle-btn" data-mode="night" aria-pressed="false">Night</button>
+      </div>
+      <p class="hero-toggle-caption">Every home, in every light. Browse verified listings around the clock.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="200" data-suffix="+">0+</div>
+      <div class="stat-label">Properties listed</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.08s">
+      <div class="stat-num" data-target="99" data-suffix="%">0%</div>
+      <div class="stat-label">Verified agencies</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.16s">
+      <div class="stat-num" data-target="34" data-suffix="+">0+</div>
+      <div class="stat-label">Properties sold</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.24s">
+      <div class="stat-num" data-target="100" data-suffix="%">0%</div>
+      <div class="stat-label">Client satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PURPOSE SECTION ══ -->
+<section id="purpose-section" class="section-pad" style="background-color: #090A0A">
+  <div class="purpose-inner">
+    <div class="purpose-header reveal">
+      <span class="overline">Two ways to reach Zeno</span>
+      <h2>Built for how you actually search</h2>
+    </div>
+    <div class="purpose-grid">
+      <div class="purpose-card reveal">
+        <div class="purpose-icon">01</div>
+        <span class="purpose-tag">ZENO Website</span>
+        <h3 class="purpose-title">Learn &amp; research</h3>
+        <p class="purpose-desc">Learn about real estate, discover buying tips, and stay updated with market news.</p>
+      </div>
+      <div class="purpose-card reveal d1">
+        <div class="purpose-icon">02</div>
+        <span class="purpose-tag">ZENO Mobile App</span>
+        <h3 class="purpose-title">Buy, sell &amp; rent</h3>
+        <p class="purpose-desc">Discover, buy, sell, or rent verified properties with total confidence.</p>
+        <div class="purpose-dl">
+          <img class="purpose-qr" src="assets/qr-placeholder.svg" alt="Scan to download the Zeno app">
+          <div class="purpose-dl-btns">
+            <a href="#" class="footer-app-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+            </a>
+            <a href="#" class="footer-app-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+              <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APP SECTION ══ -->
+<section id="app-section" class="section-pad">
+  <div class="app-inner">
+    <div class="app-header reveal">
+      <span class="overline">Mobile first experience</span>
+      <h2>Leading the way in property innovation</h2>
+      <p class="app-sub">
+        Every detail is designed to align with the needs of the discerning property seeker. We combine the finest of technology with the trust of a dedicated concierge team so you can search, discover, and close with total confidence.
+      </p>
+    </div>
+    <div class="app-2col">
+      <div class="app-feature-list reveal d1">
+        <div class="app-frow active" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">🤖</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">Buyers &amp; Sellers Database</div>
+            <div class="app-frow-desc">Smart recommendations based on your lifestyle and budget. The more you interact, the smarter the matches become.</div>
+          </div>
+        </div>
+        <div class="app-frow" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">✅</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">Investment</div>
+            <div class="app-frow-desc">Every agent passes rigorous vetting for trust and quality. Connect directly through the app to book viewings.</div>
+          </div>
+        </div>
+        <div class="app-frow" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">📊</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">Market Intelligence</div>
+            <div class="app-frow-desc">Real-time valuations, price history, and neighbourhood data so you can make confident, data-backed decisions.</div>
+          </div>
+        </div>
+        <div class="app-frow" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">🌏</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">Cross-Border Search</div>
+            <div class="app-frow-desc">Browse properties across Thailand, Myanmar, and all of ASEAN from a single unified platform.</div>
+          </div>
+        </div>
+        <div class="app-frow" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">🔑</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">End-to-End Support</div>
+            <div class="app-frow-desc">From search to settlement, guided every step of the way with legal support and full transparency.</div>
+          </div>
+        </div>
+        <div class="app-frow" data-app-img="uploads/Feed.jpg">
+          <div class="app-frow-icon">📝</div>
+          <div class="app-frow-body">
+            <div class="app-frow-title">Sample Title</div>
+            <div class="app-frow-desc">Sample paragraph placeholder. Replace this copy with the description you provide.</div>
+          </div>
+        </div>
+      </div>
+      <div class="app-img-sticky reveal d2">
+        <div class="ios-phone" style="max-width:280px;">
+          <div class="ios-phone-screen">
+            <img id="app-phone-img" src="uploads/Feed.jpg" alt="Zeno App Feed Screen">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ══ -->
+<section id="features" class="section-pad">
+  <spline-viewer url="https://prod.spline.design/9gmWp9PDmQNPj75P/scene.splinecode"></spline-viewer>
+  <div class="features-overlay"></div>
+  <div class="features-intro">
+    <div class="reveal">
+      <span class="overline">One ecosystem, infinite possibilities</span>
+      <h2>Everything you need to buy, sell, and invest across ASEAN</h2>
+    </div>
+    <p class="features-desc reveal" style="transition-delay:0.1s">
+      Zeno Property is the #1 ASEAN real estate ecosystem uniting buyers, sellers, investors, and agencies across Thailand, Myanmar, and ASEAN. We combine advanced technology with the trust of a dedicated concierge team so you can search, decide, and invest with confidence.
+    </p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal" style="transition-delay:0s">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/></svg></div>
+      <div class="feature-title">AI powered matching</div>
+      <div class="feature-desc">We understand more about those looking for a home. AI that learns your taste of the market.</div>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.08s">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 2H5c-1.1 0-2 .9-2 2v3c0 1.26.756 2.36 1.857 2.903-.288.626-.464 1.317-.464 2.054 0 .741.176 1.432.464 2.058C3.756 14.64 3 15.74 3 17v3c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-3c0-1.26-.756-2.36-1.857-2.902.288-.626.464-1.317.464-2.054 0-.737-.176-1.428-.464-2.058C20.244 9.36 21 8.26 21 7V4c0-1.1-.9-2-2-2zm0 5H5V4h14v3zm0 9v3H5v-3c0-.82.51-1.52 1.25-1.82A3.82 3.82 0 0 1 12 13.2c1.31 0 2.46.46 3.75 1.29.74.3 1.25 1 1.25 1.82z" fill="currentColor"/></svg></div>
+      <div class="feature-title">Top vetted advantage</div>
+      <div class="feature-desc">We combine technology with the expertise of our dedicated team to help you find the best deals.</div>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.16s">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 2C6.04 2 2 6.04 2 11s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 6 14.5 6 13 6.67 13 7.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 6 7.5 6 6 6.67 6 7.5 6.67 9 7.5 9z" fill="currentColor"/></svg></div>
+      <div class="feature-title">Radical transparency</div>
+      <div class="feature-desc">Every listing is verified and supported by our dedicated analysts, so you can trust us to be honest.</div>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.24s">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg></div>
+      <div class="feature-title">Regional intelligence</div>
+      <div class="feature-desc">From Thailand to Myanmar, south to the entire ASEAN region. Our local experts know every market.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PLATFORM ══ -->
+<section id="platform" class="section-pad">
+  <div class="section-header reveal">
+    <span class="overline">One platform, every solution</span>
+    <h2>What Are You Looking to Do?</h2>
+  </div>
+  <div class="platform-grid">
+    <div class="platform-card tall reveal">
+      <span class="platform-card-tag tag-buy">✦ ZENO BUY</span>
+      <h3 class="platform-card-title">Zeno Buy</h3>
+      <div class="platform-card-desc"><div>Find properties matched to your needs, budget, and preferred location. Matched to what you need, what you can afford, and where you want to be.</div></div>
+      <div class="iphone-stage" style="position:relative; flex:1; min-height:480px;">
+        <img src="uploads/Green Gradient iPhone 17 Mockup with Floating Effect.png" alt="Zeno App on iPhone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, var(--neutral-25) 0%, transparent 18%, transparent 78%, var(--neutral-25) 100%);"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--neutral-25) 0%, transparent 15%, transparent 85%, var(--neutral-25) 100%);"></div>
+      </div>
+    </div>
+    <div class="platform-card reveal" style="transition-delay:0.08s">
+      <span class="platform-card-tag tag-rent">✦ ZENO RENT</span>
+      <h3 class="platform-card-title">Zeno Rent</h3>
+      <div class="platform-card-soon">Coming Soon</div>
+      <div class="platform-card-desc"><div>Discover rental options from short-term stays to long-term residences. Matched to your lifestyle, budget, and duration of stay.</div></div>
+      <div class="iphone-stage solo" style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop&crop=center" alt="Modern rental apartment" style="width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;border-radius:12px;" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, var(--neutral-25) 0%, transparent 30%, transparent 65%, var(--neutral-25) 100%);border-radius:12px;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--neutral-25) 0%, transparent 20%, transparent 80%, var(--neutral-25) 100%);border-radius:12px;"></div>
+      </div>
+    </div>
+    <div class="platform-card reveal" style="transition-delay:0.16s">
+      <span class="platform-card-tag tag-sell">✦ ZENO SELL</span>
+      <h3 class="platform-card-title">Zeno Sell</h3>
+      <div class="platform-card-desc"><div>List your property to reach active buyers and renters. Matched to your property's value, selling timeline, and ideal buyers.</div></div>
+      <div class="iphone-stage solo" style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center" alt="Property for sale" style="width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;border-radius:12px;" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, var(--neutral-25) 0%, transparent 30%, transparent 65%, var(--neutral-25) 100%);border-radius:12px;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--neutral-25) 0%, transparent 20%, transparent 80%, var(--neutral-25) 100%);border-radius:12px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SMART PROPERTY DISCOVERY ══ -->
+<section id="discovery" class="section-pad">
+  <div class="discovery-inner reveal">
+    <span class="overline" style="justify-content:center;display:flex;">Search with precision</span>
+    <h2>Smart Property Discovery</h2>
+    <div class="discovery-rule"></div>
+    <p>Find the right property with the exact details you need. Filter by location, property type, price, and custom criteria to understand the market before taking your next step.</p>
+  </div>
+</section>
+
+<!-- ══ INSIGHTS ══ -->
+<section id="insights" class="section-pad">
+  <div class="section-header reveal">
+    <span class="overline">Market insights · AI analysis · Live properties</span>
+    <h2>Stay ahead with the latest in ASEAN real estate</h2>
+    <p class="section-sub">Zeno distills the most important ASEAN real estate news, verified by our local agents. Be the first to know what to stand by, buy, or sell. With clarity, always.</p>
+  </div>
+  <div class="insights-grid">
+    <div class="insight-card reveal">
+      <div class="insight-img" style="background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=400&fit=crop&crop=center') center/cover;"></div>
+      <div class="insight-category">Market report</div>
+      <div class="insight-body">
+        <h3 class="insight-title">The 2026 ASEAN Real Estate Outlook: Growth Hubs in Thailand and Myanmar</h3>
+        <div class="insight-excerpt">Discover which high-growth markets are scaling fast. A deep-dive into different micro-markets and emerging pockets of value the year ahead.</div>
+        <a href="zeno-article-detail.html" class="read-more" onclick="goArticle('The 2026 ASEAN Real Estate Outlook: Growth Hubs in Thailand and Myanmar','April 28, 2026','Market Research','9 min read');return false;">Read →</a>
+      </div>
+    </div>
+    <div class="insight-card reveal" style="transition-delay:0.08s">
+      <div class="insight-img" style="background: url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=400&fit=crop&crop=center') center/cover;"></div>
+      <div class="insight-category">Feature</div>
+      <div class="insight-body">
+        <h3 class="insight-title">Beyond the Algorithm: How Zeno's AI Predicts the Best Time to Buy</h3>
+        <div class="insight-excerpt">A deep dive into how we analyze thousands of data points to predict which markets and unit types are emerging in value.</div>
+        <a href="zeno-article-detail.html" class="read-more" onclick="goArticle('Beyond the Algorithm: How Zeno\u2019s AI Predicts the Best Time to Buy','April 10, 2026','Proptech','7 min read');return false;">Read →</a>
+      </div>
+    </div>
+    <div class="insight-card reveal" style="transition-delay:0.16s">
+      <div class="insight-img" style="background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=400&fit=crop&crop=center') center/cover;"></div>
+      <div class="insight-category">Investor guide</div>
+      <div class="insight-body">
+        <h3 class="insight-title">Navigating Cross-Border Investments: A Guide for International Buyers</h3>
+        <div class="insight-excerpt">Everything you need to know about legal frameworks, taxes, and ownership structures for Thailand and Myanmar investing overseas.</div>
+        <a href="zeno-article-detail.html" class="read-more" onclick="goArticle('Navigating Cross-Border Investments: A Guide for International Buyers','March 5, 2026','Investment','14 min read');return false;">Read →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LEARN + ACT ══ -->
+<section id="learn-act" class="section-pad">
+  <div class="section-header reveal">
+    <span class="overline">Website + Mobile App</span>
+    <h2>Learn with ZENO. Act with ZENO App.</h2>
+  </div>
+  <div class="learnact-grid">
+    <div class="learnact-card reveal">
+      <div class="learnact-tag">Use the Website to</div>
+      <h3>Learn &amp; research</h3>
+      <ul class="learnact-list">
+        <li>Learn real estate essentials</li>
+        <li>Read property buying guides</li>
+        <li>Track market news and findings</li>
+      </ul>
+    </div>
+    <div class="learnact-card dark reveal d1">
+      <div class="learnact-tag">Use the Mobile App to</div>
+      <h3>Buy, rent &amp; sell</h3>
+      <ul class="learnact-list">
+        <li>Search verified listings</li>
+        <li>Buy properties</li>
+        <li>Rent properties</li>
+        <li>Sell properties</li>
+      </ul>
+      <div class="learnact-download">
+        <img class="learnact-qr" src="assets/qr-placeholder.svg" alt="Scan to download the Zeno app">
+        <div class="learnact-dl-btns">
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+        </a>
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+          <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="learnact-bottom">
+    <div class="learnact-block reveal">
+      <span class="overline">Smart Listing</span>
+      <h3>List Smarter. Reach Faster.</h3>
+      <p>ZENO Property enables property owners to showcase listings clearly and connect directly with active searchers.</p>
+    </div>
+    <div class="learnact-block reveal d1">
+      <span class="overline">ASEAN Property Vision</span>
+      <h3>Starting in Myanmar, expanding across ASEAN</h3>
+      <p>Starting in Myanmar and expanding across Thailand and ASEAN, ZENO simplifies real estate data to make property discovery effortless and seamless for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SLOGAN ══ -->
+<section id="slogan-section" class="section-pad">
+  <div class="learnact-slogan reveal"><span class="slogan-line">High Tech.</span><span class="slogan-line">Full Trust.</span><span class="slogan-line accent">Own Property.</span></div>
+</section>
+
+<!-- ══ TESTIMONIAL ══ -->
+<section id="testimonial" class="section-pad">
+  <div class="testimonial-inner">
+    <div class="reveal">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote t-fade" id="t-quote">
+        "Zeno made what felt like an impossible search feel effortless. Within two weeks, their AI matched us with a property that ticked every box: location, budget, and lifestyle. The team were exceptional throughout."
+      </div>
+
+      <div class="testimonial-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <div class="testimonial-vis reveal" style="transition-delay:0.12s;">
+      <div class="testimonial-vis-glow"></div>
+      <div class="t-fade" id="t-person" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;padding:32px;">
+        <div style="width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--brand-primary);box-shadow:0 0 0 6px rgba(211,141,41,0.15),0 12px 40px rgba(0,0,0,0.4);">
+          <img id="t-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=192&h=192&fit=crop&crop=face" alt="Stephanie Powell" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div style="text-align:center;display:flex;flex-direction:column;gap:6px;">
+          <div id="t-name" style="font-weight:700;color:var(--content-primary);font-size:20px;">Stephanie Powell</div>
+          <div id="t-role" style="color:var(--content-secondary);font-size:14px;">VP of Sales · Nexwork</div>
+          <div style="color:var(--brand-primary);font-size:18px;margin-top:4px;">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-text-col">
+      <span class="cta-subtitle" style="font-size: 14px">Find your corner</span>
+      <h2 class="cta-title" >Find your place in Southeast Asia</h2>
+      <p class="cta-body" style="font-size: 16px">Whether you're buying, selling, renting, or investing, Zeno Property puts the entire region in your pocket.</p>
+    </div>
+  </div>
+  <div class="cta-img-col">
+    <div class="cta-arc" aria-hidden="true"></div>
+    <img src="uploads/iPhone 16 Pro (2).png" alt="Zeno App on iPhone 16 Pro" />
+  </div>
+  <div class="cta-ribbon reveal">
+    <div class="cta-qr-card">
+      <img src="assets/qr-placeholder.svg" alt="Scan to download">
+    </div>
+    <div class="cta-qr-row">
+      <svg class="cta-qr-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17L7 7M7 7v8M7 7h8"/></svg>
+      <span class="cta-qr-label">Scan to download</span>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="cta-btn dark">
+        <svg class="cta-btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div>
+          <div class="cta-text-sm">Download on the</div>
+          <div class="cta-text-lg">App Store</div>
+        </div>
+      </a>
+      <a href="#" class="cta-btn light">
+        <svg class="cta-btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+        <div>
+          <div class="cta-text-sm">Get it on</div>
+          <div class="cta-text-lg">Google Play</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+</main>
+<footer>
+  <div class="footer-offices">
+    <div class="office-card reveal">
+      <div class="office-icon">🇹🇭</div>
+      <div>
+        <div class="office-name">Bangkok, Thailand</div>
+        <div class="office-addr"><div>11/2 P23 Building, 11th Floor, Soi Sukhumvit 23,</div><div>Sukhumvit Road, Khlong Toei Nuea, Watthana,</div><div>Bangkok, 10110, Thailand.</div><div>(Beside Asoke BTS / Sukhumvit MRT Station)</div></div>
+        <div class="office-tel">+66 87 691 9916, +66 99 838 8949</div>
+      </div>
+    </div>
+    <div class="office-card reveal" style="transition-delay:0.08s">
+      <div class="office-icon">🇲🇲</div>
+      <div>
+        <div class="office-name">Yangon, Myanmar</div>
+        <div class="office-addr"><div>G10-12, Building A/B, Ground Floor, Pearl Condo,</div><div>Kabaraye Pagoda and Sayarsan Road, Bahan</div><div>Township, Yangon.</div></div>
+        <div class="office-tel">+95 9 757 223 943</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-col reveal" style="transition-delay:0.06s">
+      <div class="footer-col-title">Platform</div>
+      <ul>
+        <li><a href="zeno-platform.html">Zeno Buy</a></li>
+        <li><a href="zeno-platform.html">Zeno Rent</a></li>
+        <li><a href="zeno-platform.html">Zeno Sell</a></li>
+        <li><a href="zeno-platform.html">Zeno Invest</a></li>
+        <li><a href="#">Mobile app</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.12s">
+      <div class="footer-col-title">Resources</div>
+      <ul>
+        <li><a href="zeno-articles.html">Newsroom</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.18s">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="zeno-about.html">About us</a></li>
+        <li><a href="zeno-jobs.html">Careers</a></li>
+        <li><a href="zeno-contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.24s">
+      <div class="footer-col-title">Partners</div>
+      <ul>
+        <li><a href="zeno-agents.html">For agents</a></li>
+        <li><a href="zeno-developers.html">For developers</a></li>
+        <li><a href="zeno-partners.html">Partner program</a></li>
+        
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.30s">
+      <div class="footer-help-label">Download</div>
+      <div class="footer-app-btns">
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+        </a>
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+          <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+        </a>
+      </div>
+      <a href="#" class="footer-help-link">Help Center <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+  <div class="footer-legal-only">
+    <span class="footer-copyright">Copyright © 2026 Zeno Property Co.,ltd,. All Right Reserved.</span>
+    <div class="footer-legal-links">
+      <a href="zeno-terms.html">Terms</a>
+      <a href="zeno-privacy.html">Privacy policy</a>
+      <a href="zeno-cookies.html">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
+
+<script>
+// ── Navbar scroll ──
+const navbar = document.getElementById('navbar');
+let navTicking = false;
+function updateNav() {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  navTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!navTicking) { navTicking = true; requestAnimationFrame(updateNav); }
+}, { passive: true });
+updateNav();
+
+// ── Scroll reveal + count-up ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Release will-change once the reveal transition finishes
+      setTimeout(() => entry.target.classList.add('done'), 700);
+      observer.unobserve(entry.target);
+      const numEl = entry.target.querySelector('[data-target]');
+      if (numEl && !numEl.dataset.counted) {
+        numEl.dataset.counted = '1';
+        animateCount(numEl);
+      }
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.stat-item').forEach(el => observer.observe(el));
+
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '+';
+  const duration = 1800;
+  const startTime = performance.now();
+  const easeOut = t => 1 - Math.pow(1 - t, 4);
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    el.textContent = Math.round(easeOut(progress) * target) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// ── App feature row click → swap phone mockup ──
+document.querySelectorAll('.app-frow[data-app-img]').forEach(function(row) {
+  row.addEventListener('click', function() {
+    document.querySelectorAll('.app-frow').forEach(r => r.classList.remove('active'));
+    row.classList.add('active');
+    var img = document.getElementById('app-phone-img');
+    if (img) {
+      img.style.opacity = '0';
+      setTimeout(function() {
+        img.src = row.getAttribute('data-app-img');
+        img.style.opacity = '1';
+      }, 200);
+    }
+  });
+});
+var appImg = document.getElementById('app-phone-img');
+if (appImg) appImg.style.transition = 'opacity 0.2s ease';
+
+// ── Pause 3D scene when features section is off-screen ──
+const splineViewer = document.querySelector('#features spline-viewer');
+if (splineViewer) {
+  const splineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      splineViewer.classList.toggle('paused', !entry.isIntersecting);
+    });
+  }, { rootMargin: '300px 0px 300px 0px' });
+  splineObserver.observe(document.getElementById('features'));
+}
+
+// ── Testimonial carousel ──
+const zTestimonials = [
+  { quote: '"Zeno made what felt like an impossible search feel effortless. Within two weeks, their AI matched us with a property that ticked every box: location, budget, and lifestyle. The team were exceptional throughout."', name: 'Stephanie Powell', role: 'VP of Sales · Nexwork', photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=192&h=192&fit=crop&crop=face' },
+  { quote: '"We were buying from overseas and expected months of friction. Zeno handled verification, paperwork, and translation in one place. Every listing we saw was real and available."', name: 'Marcus Chen', role: 'Managing Director · Halcyon Capital', photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=192&h=192&fit=crop&crop=face' },
+  { quote: '"The market data is what sold me. Being able to see genuine price history and neighbourhood trends before making an offer changed how confidently we invest in the region."', name: 'Aye Chan Moe', role: 'Portfolio Manager · Yangon', photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=192&h=192&fit=crop&crop=face' },
+  { quote: '"Listing with Zeno brought qualified buyers in the first week, not tyre-kickers. The agent assigned to us knew the building, the street, and exactly what to price it at."', name: 'Daniel Suriya', role: 'Property Owner · Bangkok', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=192&h=192&fit=crop&crop=face' }
+];
+(function(){
+  const dots = [...document.querySelectorAll('.testimonial-dots .dot')];
+  const q = document.getElementById('t-quote'), p = document.getElementById('t-person');
+  const nameEl = document.getElementById('t-name'), roleEl = document.getElementById('t-role'), photoEl = document.getElementById('t-photo');
+  if (!q || !p || !dots.length) return;
+  let idx = 0, timer;
+  function render(n) {
+    const t = zTestimonials[n % zTestimonials.length];
+    q.classList.add('out'); p.classList.add('out');
+    setTimeout(() => {
+      q.textContent = t.quote;
+      nameEl.textContent = t.name; roleEl.textContent = t.role;
+      photoEl.src = t.photo; photoEl.alt = t.name;
+      q.classList.remove('out'); p.classList.remove('out');
+    }, 450);
+    dots.forEach((d, i) => d.classList.toggle('active', i === n % zTestimonials.length));
+    idx = n % zTestimonials.length;
+  }
+  function start() { clearInterval(timer); timer = setInterval(() => render(idx + 1), 6500); }
+  dots.forEach((d, i) => d.addEventListener('click', () => { render(i); start(); }));
+  start();
+})();
+</script>
+
+<script>
+function goArticle(title, date, category, readTime) {
+  localStorage.setItem('zeno_current_article', JSON.stringify({ title, date: date || 'May 2026', category: category || 'Market Research', readTime: readTime || '8 min read' }));
+  window.location.href = 'zeno-article-detail.html';
+}
+</script>
+
+
+<script>
+(function() {
+  var img = document.querySelector('.cta-img-col img');
+  if (!img) return;
+
+  function processImage() {
+    var W = img.naturalWidth, H = img.naturalHeight;
+    var canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    canvas.style.cssText = 'width:100%;height:auto;display:block;filter:drop-shadow(0 32px 64px rgba(0,0,0,0.3));';
+
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    var imageData = ctx.getImageData(0, 0, W, H);
+    var data = imageData.data;
+    var visited = new Uint8Array(W * H);
+
+    /* Sample background colour from top-left corner */
+    var bgR = data[0], bgG = data[1], bgB = data[2];
+    var tol = 38;
+
+    function match(i) {
+      return Math.abs(data[i]   - bgR) < tol &&
+             Math.abs(data[i+1] - bgG) < tol &&
+             Math.abs(data[i+2] - bgB) < tol;
+    }
+
+    /* BFS flood-fill from all four corners */
+    var queue = new Int32Array(W * H);
+    var head = 0, tail = 0;
+
+    function seed(x, y) {
+      var p = y * W + x;
+      if (!visited[p]) { visited[p] = 1; queue[tail++] = p; }
+    }
+    seed(0, 0); seed(W - 1, 0); seed(0, H - 1); seed(W - 1, H - 1);
+
+    while (head < tail) {
+      var p = queue[head++];
+      var di = p * 4;
+      if (!match(di)) continue;
+      data[di + 3] = 0;
+      var x = p % W, y = (p / W) | 0;
+      if (x > 0     && !visited[p - 1]) { visited[p - 1] = 1; queue[tail++] = p - 1; }
+      if (x < W - 1 && !visited[p + 1]) { visited[p + 1] = 1; queue[tail++] = p + 1; }
+      if (y > 0     && !visited[p - W]) { visited[p - W] = 1; queue[tail++] = p - W; }
+      if (y < H - 1 && !visited[p + W]) { visited[p + W] = 1; queue[tail++] = p + W; }
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    img.parentNode.replaceChild(canvas, img);
+  }
+
+  if (img.complete && img.naturalWidth) { processImage(); }
+  else { img.addEventListener('load', processImage); }
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+<script>
+/* ══ HERO DAY/NIGHT TOGGLE — Layer 1 (GSAP crossfade) ══ */
+(function(){
+  var hero = document.getElementById('hero');
+  if (!hero || !window.gsap) return;
+  var nightBg = hero.querySelector('.hero-bg-night');
+  var lights = hero.querySelectorAll('.hero-light');
+  var thumb = hero.querySelector('.hero-toggle-thumb');
+  var btns = hero.querySelectorAll('.hero-toggle-btn');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = 'day';
+  var ready = false;
+
+  // Size thumb to the active button
+  function placeThumb(mode, animate){
+    var btn = hero.querySelector('.hero-toggle-btn[data-mode="' + mode + '"]');
+    if (!btn) return;
+    var x = btn.offsetLeft - 4;
+    var w = btn.offsetWidth;
+    if (animate && !reduced){
+      gsap.to(thumb, { x: x, width: w, duration: 0.3, ease: 'power3.out' });
+    } else {
+      gsap.set(thumb, { x: x, width: w });
+    }
+  }
+
+  function setState(mode, animate){
+    if (mode === current && animate) return;
+    current = mode;
+    var night = mode === 'night';
+    hero.classList.toggle('is-day', !night);
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
+    });
+    placeThumb(mode, animate);
+    if (animate && !reduced){
+      gsap.to(nightBg, { opacity: night ? 1 : 0, duration: 0.8, ease: 'power2.inOut' });
+      if (night){
+        gsap.to(lights, { opacity: 1, duration: 0.5, ease: 'power2.out', stagger: 0.12, delay: 0.35 });
+      } else {
+        gsap.to(lights, { opacity: 0, duration: 0.3, ease: 'power2.in' });
+      }
+    } else {
+      gsap.set(nightBg, { opacity: night ? 1 : 0 });
+      gsap.set(lights, { opacity: night ? 1 : 0 });
+    }
+  }
+
+  // Preload both scenes before enabling the toggle
+  var srcs = ['.hero-bg-day img', '.hero-bg-night img'].map(function(s){
+    return hero.querySelector(s).currentSrc || hero.querySelector(s).src;
+  });
+  var loaded = 0;
+  srcs.forEach(function(src){
+    var im = new Image();
+    im.onload = im.onerror = function(){
+      loaded++;
+      if (loaded === srcs.length) ready = true;
+    };
+    im.src = src;
+  });
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!ready) return;
+      setState(b.dataset.mode, true);
+    });
+  });
+
+  // Initial: Day, no animation (spec #5)
+  placeThumb('day', false);
+  window.addEventListener('resize', function(){ placeThumb(current, false); });
+
+  /* LAYER 2 (Three.js) — intentionally not mounted. To enable:
+     lazy-load three.js after this IIFE, render into #hero-webgl-slot,
+     hide .hero-bg layers, and drive scene lighting from setState(). */
+})();
+</script>
+<script>
+/* ══ SCROLL CHOREOGRAPHY (non-hero sections only) ══ */
+(function(){
+  if (!window.gsap || !window.ScrollTrigger) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+  var q = function(s, ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(s)); };
+
+  // 1. Parallax drift on section imagery (transform only — never touches .reveal opacity)
+  q('#platform .iphone-stage img, #app-section .app-img-sticky img, .insight-img').forEach(function(el){
+    gsap.fromTo(el, { yPercent: -6 }, {
+      yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: el.closest('.platform-card, .insight-card, .app-img-sticky') || el, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
+    });
+  });
+
+  // 2. Section headings settle: slight rise + letter-spacing tighten as they enter
+  q('#platform .section-header h2, #discovery h2, #insights .section-header h2, #learn-act .section-header h2, .purpose-header h2').forEach(function(h){
+    gsap.fromTo(h, { letterSpacing: '0.02em', y: 18 }, {
+      letterSpacing: '-0.02em', y: 0, ease: 'power2.out',
+      scrollTrigger: { trigger: h, start: 'top 88%', end: 'top 55%', scrub: 0.5 }
+    });
+  });
+
+  // 3. Card depth: grids lift into place with stagger, scrubbed to scroll
+  [['#platform .platform-grid', '.platform-card'], ['.purpose-grid', '.purpose-card'], ['.learnact-grid', '.learnact-card'], ['.insights-grid', '.insight-card']].forEach(function(pair){
+    var grid = document.querySelector(pair[0]);
+    if (!grid) return;
+    gsap.fromTo(q(pair[1], grid), { y: 46, scale: 0.985 }, {
+      y: 0, scale: 1, ease: 'power2.out', stagger: 0.07,
+      scrollTrigger: { trigger: grid, start: 'top 90%', end: 'top 45%', scrub: 0.6 }
+    });
+  });
+
+  // 4. Slogan: staggered lines, word-by-word ink reveal
+  var sloganLines = q('.slogan-line');
+  if (sloganLines.length) {
+    sloganLines.forEach(function(line){
+      if (line.dataset.split) return;
+      line.dataset.split = '1';
+      var words = line.textContent.trim().split(/\s+/);
+      line.textContent = '';
+      words.forEach(function(w, i){
+        var s = document.createElement('span');
+        s.className = 'slogan-word';
+        s.textContent = w;
+        line.appendChild(s);
+        if (i < words.length - 1) line.appendChild(document.createTextNode(' '));
+      });
+    });
+    gsap.fromTo(q('.slogan-word'), { opacity: 0.14, y: 18 }, {
+      opacity: 1, y: 0, ease: 'power1.out', stagger: 0.1,
+      scrollTrigger: { trigger: '#slogan-section', start: 'top 82%', end: 'bottom 60%', scrub: 0.8 }
+    });
+    sloganLines.forEach(function(line, i){
+      gsap.fromTo(line, { x: i % 2 ? 70 : -70 }, {
+        x: 0, ease: 'none',
+        scrollTrigger: { trigger: '#slogan-section', start: 'top bottom', end: 'bottom top', scrub: 0.9 }
+      });
+    });
+  }
+
+  // 5. Discovery: a scroll-drawn rule under the heading
+  var rule = document.querySelector('.discovery-rule');
+  if (rule) {
+    gsap.fromTo(rule, { scaleX: 0 }, {
+      scaleX: 1, ease: 'none', transformOrigin: 'center',
+      scrollTrigger: { trigger: '#discovery', start: 'top 80%', end: 'center 60%', scrub: 0.6 }
+    });
+  }
+
+  // 6. CTA panel eases up as it enters
+  var ctaInner = document.querySelector('#cta .cta-inner');
+  if (ctaInner) {
+    gsap.fromTo(ctaInner, { y: 40 }, {
+      y: 0, ease: 'power2.out',
+      scrollTrigger: { trigger: '#cta', start: 'top 92%', end: 'top 50%', scrub: 0.6 }
+    });
+  }
+
+  // 5b. Discovery chips stagger in
+  var chips = q('.discovery-chip');
+  if (chips.length) {
+    gsap.fromTo(chips, { y: 18, opacity: 0 }, {
+      y: 0, opacity: 1, ease: 'power2.out', stagger: 0.08, duration: 0.5,
+      scrollTrigger: { trigger: '.discovery-chips', start: 'top 88%' }
+    });
+  }
+
+  // 7. Slim scroll-progress rule under the navbar
+  var bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.2 } });
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+<script src="assets/a11y.js"></script>
+</body>
+</html>

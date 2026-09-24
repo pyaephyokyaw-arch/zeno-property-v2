@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#0a0c0e"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#0a0c0e"/><text x="100" y="115" font-family="sans-serif" font-size="64" font-weight="800" fill="#d38d29" text-anchor="middle">Z</text></svg></template>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENO for Developers | Showcase Your Projects</title>
+<meta name="description" content="Partner with ZENO to showcase residential and commercial developments to qualified buyers and investors across Southeast Asia.">
+<link rel="canonical" href="https://zeno-property-site.vercel.app/zeno-developers.html">
+<meta name="theme-color" content="#090a0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZENO Property">
+<meta property="og:title" content="ZENO for Developers | Showcase Your Projects">
+<meta property="og:description" content="Partner with ZENO to showcase residential and commercial developments to qualified buyers and investors across Southeast Asia.">
+<meta property="og:url" content="https://zeno-property-site.vercel.app/zeno-developers.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="zeno-logo.svg">
+<!-- Zeno Property Design System — Dark Theme -->
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/colors.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/theme.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/typography.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/components/interactions.css">
+<link rel="stylesheet" href="_ds/zeno-property-design-system-e0eecb1a-39bf-4b1d-9735-cdd8e0eda097/styles.css">
+<style>
+/* ── Zeno DS: dark theme token remapping ── */
+:root {
+  --bg:   #090a0a;
+  --bg2:  #202325;
+  --bg3:  #303437;
+  --pp:   #d38d29;
+  --pl:   #f1cb7c;
+  --pd:   #975614;
+  --gb:   rgba(255,255,255,0.06);
+  --pb:   rgba(211,141,41,0.22);
+  --gs:   rgba(255,255,255,0.03);
+  --tp:   #f7f9fa;
+  --tm:   #979c9e;
+  --td:   #50555c;
+  --green:#23c16b;
+  --teal: #9bdcfd;
+  --nav-h:72px;
+  --r:    16px; --r-sm:10px; --r-btn:9px;
+}
+/* Sora for all headings */
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+/* Gold focus ring */
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+/* ═══════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════ */
+:root {
+  --bg:    #090a0a;
+  --bg2:   #202325;
+  --bg3:   #303437;
+  --pp:    #d38d29;
+  --pl:    #f1cb7c;
+  --pd:    #975614;
+  --gb:    rgba(255,255,255,0.08);
+  --pb:    rgba(211,141,41,0.22);
+  --gs:    rgba(255,255,255,0.04);
+  --tp:    #f7f9fa;
+  --tm:    #979c9e;
+  --td:    #50555c;
+  --green: #4ADE80;
+  --teal:  #48a7f8;
+  --nav-h:72px;
+  --r:     16px;
+  --r-sm:  10px;
+  --r-btn: 9px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family:var(--font-body);
+  background: var(--bg);
+  color: var(--tp);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .08s; }
+.d2 { transition-delay: .16s; }
+.d3 { transition-delay: .24s; }
+.d4 { transition-delay: .32s; }
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:200;
+  height:var(--nav-h);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;
+  padding:0 max(48px, calc((100% - 1200px) / 2));
+  transition: background .4s ease, backdrop-filter .4s ease;
+  background: rgba(9,10,10,0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: none;
+  box-shadow: none;
+}
+
+nav.scrolled{
+  background: rgba(9,10,10,0.97);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(211,141,41,0.10);
+}
+.nav-left,.nav-right-group{
+  display:flex;align-items:center;
+  list-style:none;
+}
+.nav-left{gap:28px;}
+@media (max-width: 1080px){ .nav-left{gap:16px;} .nav-right-group{gap:12px;} .nav-left a,.nav-right-group a:not(.nav-cta-btn){font-size:14px;} nav{gap:14px;padding:0 20px;} .nav-center svg{height:44px;} }
+.nav-right-group{gap:20px;justify-content:flex-end;}
+.nav-left a,.nav-right-group a:not(.nav-cta-btn){
+  font-size:16px;font-weight:500;
+  color:var(--tm);text-decoration:none;
+  letter-spacing:.01em;
+  transition:color .2s;
+  position:relative;padding-bottom:2px;
+}
+.nav-left a::after,.nav-right-group a:not(.nav-cta-btn)::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--pp);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s;
+}
+.nav-left a:hover,.nav-right-group a:not(.nav-cta-btn):hover{color:var(--tp);}
+.nav-left a:hover::after,.nav-right-group a:hover::after,
+.nav-left a.active::after{transform:scaleX(1);}
+.nav-left a.active{color:var(--tp);}
+.nav-logo{
+  font-size:18px;font-weight:700;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,#f1cb7c,#d38d29);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;text-decoration:none;
+}
+.nav-cta,.nav-cta-btn{
+  padding:8px 18px;
+  border:none;border-radius:var(--r-btn);
+  font-size:16px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg, #d38d29, #975614);
+  cursor:pointer;text-decoration:none;
+  box-shadow:0 0 20px rgba(211,141,41,0.28);
+  transition:all .2s;font-family:inherit;
+}
+.nav-cta:hover,.nav-cta-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(211,141,41,0.45);}
+
+/* ═══════════════════════════════
+   SHARED PRIMITIVES
+═══════════════════════════════ */
+.overline {
+  display: flex; align-items: center; gap: 10px;
+  font-size:14px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--pl); margin-bottom: 14px;
+}
+.overline::before {
+  content: ''; display: none; width: 20px; height: 2px;
+  background: linear-gradient(90deg,#d38d29,#f1cb7c);
+  border-radius: 2px; flex-shrink: 0;
+}
+h2.sec {
+  font-size:clamp(26px,3.2vw,44px);
+  font-weight:700; letter-spacing: -1.5px; line-height: 1.1;
+  margin-bottom: 14px;
+}
+.sec-sub {
+  font-size: 16px; color: var(--tm);
+  max-width: 560px; line-height: 1.75; margin-bottom: 0;
+}
+section { padding: 96px 48px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #d38d29, #975614);
+  border: none; border-radius: var(--r-btn);
+  font-size:16px; font-weight: 700; color: #fff;
+  cursor: pointer; text-decoration: none; font-family: inherit;
+  box-shadow: 0 0 24px rgba(211,141,41,0.32);
+  transition: all .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(211,141,41,0.50); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px;
+  background: var(--gs);
+  border: 1px solid var(--gb); border-radius: var(--r-btn);
+  font-size:16px; font-weight:700; color: var(--tm);
+  cursor: pointer; text-decoration: none; font-family: inherit;
+  backdrop-filter: blur(8px);
+  transition: all .2s;
+}
+.btn-ghost:hover { border-color: var(--pb); color: var(--pl); transform: translateY(-2px); }
+
+/* Image placeholder */
+.img-placeholder {
+  background: linear-gradient(145deg, #181a1b, var(--bg2));
+  border: 1px solid var(--gb); border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; position: relative; overflow: hidden;
+  color: var(--td);
+}
+.img-placeholder::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.img-placeholder span { position: relative; z-index: 1; opacity: .5; }
+
+/* ── Feature card click interaction ── */
+.feature-row {
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.feature-row.active {
+  background: rgba(211,141,41,.08);
+  border-color: rgba(211,141,41,.35);
+}
+.feature-row:hover:not(.active) {
+  background: rgba(255,255,255,.03);
+  border-color: rgba(255,255,255,.1);
+}
+.active-bar {
+  width: 3px; height: 0; background: var(--pp);
+  border-radius: 3px; transition: height .3s ease;
+  flex-shrink: 0; margin-right: 4px;
+}
+.feature-row.active .active-bar { height: 100%; }
+
+/* Crossfade image wrap */
+.feature-img-wrap {
+  position: relative; border-radius: 16px; overflow: hidden;
+}
+.feature-img-wrap .fi {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: opacity .55s ease;
+  opacity: 0;
+}
+.feature-img-wrap .fi.active { opacity: 1; }
+.feature-list { display: flex; flex-direction: column; }
+.feature-row {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gb);
+  transition: background .2s;
+  cursor: default;
+}
+.feature-row:first-child { border-top: 1px solid var(--gb); }
+.feature-row:hover .frow-icon { transform: translateX(4px); border-color: var(--pb); box-shadow: 0 0 14px rgba(211,141,41,.2); }
+.frow-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: var(--r-sm);
+  background: rgba(211,141,41,.08);
+  border: 1px solid var(--gb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  transition: all .2s;
+}
+.frow-body {}
+.frow-title { font-size: 16px; font-weight: 700; color: var(--tp); margin-bottom: 4px; }
+.frow-desc { font-size:14px; color: var(--tm); line-height: 1.65; }
+
+/* 2-col feature layout */
+.feat-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-top: 48px;
+}
+.feat-img-sticky { position: sticky; top: calc(var(--nav-h) + 20px); }
+
+/* ═══════════════════════════════
+   01 HERO
+═══════════════════════════════ */
+#hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 48px 100px;
+  background: linear-gradient(160deg, #0a0c0e 0%, var(--bg) 60%, #090a0a 100%);
+  overflow: hidden;
+  min-height:100vh;
+  display: flex; align-items: center;
+}
+#light-rays-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  z-index:0;
+  pointer-events:none;
+  display:block;
+}
+.hero-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(80px);
+  animation: orbDrift 9s ease-in-out infinite alternate;
+  z-index:1;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(211,141,41,.2) 0%, transparent 70%);
+  top: -100px; left: -80px;
+}
+.hero-orb-2 {
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(211,141,41,.15) 0%, transparent 70%);
+  bottom: -40px; right: 180px; animation-delay: -4.5s;
+}
+@keyframes orbDrift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(30px,22px) scale(1.07); }
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 60px; align-items: start;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--pb); border-radius: 100px;
+  font-size: 12px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--pl); margin-bottom: 24px;
+  background: rgba(211,141,41,.06);
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0; animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+#hero h1 {
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight:700; letter-spacing: -2.5px; line-height: 1.06;
+  margin-bottom: 20px;
+}
+.hero-sub { font-size:18px; color: var(--tm); max-width: 500px; line-height: 1.8; }
+.hero-icon {
+  width: 84px; height: 84px; border-radius: 18px;
+  background: rgba(211,141,41,0.10); border: 1px solid var(--pb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; flex-shrink: 0; margin-top: 10px;
+  box-shadow: 0 0 30px rgba(211,141,41,.15);
+}
+
+/* ═══════════════════════════════
+   02 RENTERS INTRO
+═══════════════════════════════ */
+#renters { background: var(--bg2); }
+.renters-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.renters-left h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight:700; letter-spacing: -1.5px; line-height: 1.1;
+  margin-bottom: 20px;
+}
+.renters-left p { font-size: 16px; color: var(--tm); line-height: 1.8; margin-bottom: 32px; }
+.renters-qr { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 24px; }
+.renters-qr img { width: 100px; height: 100px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.15); }
+.renters-qr-label { font-size:12px; color: var(--tm); text-transform: uppercase; letter-spacing: 0.08em; }
+.renters-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.app-btn-wrap {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: 12px;
+  cursor: pointer; text-decoration: none; transition: all .3s; font-family: inherit;
+}
+.app-ios {
+  background: linear-gradient(135deg, #d38d29, #975614);
+  border: none; color: #fff;
+  box-shadow: 0 0 24px rgba(211,141,41,0.32);
+}
+.app-ios:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(211,141,41,0.45); }
+.app-android {
+  background: var(--gs); border: 1px solid var(--gb); color: var(--tm);
+  backdrop-filter: blur(8px);
+}
+.app-android:hover { border-color: var(--pb); color: var(--pl); transform: translateY(-2px); }
+.app-icon { font-size: 22px; }
+.app-small { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; opacity: .7; }
+.app-big { font-size: 16px; font-weight: 700; }
+.renters-img { height: 380px; }
+
+/* ═══════════════════════════════
+   03 BUY
+═══════════════════════════════ */
+#buy { background: var(--bg); }
+
+/* ═══════════════════════════════
+   05 APP DOWNLOAD BANNER
+═══════════════════════════════ */
+#app-banner {
+  background: var(--bg);
+  padding: 80px max(48px, calc((100% - 1200px) / 2));
+}
+.app-banner-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 340px; gap: 2px; border-radius: 16px; overflow: hidden;
+}
+.app-banner-half {
+  padding: 72px 64px; width: 100%;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.app-banner-half.left {
+  background: linear-gradient(160deg, #100e08 0%, #1c160a 60%, #231a0c 100%);
+  border-right: 1px solid rgba(211,141,41,0.12);
+}
+.app-banner-half.right {
+  background: linear-gradient(160deg, #0a0908 0%, #130f09 60%, #1a1309 100%);
+}
+.app-banner-orb {
+  position: absolute; width: 280px; height: 280px;
+  border-radius: 50%; filter: blur(70px); pointer-events: none;
+  bottom: -80px;
+}
+.app-banner-half.left .app-banner-orb {
+  background: radial-gradient(circle, rgba(211,141,41,.35) 0%, transparent 70%);
+  right: -60px;
+}
+.app-banner-half.right .app-banner-orb {
+  background: radial-gradient(circle, rgba(211,141,41,.18) 0%, transparent 70%);
+  left: -60px;
+}
+.app-banner-half h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight:700; letter-spacing: -.5px; margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.app-banner-half p {
+  font-size: 16px; color: var(--tm); margin-bottom: 28px;
+  max-width: 380px; line-height: 1.75;
+  position: relative; z-index: 1;
+}
+.app-banner-btn { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════
+   06 SELL
+═══════════════════════════════ */
+#sell { background: var(--bg2); }
+
+/* ═══════════════════════════════
+   07 INVEST
+═══════════════════════════════ */
+#invest { background: var(--bg); }
+.invest-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start; margin-top: 48px;
+}
+.invest-left { display: flex; flex-direction: column; gap: 0; }
+.invest-img { height: 220px; margin-top: 24px; }
+.human-card {
+  position: sticky; top: calc(var(--nav-h) + 20px);
+  background: linear-gradient(145deg, rgba(211,141,41,.06), rgba(211,141,41,.04));
+  border: 1px solid var(--pb);
+  border-radius: var(--r);
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(211,141,41,0.10);
+}
+.human-tag {
+  display: inline-block; padding: 4px 12px;
+  background: rgba(211,141,41,0.10); border: 1px solid var(--pb);
+  border-radius: 100px; font-size: 12px; font-weight:700;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--pl);
+  margin-bottom: 16px;
+}
+.human-card h3 {
+  font-size: 20px; font-weight:700; letter-spacing: -.3px;
+  margin-bottom: 12px; line-height: 1.3;
+}
+.human-card p { font-size:14px; color: var(--tm); line-height: 1.7; margin-bottom: 20px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size:14px; color: var(--tm); line-height: 1.5;
+}
+.check-list li::before {
+  content: '✓';
+  color: var(--green); font-weight: 700; font-size:14px;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* ═══════════════════════════════
+   08 GROW
+═══════════════════════════════ */
+#grow { background: var(--bg2); }
+.grow-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start; margin-top: 48px;
+}
+.grow-right { display: flex; flex-direction: column; gap: 20px; }
+.grow-img { height: 260px; }
+.work-together-card {
+  background: linear-gradient(145deg, rgba(211,141,41,.05), rgba(211,141,41,.03));
+  border: 1px solid var(--pb);
+  border-radius: var(--r); padding: 28px;
+  box-shadow: 0 0 30px rgba(211,141,41,.08);
+}
+.work-together-card h4 {
+  font-size: 18px; font-weight:700; letter-spacing: -.2px;
+  margin-bottom: 10px;
+}
+.work-together-card p {
+  font-size:14px; color: var(--tm); line-height: 1.7; margin-bottom: 20px;
+}
+.work-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ═══════════════════════════════
+   09 FAQ
+═══════════════════════════════ */
+#faq { background: var(--bg); text-align: center; }
+.faq-header { margin-bottom: 48px; }
+.faq-header .overline { justify-content: center; }
+.faq-header .overline::before { display: none; }
+.faq-list {
+  max-width: 720px; margin: 0 auto; text-align: left;
+}
+.faq-item {
+  border-bottom: 1px solid var(--gb);
+  overflow: hidden;
+}
+.faq-item:first-child { border-top: 1px solid var(--gb); }
+.faq-q {
+  width: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  padding: 20px 4px;
+  background: transparent; border: none;
+  font-family: inherit; font-size: 16px; font-weight:700;
+  color: var(--tp); cursor: pointer; text-align: left;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--pl); }
+.faq-chevron {
+  font-size: 20px; color: var(--tm); flex-shrink: 0;
+  transition: transform .3s; display: inline-block;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-a {
+  font-size: 16px; color: var(--tm); line-height: 1.75;
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+  padding: 0 4px;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding: 0 4px 20px;
+}
+
+/* old footer block removed — using unified footer styles below */
+.footer-brand-desc { font-size: 16px; color: var(--tm); line-height: 1.7; max-width: 220px; }
+.footer-col-title {
+  font-family: var(--font-body); font-size:12px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand-primary); margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: 16px; color: var(--tm); text-decoration: none; transition: color .2s; }
+.footer-col ul a:hover { color: var(--tp); }
+.footer-divider { max-width: 1200px; margin: 0 auto 28px; height: 1px; background: var(--gb); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-help { display: flex; align-items: center; gap: 12px; }
+.help-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border: 1px solid var(--gb); border-radius: var(--r-btn);
+  background: var(--bg2); color: var(--tm); font-size:14px; font-weight:700;
+  cursor: pointer; transition: all .2s; font-family: inherit;
+}
+.help-btn:hover { border-color: var(--pb); color: var(--pl); }
+.footer-legal { display: flex; gap: 20px; align-items: center; }
+.footer-legal span { font-size:14px; color: var(--td); }
+.footer-legal a { font-size:14px; color: var(--tm); text-decoration: none; transition: color .2s; }
+.footer-legal a:hover { color: var(--tp); }
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  section { padding: 72px 32px; }
+  .feat-2col, .invest-2col, .grow-2col { gap: 40px; }
+  .renters-grid { gap: 40px; }
+  .footer-links { grid-template-columns: repeat(3,1fr); gap: 24px; }
+  footer { padding: 56px 32px 32px; }
+}
+@media (max-width: 900px) {
+  .app-banner-grid { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-icon { display: none; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  nav .nav-group:first-child { display: none; }
+  section { padding: 72px 24px; }
+  #hero { padding: calc(var(--nav-h) + 48px) 24px 80px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-icon { display: none; }
+  .renters-grid, .feat-2col, .invest-2col, .grow-2col { grid-template-columns: 1fr; }
+  .feat-img-sticky, .human-card { position: relative; top: auto; }
+  .app-banner-grid { grid-template-columns: 1fr; }
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px 24px 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+  /* ─ Footer col-1 help + app badges ─ */
+  .footer-help-center-label {
+    font-size:14px; font-weight: 700; color: var(--tp);
+    margin: 16px 0 10px;
+  }
+  .footer-app-btns { display: flex; flex-direction: column; gap: 8px; }
+  .footer-app-badge {
+    display: flex; align-items: center; gap: 9px;
+    padding: 8px 14px; border-radius: 10px;
+    border: 1px solid var(--gb); background: var(--gs);
+    text-decoration: none; transition: all .2s; cursor: pointer;
+  }
+  .footer-app-badge:hover { border-color: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(211,141,41,0.15); }
+  .fab-sm { font-size:10px; color: var(--tm); text-transform: uppercase; letter-spacing: .06em; display: block; }
+  .fab-lg { font-size: 12px; font-weight: 700; color: var(--tp); display: block; }
+
+
+  .footer-legal-only {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0 28px; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copyright { font-size: 10px; color: var(--td); }
+  .footer-legal-links { display: flex; gap: 20px; }
+  .footer-legal-links a { font-size: 12px; color: var(--tm); text-decoration: none; transition: color .2s; }
+  .footer-legal-links a:hover { color: var(--tp); }
+
+
+  
+
+
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--ink-darkest);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 72px 48px var(--space-xxl);
+}
+.footer-offices {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg); margin-bottom: var(--space-5xl);
+  max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+.footer-links {
+  max-width: 1200px; margin: 0 auto var(--space-4xl);
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-xl);
+}
+.office-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-l);
+  padding: 24px 28px; display: grid; grid-template-columns: 40px 1fr;
+  gap: 16px; align-items: start; transition: border-color 0.2s;
+}
+.office-card:hover { border-color: rgba(211,141,41,0.35); }
+.office-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-m);
+  background: rgba(211,141,41,0.12); border: 1px solid rgba(211,141,41,0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.office-name { font-family: var(--font-body); font-size: 14px; font-weight: var(--weight-bold); color: var(--sky-white); margin-bottom: var(--space-2xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.office-addr { font-size:14px; color: var(--ink-lightest); line-height: 1.65; }
+.office-tel { font-size:14px; color: var(--primary-light); margin-top: 4px; font-weight: var(--weight-medium); }
+
+
+.footer-brand-desc { font-size: 16px; color: var(--ink-lightest); line-height: 1.7; max-width: 220px; margin-top: var(--space-sm); }
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  font-size: 16px; color: var(--ink-lightest);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-col ul a:hover { color: var(--brand-primary); padding-left: 4px; }
+.footer-help-link { display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-md); padding: 10px 20px; border-radius: var(--radius-m); background: var(--brand-primary); color: var(--sky-white); font-size: 14px; font-weight: var(--weight-bold); text-decoration: none; transition: all 0.2s; }
+.footer-help-link:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(211,141,41,0.3); }
+.footer-help-label { font-size:12px; font-weight: var(--weight-bold); color: var(--brand-primary); margin: 0 0 var(--space-lg); text-transform: uppercase; letter-spacing: 0.12em; padding-bottom: var(--space-sm); border-bottom: 1px solid rgba(211,141,41,0.2); display: inline-block; }
+.footer-app-btns { display: flex; flex-direction: column; gap: var(--space-xs); }
+.footer-app-badge {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: 8px var(--space-md); border-radius: var(--radius-m);
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  text-decoration: none; transition: all 0.2s; width: 162px;
+}
+
+.fab-sm { font-size:10px; color: var(--ink-lightest); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+.fab-lg { font-size: 12px; font-weight: var(--weight-bold); color: var(--sky-white); display: block; }
+
+.footer-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: var(--space-xl); }
+.footer-legal-only {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+.footer-copyright { font-size: 10px; color: var(--ink-lightest); }
+.footer-legal-links { display: flex; gap: var(--space-xl); }
+.footer-legal-links a { font-size: 12px; color: var(--ink-lightest); text-decoration: none; transition: color 0.2s; }
+.footer-legal-links a:hover { color: var(--sky-white); }
+
+@media (max-width: 768px) {
+  .footer-offices { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px var(--space-xl) var(--space-xl); }
+  .footer-legal-only { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Zeno DS: font overrides ── */
+body { font-family:var(--font-body)!important; }
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
+a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
+
+
+/* ═══ AGENTS PAGE ═══ */
+#ag-hero{position:relative;padding:calc(var(--nav-h) + 96px) 48px 96px;background:linear-gradient(160deg,#0a0c0e 0%,var(--bg) 60%,#090a0a 100%);overflow:hidden;}
+.ag-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;}
+#ag-hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:700;letter-spacing:-2.2px;line-height:1.08;margin-bottom:20px;}
+#ag-hero h1 em{font-style:normal;background:linear-gradient(135deg,#f1cb7c,#d38d29);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ag-hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.ag-hero-note{font-size:14px;color:var(--td);margin-top:16px;}
+.ag-hero-vis{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--gb);min-height:400px;box-shadow:0 30px 80px rgba(0,0,0,.45);}
+.ag-hero-vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ag-hero-vis::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(9,10,10,.75),transparent 60%),radial-gradient(circle at 75% 20%,rgba(211,141,41,.18),transparent 62%);}
+.ag-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;padding-top:40px;border-top:1px solid var(--gb);position:relative;z-index:2;max-width:1200px;margin-left:auto;margin-right:auto;}
+.ag-stat-num{font-size:36px;font-weight:700;color:var(--pl);letter-spacing:-1.4px;line-height:1;font-family:var(--font-display);}
+.ag-stat-label{font-size:14px;color:var(--tm);margin-top:10px;line-height:1.55;}
+#ag-join{background:var(--bg2);}
+.ag-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+.ag-step{background:var(--bg);border:1px solid var(--gb);border-radius:var(--r);padding:28px;transition:all .3s;}
+.ag-step:hover{transform:translateY(-3px);border-color:var(--pb);box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.ag-step-n{width:34px;height:34px;border-radius:50%;background:rgba(211,141,41,.12);border:1px solid var(--pb);color:var(--pl);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin-bottom:18px;}
+.ag-step-title{font-size:18px;font-weight:700;color:var(--tp);margin-bottom:8px;}
+.ag-step-desc{font-size:14px;color:var(--tm);line-height:1.7;}
+.ag-req{margin-top:48px;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;background:var(--bg);border:1px solid var(--gb);border-radius:var(--r);padding:36px;}
+.ag-req-title{font-size:20px;font-weight:700;letter-spacing:-.4px;margin-bottom:10px;font-family:var(--font-display);}
+.ag-req-sub{font-size:16px;color:var(--tm);line-height:1.75;}
+.ag-req-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+.ag-req-item{display:flex;gap:10px;font-size:16px;color:var(--tp);line-height:1.6;}
+.ag-req-item span{color:var(--pl);flex-shrink:0;font-weight:700;}
+.ag-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.ag-benefit{background:var(--bg2);border:1px solid var(--gb);border-radius:var(--r);padding:28px;transition:all .3s;}
+.ag-benefit:hover{transform:translateY(-3px);border-color:var(--pb);box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.ag-benefit-icon{width:44px;height:44px;border-radius:var(--r-sm);background:rgba(211,141,41,.08);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;}
+.ag-benefit-title{font-size:18px;font-weight:700;margin-bottom:8px;}
+.ag-benefit-desc{font-size:14px;color:var(--tm);line-height:1.7;}
+#ag-tiers{background:var(--bg2);}
+.ag-tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.ag-tier{background:var(--bg);border:1px solid var(--gb);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:18px;}
+.ag-tier.featured{border-color:var(--pb);box-shadow:0 0 40px rgba(211,141,41,.10);}
+.ag-tier-badge{align-self:flex-start;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(211,141,41,.12);color:var(--pl);border:1px solid var(--pb);}
+.ag-tier-name{font-size:22px;font-weight:700;letter-spacing:-.5px;font-family:var(--font-display);}
+.ag-tier-meta{font-size:14px;color:var(--tm);line-height:1.7;}
+.ag-tier-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+.ag-tier-list li{font-size:14px;color:var(--tp);display:flex;gap:10px;line-height:1.6;}
+.ag-tier-list li::before{content:'✓';color:var(--pl);font-weight:700;flex-shrink:0;}
+.ag-rules{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
+.ag-rule{display:flex;gap:18px;background:var(--bg2);border:1px solid var(--gb);border-radius:var(--r);padding:24px 26px;}
+.ag-rule-n{font-size:14px;font-weight:700;color:var(--pl);letter-spacing:.08em;flex-shrink:0;padding-top:2px;}
+.ag-rule-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.ag-rule-desc{font-size:14px;color:var(--tm);line-height:1.7;}
+.ag-notice{margin-top:24px;background:rgba(211,141,41,.06);border:1px solid var(--pb);border-radius:var(--r-sm);padding:20px 24px;font-size:14px;color:var(--tm);line-height:1.75;}
+.ag-notice strong{color:var(--tp);}
+#ag-cta{background:var(--bg2);text-align:center;}
+.ag-cta-inner{max-width:680px;margin:0 auto;}
+.ag-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+@media (max-width:1024px){.ag-hero-inner{grid-template-columns:1fr;}.ag-steps,.ag-benefits,.ag-tier-grid{grid-template-columns:1fr 1fr;}.ag-stats{grid-template-columns:1fr 1fr;gap:32px;}.ag-req{grid-template-columns:1fr;gap:28px;}}
+@media (max-width:768px){section{padding:72px 24px;}#ag-hero{padding:calc(var(--nav-h) + 64px) 24px 72px;}.ag-steps,.ag-benefits,.ag-tier-grid,.ag-rules,.ag-req-list{grid-template-columns:1fr;}}
+
+/* ═══ DEVELOPERS PAGE ═══ */
+.dp-form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;margin-top:48px;align-items:start;}
+.dp-form-aside-title{font-size:20px;font-weight:700;letter-spacing:-.4px;margin-bottom:12px;font-family:var(--font-display);}
+.dp-form-aside p{font-size:16px;color:var(--tm);line-height:1.8;margin-bottom:20px;}
+.dp-aside-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.dp-aside-list li{font-size:14px;color:var(--tp);display:flex;gap:10px;line-height:1.6;}
+.dp-aside-list li::before{content:'✓';color:var(--pl);font-weight:700;flex-shrink:0;}
+.dp-form{background:var(--bg);border:1px solid var(--gb);border-radius:var(--r);padding:36px;}
+.dp-grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.dp-field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.dp-field label{font-size:14px;font-weight:700;color:var(--tp);letter-spacing:.01em;}
+.dp-field input,.dp-field select,.dp-field textarea{width:100%;padding:12px 14px;background:var(--bg2);border:1px solid var(--gb);border-radius:var(--r-btn);color:var(--tp);font-family:inherit;font-size:16px;transition:border-color .2s,background .2s;}
+.dp-field input::placeholder,.dp-field textarea::placeholder{color:var(--td);}
+.dp-field input:focus,.dp-field select:focus,.dp-field textarea:focus{outline:none;border-color:var(--pp);background:var(--bg3);}
+.dp-field textarea{resize:vertical;min-height:110px;line-height:1.7;}
+.dp-check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--tm);line-height:1.65;margin-bottom:22px;}
+.dp-check input{width:16px;height:16px;margin-top:2px;accent-color:var(--pp);flex-shrink:0;}
+.dp-form-note{font-size:14px;color:var(--td);margin-top:14px;line-height:1.6;}
+.dp-success{display:none;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);border-radius:var(--r-sm);padding:18px 20px;font-size:14px;color:#4ADE80;line-height:1.7;margin-top:18px;}
+.dp-success.show{display:block;}
+@media (max-width:1024px){.dp-form-wrap{grid-template-columns:1fr;gap:32px;}}
+@media (max-width:768px){.dp-grid2{grid-template-columns:1fr;}.dp-form{padding:24px;}}
+.lang-dropdown{position:relative;}.lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:7px 14px;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--tm,#9a9488);cursor:pointer;transition:all .2s;font-family:inherit;}.lang-trigger:hover{color:var(--tp,#fff);border-color:var(--pb,#d38d29);}.lang-trigger svg{width:9px;height:9px;transition:transform .2s;}.lang-dropdown.open .lang-trigger svg{transform:rotate(180deg);}.lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--bg2,#12100d);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:130px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s;box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:200;}.lang-dropdown.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}.lang-menu button{background:none;border:none;text-align:left;padding:9px 12px;border-radius:7px;font-size:14px;color:var(--tm,#9a9488);cursor:pointer;transition:all .15s;font-family:inherit;width:100%;}.lang-menu button:hover{background:rgba(211,141,41,.08);color:var(--tp,#fff);}.lang-menu button.active{color:var(--pl,#d38d29);font-weight:700;}</style>
+<style>.nav-cta,.nav-cta-btn{white-space:nowrap}.nav-right-group{gap:14px}.lang-trigger{padding:6px 10px}</style><script src="assets/i18n.js" defer></script><script src="assets/nav-responsive.js" defer></script><style id="zeno-preloader-css">
+html.pl-lock,html.pl-lock body{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999;background:#090a0a;clip-path:inset(0 0 0 0);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+#preloader::before{content:'';position:absolute;top:44%;left:50%;width:min(900px,120vw);height:min(900px,120vw);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(211,141,41,.16) 0%,transparent 62%);pointer-events:none}
+.pl-logo{align-self:center;justify-self:center;position:relative;z-index:2}
+.pl-svg{width:clamp(210px,28vw,330px);height:auto;display:block;overflow:visible}
+.pl-flame{transform-box:fill-box;transform-origin:center;transform:scale(.18);opacity:0}
+.pl-word{clip-path:inset(0 100% 0 0)}
+.pl-foot{position:relative;z-index:2;display:flex;justify-content:flex-end;align-items:flex-end;padding:0 clamp(24px,5vw,64px) clamp(28px,5vh,56px)}
+.pl-eyebrow,.pl-slogan{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);white-space:nowrap;opacity:0}
+.pl-count{font-family:var(--font-display);font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.04em;line-height:.9;color:#d38d29;font-variant-numeric:tabular-nums;opacity:0;justify-self:end}
+.pl-rule{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1);z-index:3}
+.pl-rule span{display:block;height:100%;background:#d38d29;transform:scaleX(0);transform-origin:left}
+#preloader.pl-run .pl-flame{animation:plFlame .9s cubic-bezier(.16,1,.3,1) both}
+#preloader.pl-run .pl-word{animation:plWipe .75s cubic-bezier(.22,1,.36,1) .35s both}
+#preloader.pl-run .pl-eyebrow{animation:plUp .5s ease .3s both}
+#preloader.pl-run .pl-slogan{animation:plUp .5s ease .5s both}
+#preloader.pl-run .pl-count{animation:plUp .5s cubic-bezier(.16,1,.3,1) .35s both}
+#preloader.pl-run .pl-rule span{animation:plBar 1.75s cubic-bezier(.33,1,.68,1) .35s both}
+#preloader.pl-run .pl-logo{animation:plLift .34s cubic-bezier(.65,0,.35,1) 2.1s both}
+#preloader.pl-run .pl-foot{animation:plLift .3s cubic-bezier(.65,0,.35,1) 2.06s both}
+#preloader.pl-run{animation:plPanel .38s cubic-bezier(.76,0,.24,1) 2.32s both}
+@keyframes plFlame{from{transform:scale(.18);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes plWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes plUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes plBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes plLift{from{transform:translateY(0);opacity:1}to{transform:translateY(-52px);opacity:0}}
+@keyframes plPanel{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+
+</style>
+<link rel="stylesheet" href="assets/a11y.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- ══ PRELOADER ══ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pl-logo">
+    <svg class="pl-svg" viewBox="14 18 264 94" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="pl-flame"><path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="#fff"/></g>
+      <g class="pl-word"><path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="#fff"/><path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="#fff"/><path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="#fff"/><path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="#fff"/><path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="#fff"/><path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="#fff"/><path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="#fff"/><path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="#fff"/><path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="#fff"/><path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="#fff"/><path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="#fff"/><path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="#fff"/></g>
+    </svg>
+  </div>
+  <div class="pl-foot">
+    <span class="pl-count">000</span>
+  </div>
+  <div class="pl-rule"><span></span></div>
+</div>
+<script>
+(function(){
+  var pl=document.getElementById('preloader');if(!pl)return;
+  var root=document.documentElement;root.classList.add('pl-lock');
+  var count=pl.querySelector('.pl-count');
+  var TOTAL=2700,CS=350,CD=1750;
+  function finish(){root.classList.remove('pl-lock');pl.remove();}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){requestAnimationFrame(finish);return;}
+  pl.classList.add('pl-run');
+  var t0=performance.now();
+  (function tick(now){
+    var p=Math.min(1,Math.max(0,((now||performance.now())-t0-CS)/CD));
+    var e=1-Math.pow(1-p,3);
+    count.textContent=String(Math.round(e*100)).padStart(3,'0');
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(finish,TOTAL);
+})();
+</script>
+
+
+<!-- ══════════════════════════
+     01 NAVBAR
+══════════════════════════ -->
+<nav id="navbar" aria-label="Primary" style="opacity: 1">
+  <!-- Left: About Us · Products · Newsroom -->
+  <ul class="nav-left">
+    <li><a href="zeno-about.html">ABOUT US</a></li>
+    <li><a href="zeno-platform.html">PLATFORM</a></li>
+    <li><a href="zeno-newsroom.html">NEWSROOM</a></li>
+  </ul>
+
+  <!-- Center: Logo -->
+  <div class="nav-center">
+    <a href="zeno-landing.html" class="nav-logo-link" aria-label="ZENO Property home">
+      <svg style="display:block;" height="64" viewBox="0 0 290 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M95.02 53.6104L99.28 57.8704C103.52 62.1104 103.52 68.9804 99.28 73.2204L85.39 87.1104C83.32 89.1804 79.83 88.6304 78.5 86.0304L76.47 82.0804C74.61 78.4604 74.88 74.1204 77.16 70.7604L88.39 54.2404C89.91 52.0004 93.1 51.7004 95.02 53.6104ZM73.58 64.3404L84.59 48.1404C85.76 46.4304 85.54 44.1304 84.07 42.6604L67.77 26.3604C63.49 22.0804 56.56 22.0804 52.28 26.3604L29.69 48.9504C27.53 51.1104 28.24 54.7804 31.05 55.9804L60.04 68.3304C64.92 70.4104 70.6 68.7404 73.58 64.3504V64.3404ZM63.57 76.9704L23.66 59.9704C21.36 58.9904 18.72 60.2404 18.01 62.6404C17.02 65.9704 17.67 70.4004 21.53 74.0004L52.32 104.79C56.57 109.04 63.47 109.04 67.72 104.79L74.1 98.4104C75.43 97.0804 75.75 95.0504 74.89 93.3804L69.1 82.1104C67.91 79.8004 65.96 77.9904 63.58 76.9704H63.57Z" fill="white"></path>
+<path d="M148.65 54.6802V46.9902H115.92V56.7002H132.34L115.38 76.4302V84.1302H149.5V74.4202H131.7L148.65 54.6802Z" fill="white"></path>
+<path d="M165.47 69.8002H181.17V60.7802H165.47V56.4302H183.35V46.9902H153.16V84.1302H184.04V74.6802H165.47V69.8002Z" fill="white"></path>
+<path d="M213.27 63.8802L199.16 46.9902H188.86V84.1302H201.07V67.2402L215.18 84.1302H225.47V46.9902H213.27V63.8802Z" fill="white"></path>
+<path d="M270.38 57.7904C269.34 55.4404 267.88 53.3904 266.01 51.6404C264.13 49.8904 261.92 48.5404 259.38 47.5804C256.83 46.6204 254.04 46.1504 251 46.1504C247.96 46.1504 245.21 46.6204 242.65 47.5804C240.09 48.5304 237.87 49.8904 235.99 51.6404C234.11 53.3904 232.65 55.4404 231.61 57.7904C230.57 60.1404 230.04 62.7304 230.04 65.5604C230.04 68.3904 230.56 70.9404 231.61 73.3104C232.65 75.6804 234.11 77.7404 235.99 79.4904C237.86 81.2404 240.08 82.5904 242.65 83.5504C245.22 84.5104 248.02 84.9804 251.06 84.9804C254.1 84.9804 256.85 84.5004 259.39 83.5504C261.93 82.6004 264.14 81.2404 266.02 79.4904C267.89 77.7404 269.35 75.6804 270.39 73.3104C271.43 70.9404 271.96 68.3604 271.96 65.5604C271.96 62.7604 271.44 60.1404 270.39 57.7904H270.38ZM258.68 69.4604C258.26 70.6104 257.66 71.5804 256.9 72.3804C256.14 73.1804 255.26 73.7904 254.25 74.2104C253.24 74.6304 252.15 74.8504 250.99 74.8504C249.83 74.8504 248.74 74.6304 247.73 74.2104C246.72 73.7904 245.84 73.1804 245.08 72.3804C244.32 71.5904 243.73 70.6104 243.3 69.4604C242.88 68.3104 242.67 67.0104 242.67 65.5604C242.67 64.1104 242.88 62.8104 243.3 61.6604C243.73 60.5104 244.32 59.5404 245.08 58.7404C245.84 57.9504 246.72 57.3404 247.73 56.9104C248.74 56.4904 249.83 56.2804 250.99 56.2804C252.15 56.2804 253.24 56.4904 254.25 56.9104C255.26 57.3404 256.14 57.9504 256.9 58.7404C257.66 59.5404 258.26 60.5104 258.68 61.6604C259.1 62.8104 259.31 64.1104 259.31 65.5604C259.31 67.0104 259.1 68.3104 258.68 69.4604Z" fill="white"></path>
+<path d="M120.31 88.6604C119.89 88.4604 119.38 88.3604 118.78 88.3604H115.39V96.7504H116.5V93.4404H118.78C119.38 93.4404 119.89 93.3404 120.31 93.1404C120.73 92.9404 121.05 92.6504 121.27 92.2704C121.49 91.8904 121.6 91.4304 121.6 90.8904C121.6 90.3504 121.49 89.8904 121.27 89.5204C121.05 89.1404 120.73 88.8604 120.31 88.6604ZM120.03 92.1304C119.72 92.4104 119.25 92.5504 118.63 92.5504H116.49V89.2704H118.63C119.25 89.2704 119.71 89.4103 120.03 89.6803C120.34 89.9503 120.5 90.3603 120.5 90.9003C120.5 91.4403 120.34 91.8504 120.03 92.1304Z" fill="white"></path>
+<path d="M131.13 93.2903C131.03 93.2203 130.91 93.1704 130.79 93.1304C131.02 93.0804 131.24 93.0203 131.44 92.9303C131.86 92.7403 132.18 92.4604 132.4 92.1004C132.62 91.7404 132.73 91.3004 132.73 90.8004C132.73 90.0204 132.49 89.4204 132 89.0004C131.51 88.5804 130.82 88.3604 129.91 88.3604H126.52V96.7504H127.63V93.2504H129.06C129.31 93.2504 129.52 93.2704 129.7 93.3204C129.88 93.3604 130.04 93.4403 130.18 93.5603C130.32 93.6803 130.44 93.8504 130.55 94.0704L132 96.7504H133.23L131.75 94.0504C131.57 93.7004 131.36 93.4503 131.13 93.2903ZM127.64 92.4003V89.2704H129.75C130.38 89.2704 130.86 89.4004 131.18 89.6604C131.5 89.9204 131.66 90.3104 131.66 90.8304C131.66 91.3504 131.5 91.7404 131.18 92.0004C130.86 92.2704 130.39 92.4003 129.75 92.4003H127.64Z" fill="white"></path>
+<path d="M144.46 89.41C144.12 89.04 143.71 88.75 143.23 88.55C142.75 88.35 142.22 88.25 141.63 88.25C141.04 88.25 140.5 88.35 140.02 88.55C139.54 88.75 139.13 89.04 138.79 89.41C138.45 89.79 138.19 90.24 138.01 90.77C137.83 91.3 137.74 91.89 137.74 92.55C137.74 93.21 137.83 93.8 138.01 94.33C138.19 94.86 138.45 95.31 138.8 95.69C139.14 96.07 139.55 96.36 140.03 96.56C140.51 96.76 141.04 96.86 141.64 96.86C142.24 96.86 142.77 96.76 143.24 96.56C143.72 96.36 144.12 96.07 144.46 95.69C144.8 95.31 145.06 94.85 145.24 94.32C145.42 93.79 145.51 93.19 145.51 92.54C145.51 91.89 145.42 91.29 145.24 90.76C145.06 90.23 144.8 89.78 144.46 89.41ZM144.02 94.35C143.8 94.85 143.49 95.23 143.09 95.49C142.69 95.75 142.2 95.88 141.63 95.88C141.06 95.88 140.57 95.75 140.16 95.49C139.75 95.23 139.44 94.85 139.23 94.35C139.02 93.85 138.91 93.25 138.91 92.55C138.91 91.85 139.02 91.24 139.23 90.75C139.44 90.25 139.76 89.88 140.16 89.62C140.57 89.36 141.06 89.23 141.63 89.23C142.2 89.23 142.7 89.36 143.1 89.62C143.5 89.88 143.81 90.25 144.03 90.75C144.24 91.25 144.35 91.85 144.35 92.55C144.35 93.25 144.24 93.85 144.02 94.35Z" fill="white"></path>
+<path d="M155.71 88.6604C155.29 88.4604 154.78 88.3604 154.18 88.3604H150.79V96.7504H151.9V93.4404H154.18C154.78 93.4404 155.29 93.3404 155.71 93.1404C156.13 92.9404 156.45 92.6504 156.67 92.2704C156.89 91.8904 157 91.4304 157 90.8904C157 90.3504 156.89 89.8904 156.67 89.5204C156.45 89.1404 156.13 88.8604 155.71 88.6604ZM155.43 92.1304C155.12 92.4104 154.65 92.5504 154.03 92.5504H151.89V89.2704H154.03C154.65 89.2704 155.11 89.4103 155.43 89.6803C155.74 89.9503 155.9 90.3603 155.9 90.9003C155.9 91.4403 155.74 91.8504 155.43 92.1304Z" fill="white"></path>
+<path d="M161.93 96.7501H167.28V95.8501H163V92.9501H167.03V92.0401H163V89.2701H167.28V88.3701H161.93V96.7501Z" fill="white"></path>
+<path d="M177.069 93.2903C176.969 93.2203 176.849 93.1704 176.729 93.1304C176.959 93.0804 177.179 93.0203 177.379 92.9303C177.799 92.7403 178.119 92.4604 178.339 92.1004C178.559 91.7404 178.669 91.3004 178.669 90.8004C178.669 90.0204 178.429 89.4204 177.939 89.0004C177.449 88.5804 176.759 88.3604 175.849 88.3604H172.459V96.7504H173.569V93.2504H174.999C175.249 93.2504 175.459 93.2704 175.639 93.3204C175.819 93.3604 175.979 93.4403 176.119 93.5603C176.259 93.6803 176.379 93.8504 176.489 94.0704L177.939 96.7504H179.169L177.689 94.0504C177.509 93.7004 177.299 93.4503 177.069 93.2903ZM173.569 92.4003V89.2704H175.679C176.309 89.2704 176.789 89.4004 177.109 89.6604C177.429 89.9204 177.589 90.3104 177.589 90.8304C177.589 91.3504 177.429 91.7404 177.109 92.0004C176.789 92.2604 176.319 92.4003 175.679 92.4003H173.569Z" fill="white"></path>
+<path d="M182.84 89.3101H185.85V96.7501H186.96V89.3101H189.97V88.3701H182.84V89.3101Z" fill="white"></path>
+<path d="M201.03 88.3701H199.8L197.3 91.8301L194.8 88.3701H193.51L196.72 92.8201V96.7501H197.83V92.8201L201.03 88.3701Z" fill="white"></path>
+</svg>
+    </a>
+  </div>
+
+  <!-- Right: Careers · Contact · Get Zeno App -->
+  <ul class="nav-right-group">
+    <li><a href="zeno-careers.html" class="nav-link">CAREERS</a></li>
+    <li><a href="zeno-contact.html" class="nav-link">CONTACT</a></li>
+    <li><a href="#" class="nav-cta-btn">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+
+<!-- ══════════════════════════════════
+     01 HERO
+══════════════════════════════════ -->
+<section id="ag-hero" data-screen-label="Developers — Hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="ag-hero-inner">
+    <div class="reveal">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Zeno for developers</div>
+      <h1>Put your project in front of <em>qualified demand</em>.</h1>
+      <p class="hero-sub">Zeno gives property developers in Thailand, Myanmar, and wider ASEAN a direct line to verified local and cross-border buyers, with project pages, buyer intelligence, and a sales team that answers.</p>
+      <div class="ag-hero-cta">
+        <a href="#dp-form" class="btn-primary">Submit your project</a>
+        <a href="#dp-exclusive" class="btn-ghost">Exclusive partnership</a>
+      </div>
+      <div class="ag-hero-note">Project reviews are completed within ten working days.</div>
+    </div>
+    <div class="ag-hero-vis reveal d2">
+      <img src="uploads/image 2-df10015e.png" alt="Modern villa with pool in daylight">
+    </div>
+  </div>
+  <div class="ag-stats">
+    <div class="reveal d1"><div class="ag-stat-num">6</div><div class="ag-stat-label">Markets live or committed across ASEAN</div></div>
+    <div class="reveal d2"><div class="ag-stat-num">12</div><div class="ag-stat-label">Cities with verified agent coverage</div></div>
+    <div class="reveal d3"><div class="ag-stat-num">4</div><div class="ag-stat-label">Buyer languages supported end to end</div></div>
+    <div class="reveal d4"><div class="ag-stat-num">0</div><div class="ag-stat-label">Listing fee to be reviewed and onboarded</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     02 BENEFITS
+══════════════════════════════════ -->
+<section id="dp-benefits" data-screen-label="Developers — Benefits">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Why partner with Zeno</div>
+      <h2 class="sec">Benefits of being a Zeno developer</h2>
+      <p class="sec-sub">Not a listings board. A demand channel with the data, the agents, and the buyer trust already in place.</p>
+    </div>
+    <div class="ag-benefits">
+      <div class="ag-benefit reveal d1">
+        <div class="ag-benefit-icon">🏗️</div>
+        <div class="ag-benefit-title">Dedicated project pages</div>
+        <div class="ag-benefit-desc">Unit mix, floor plans, phasing, payment terms, and progress updates on a page built for your development rather than squeezed into a single listing template.</div>
+      </div>
+      <div class="ag-benefit reveal d2">
+        <div class="ag-benefit-icon">🌏</div>
+        <div class="ag-benefit-title">Cross-border buyer reach</div>
+        <div class="ag-benefit-desc">Foreign buyers searching Bangkok, Phuket, and Yangon reach your project in their own language, with ownership rules and fees explained up front.</div>
+      </div>
+      <div class="ag-benefit reveal d3">
+        <div class="ag-benefit-icon">🎯</div>
+        <div class="ag-benefit-title">Intent-matched enquiries</div>
+        <div class="ag-benefit-desc">Enquiries arrive with budget, timeline, financing intent, and viewing preference attached, routed to your sales team or a verified Zeno agent.</div>
+      </div>
+      <div class="ag-benefit reveal d1">
+        <div class="ag-benefit-icon">📊</div>
+        <div class="ag-benefit-title">Pricing and absorption data</div>
+        <div class="ag-benefit-desc">Comparable pricing, search demand by area and unit type, and absorption trends, so launch pricing and phase releases are set on evidence.</div>
+      </div>
+      <div class="ag-benefit reveal d2">
+        <div class="ag-benefit-icon">📣</div>
+        <div class="ag-benefit-title">Launch campaign support</div>
+        <div class="ag-benefit-desc">Featured placement, homepage and newsroom coverage, targeted buyer alerts, and photography or CGI review before your launch goes live.</div>
+      </div>
+      <div class="ag-benefit reveal d3">
+        <div class="ag-benefit-icon">🤝</div>
+        <div class="ag-benefit-title">Verified agent network</div>
+        <div class="ag-benefit-desc">Access to Preferred and Elite tier agents in your city for showroom coverage, viewings, and closing support without building a channel from scratch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     03 EXCLUSIVE PARTNERSHIP
+══════════════════════════════════ -->
+<section id="dp-exclusive" style="background:var(--bg2);" data-screen-label="Developers — Exclusive">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Exclusive partnership</div>
+      <h2 class="sec">Becoming an exclusive Zeno developer</h2>
+      <p class="sec-sub">Exclusive partners give Zeno first digital release on a project. In return the project gets our full launch weight behind it.</p>
+    </div>
+    <div class="ag-steps">
+      <div class="ag-step reveal d1">
+        <div class="ag-step-n">1</div>
+        <div class="ag-step-title">Submit the project</div>
+        <div class="ag-step-desc">Send company details, the development, unit mix, expected launch window, and target buyer profile through the form below.</div>
+      </div>
+      <div class="ag-step reveal d2">
+        <div class="ag-step-n">2</div>
+        <div class="ag-step-title">Due diligence</div>
+        <div class="ag-step-desc">We verify company registration, land title and construction permits, past delivery record, and escrow or payment protection arrangements.</div>
+      </div>
+      <div class="ag-step reveal d3">
+        <div class="ag-step-n">3</div>
+        <div class="ag-step-title">Commercial agreement</div>
+        <div class="ag-step-desc">We agree exclusivity scope and term, digital release window, commission structure, and the launch campaign plan in writing.</div>
+      </div>
+      <div class="ag-step reveal d4">
+        <div class="ag-step-n">4</div>
+        <div class="ag-step-title">Launch</div>
+        <div class="ag-step-desc">Project page build, photography and floor plan production, agent briefing, buyer alerts, and a coordinated release date.</div>
+      </div>
+    </div>
+    <div class="ag-req reveal">
+      <div>
+        <div class="ag-req-title">What exclusivity gives you</div>
+        <div class="ag-req-sub">Exclusive projects are limited per city and per quarter so each launch gets real attention. Requirements are the same standards we hold every listing to.</div>
+      </div>
+      <div class="ag-req-list">
+        <div class="ag-req-item"><span>·</span>Homepage and newsroom launch feature</div>
+        <div class="ag-req-item"><span>·</span>Priority placement in search for your area</div>
+        <div class="ag-req-item"><span>·</span>Named partnership manager</div>
+        <div class="ag-req-item"><span>·</span>Buyer alert campaign at release</div>
+        <div class="ag-req-item"><span>·</span>Elite agent briefing and showroom coverage</div>
+        <div class="ag-req-item"><span>·</span>Quarterly demand and pricing report</div>
+      </div>
+    </div>
+    <div class="ag-notice reveal">
+      <strong>What we require.</strong> Valid company registration and construction permits, clear land title, verified completion record or escrow protection for off-plan sales, accurate pricing and availability kept current, and disclosure of all buyer-facing fees. Projects that cannot evidence these are not published.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     04 DEVELOPER FORM
+══════════════════════════════════ -->
+<section id="dp-form" data-screen-label="Developers — Form">
+  <div class="inner">
+    <div class="reveal">
+      <div class="overline">Developer enquiry</div>
+      <h2 class="sec">Submit your development</h2>
+      <p class="sec-sub">Tell us about the project. Our partnerships team responds within ten working days.</p>
+    </div>
+    <div class="dp-form-wrap">
+      <div class="dp-form-aside reveal d1">
+        <div class="dp-form-aside-title">What happens next</div>
+        <p>A partnerships manager reviews your submission, then arranges a call to walk through the project, timeline, and commercial terms.</p>
+        <ul class="dp-aside-list">
+          <li>Initial review within ten working days</li>
+          <li>Introductory call with a partnerships manager</li>
+          <li>Document request for due diligence</li>
+          <li>Written proposal covering listing or exclusivity</li>
+        </ul>
+      </div>
+      <form class="dp-form reveal d2" id="developer-form" onsubmit="return submitDeveloperForm(event)">
+        <div class="dp-grid2">
+          <div class="dp-field"><label for="dp-company">Company name</label><input id="dp-company" name="company" type="text" placeholder="Registered company name" required></div>
+          <div class="dp-field"><label for="dp-contact">Contact name</label><input id="dp-contact" name="contact" type="text" placeholder="Full name" required></div>
+        </div>
+        <div class="dp-grid2">
+          <div class="dp-field"><label for="dp-email">Work email</label><input id="dp-email" name="email" type="email" placeholder="name@company.com" required></div>
+          <div class="dp-field"><label for="dp-phone">Phone</label><input id="dp-phone" name="phone" type="tel" placeholder="+66 or +95 number" required></div>
+        </div>
+        <div class="dp-grid2">
+          <div class="dp-field">
+            <label for="dp-market">Market</label>
+            <select id="dp-market" name="market" required>
+              <option value="">Select a market</option>
+              <option>Thailand</option>
+              <option>Myanmar</option>
+              <option>Singapore</option>
+              <option>Vietnam</option>
+              <option>Other ASEAN</option>
+            </select>
+          </div>
+          <div class="dp-field"><label for="dp-city">City or area</label><input id="dp-city" name="city" type="text" placeholder="Bangkok, Yangon, Phuket" required></div>
+        </div>
+        <div class="dp-field"><label for="dp-project">Project name</label><input id="dp-project" name="project" type="text" placeholder="Development name" required></div>
+        <div class="dp-grid2">
+          <div class="dp-field">
+            <label for="dp-type">Project type</label>
+            <select id="dp-type" name="type" required>
+              <option value="">Select a type</option>
+              <option>Condominium</option>
+              <option>Landed housing</option>
+              <option>Mixed use</option>
+              <option>Serviced apartments</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div class="dp-field"><label for="dp-units">Total units</label><input id="dp-units" name="units" type="number" min="1" placeholder="e.g. 240" required></div>
+        </div>
+        <div class="dp-grid2">
+          <div class="dp-field">
+            <label for="dp-stage">Current stage</label>
+            <select id="dp-stage" name="stage" required>
+              <option value="">Select a stage</option>
+              <option>Planning</option>
+              <option>Pre-launch</option>
+              <option>Under construction</option>
+              <option>Completed</option>
+            </select>
+          </div>
+          <div class="dp-field">
+            <label for="dp-interest">Partnership interest</label>
+            <select id="dp-interest" name="interest" required>
+              <option value="">Select an option</option>
+              <option>Standard project listing</option>
+              <option>Exclusive partnership</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="dp-field"><label for="dp-notes">Project details</label><textarea id="dp-notes" name="notes" placeholder="Price range, launch window, target buyers, and anything else we should know."></textarea></div>
+        <label class="dp-check"><input type="checkbox" required> I confirm I am authorised to represent this company and agree to Zeno contacting me about this project.</label>
+        <button type="submit" class="btn-primary">Submit project</button>
+        <div class="dp-form-note">By submitting you agree to our <a href="zeno-privacy.html" style="color:var(--pl);">privacy policy</a>. We do not share your project details outside our partnerships team.</div>
+        <div class="dp-success" id="dp-success">Thank you. Your project has been submitted. A partnerships manager will be in touch within ten working days.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     05 CTA
+══════════════════════════════════ -->
+<section id="ag-cta" style="background:var(--bg2);" data-screen-label="Developers — CTA">
+  <div class="ag-cta-inner reveal">
+    <h2 class="sec">Have questions before you submit?</h2>
+    <p class="sec-sub" style="margin:0 auto;">Our partnerships team can talk through exclusivity, pricing strategy, and launch timing before any paperwork.</p>
+    <div class="ag-cta-btns">
+      <a href="zeno-contact.html" class="btn-primary">Talk to our team</a>
+      <a href="zeno-agents.html" class="btn-ghost">Looking to join as an agent?</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<!-- ══ FOOTER ══ -->
+</main>
+<footer>
+  <div class="footer-offices">
+    <div class="office-card reveal">
+      <div class="office-icon">🇹🇭</div>
+      <div>
+        <div class="office-name">Bangkok, Thailand</div>
+        <div class="office-addr">11/2 P23 Building, 11th Floor, Soi Sukhumvit 23, Sukhumvit Road, Khlong Toei Nuea, Watthana, Bangkok, 10110, Thailand. (Beside Asoke BTS / Sukhumvit MRT Station)</div>
+        <div class="office-tel">+66 87 691 9916, +66 99 838 8949</div>
+      </div>
+    </div>
+    <div class="office-card reveal" style="transition-delay:0.08s">
+      <div class="office-icon">🇲🇲</div>
+      <div>
+        <div class="office-name">Yangon, Myanmar</div>
+        <div class="office-addr">G10-12, Building A/B, Ground Floor, Pearl Condo, Kabaraye Pagoda and Sayarsan Road, Bahan Township, Yangon.</div>
+        <div class="office-tel">+95 9 757 223 943</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-col reveal" style="transition-delay:0.06s">
+      <div class="footer-col-title">Platform</div>
+      <ul>
+        <li><a href="zeno-platform.html">Zeno Buy</a></li>
+        <li><a href="zeno-platform.html">Zeno Rent</a></li>
+        <li><a href="zeno-platform.html">Zeno Sell</a></li>
+        <li><a href="zeno-platform.html">Zeno Invest</a></li>
+        <li><a href="#">Mobile app</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.12s">
+      <div class="footer-col-title">Resources</div>
+      <ul>
+        <li><a href="zeno-articles.html">Newsroom</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.18s">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="zeno-about.html">About us</a></li>
+        <li><a href="zeno-jobs.html">Careers</a></li>
+        <li><a href="zeno-contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.24s">
+      <div class="footer-col-title">Partners</div>
+      <ul>
+        <li><a href="zeno-agents.html">For agents</a></li>
+        <li><a href="zeno-developers.html">For developers</a></li>
+        <li><a href="zeno-partners.html">Partner program</a></li>
+        
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:0.30s">
+      <div class="footer-help-label">Download</div>
+      <div class="footer-app-btns">
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="fab-sm">Download on the</span><span class="fab-lg">App Store</span></div>
+        </a>
+        <a href="#" class="footer-app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.98.15l12.08-6.98-2.61-2.61-10.45 9.44zm-1.8-20.4C1.14 3.7 1 4.08 1 4.56v14.88c0 .48.14.86.38 1.12l.06.06 8.34-8.34v-.2L1.44 3.3l-.06.06zm18.3 7.62l-2.37-1.37-2.93 2.93 2.93 2.93 2.39-1.38c.68-.39.68-1.03-.02-1.11zM4.16.24L16.24 7.22l-2.61 2.61L3.18.39c.34-.07.7-.02.98.15v-.3z"/></svg>
+          <div><span class="fab-sm">Get it on</span><span class="fab-lg">Google Play</span></div>
+        </a>
+      </div>
+      <a href="#" class="footer-help-link">Help Center <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+  <div class="footer-legal-only">
+    <span class="footer-copyright">Copyright © 2026 Zeno Property Co.,LTD. All Right Reserved.</span>
+    <div class="footer-legal-links">
+      <a href="zeno-terms.html">Terms</a>
+      <a href="zeno-privacy.html">Privacy policy</a>
+      <a href="zeno-cookies.html">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ── FEATURE CARD CLICK ── */
+document.querySelectorAll('.feature-row[data-img-wrap]').forEach(function(row) {
+  row.addEventListener('click', function() {
+    var wrapId = this.dataset.imgWrap;
+    var idx = parseInt(this.dataset.imgIdx);
+    var wrap = document.getElementById(wrapId);
+    if (!wrap) return;
+    /* deactivate siblings in same section */
+    var section = this.closest('section');
+    section.querySelectorAll('.feature-row[data-img-wrap]').forEach(function(r) { r.classList.remove('active'); });
+    wrap.querySelectorAll('.fi').forEach(function(fi) { fi.classList.remove('active'); });
+    this.classList.add('active');
+    var fis = wrap.querySelectorAll('.fi');
+    if (fis[idx]) fis[idx].classList.add('active');
+  });
+});
+/* activate first row of each interactive section */
+document.querySelectorAll('section').forEach(function(sec) {
+  var first = sec.querySelector('.feature-row[data-img-wrap]');
+  if (first) { first.classList.add('active'); }
+});
+
+/* ── NAVBAR SCROLL ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ── REVEAL ON SCROLL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  // Open clicked if it was closed
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+<script>
+function submitDeveloperForm(e){
+  e.preventDefault();
+  var form = e.target;
+  if (!form.checkValidity()) return false;
+  document.getElementById('dp-success').classList.add('show');
+  form.querySelector('button[type="submit"]').textContent = 'Submitted';
+  form.querySelector('button[type="submit"]').disabled = true;
+  return false;
+}
+</script>
+<script src="assets/a11y.js"></script>
+</body>
+</html>
