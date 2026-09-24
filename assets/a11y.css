@@ -47,3 +47,4 @@ main{min-width:0}
 @media (max-width:780px){html body .learnact-grid,html body .learnact-bottom{grid-template-columns:1fr!important}html body .learnact-card.dark{margin-top:0!important}html body .learnact-card{min-width:0}}
 @media (max-width:860px){html body footer .footer-links{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:32px 24px!important}}
 @media (max-width:640px){html body footer .footer-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}html body footer .footer-col{min-width:0}html body footer .footer-app-btns{flex-wrap:wrap}html body footer :is(.footer-legal-only,.footer-legal-links,.footer-bottom){flex-wrap:wrap;gap:12px 20px}}
+.scroll-progress{display:none!important}

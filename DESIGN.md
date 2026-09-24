@@ -145,7 +145,6 @@ Body text never goes below 16px. Measure is 44–60ch.
 | **Cards** | `--bg2` / glass fill, `--gb` border, 16px radius. Staggered lift on reveal. No colored left borders. |
 | **Forms** | `--bg3` inputs with 44px min height. Placeholder color `#80868d`. Every field has a `<label>` (currently `.sr-only`; see §9). |
 | **Footer** | Background `--ink-darkest`. Columns: brand + description · link columns · app badges · offices. The legal row sits at the bottom. |
-| **Scroll progress** | 2px gold bar fixed under the nav, `scaleX` bound to scroll. |
 | **Skip link** | Light-gold pill; visible on focus at top-left. |
 
 ---

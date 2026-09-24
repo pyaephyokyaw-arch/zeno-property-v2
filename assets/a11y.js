@@ -17,8 +17,6 @@
     document.querySelectorAll('#navbar a[href]').forEach(function(a){var h=a.getAttribute('href').split('#')[0];if(h&&h===here&&!a.classList.contains('nav-logo-link'))a.setAttribute('aria-current','page');});
     // Placeholder links: announce as unavailable instead of jumping to top
     document.querySelectorAll('a[href="#"]').forEach(function(a){if(a.getAttribute('onclick'))return;a.addEventListener('click',function(e){e.preventDefault();});});
-    // Scroll progress bar (landing page builds its own with GSAP)
-    if(!document.querySelector('.scroll-progress')&&!/zeno-landing\.html$|\/$/.test(location.pathname)||(!document.querySelector('.scroll-progress')&&!window.gsap)){var bar=document.createElement('div');bar.className='scroll-progress';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);var t=false;function up(){t=false;var m=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?Math.min(1,scrollY/m):0)+')';}addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(up);}},{passive:true});addEventListener('resize',up);up();}
     // External links
     document.querySelectorAll('a[target="_blank"]').forEach(function(a){if(!/noopener/.test(a.rel))a.rel=(a.rel+' noopener noreferrer').trim();});
   });
