@@ -116,6 +116,14 @@ Body text never goes below 16px. Measure is 44–60ch.
 | ≤ 960px | Splits stack, padding drops to 32px |
 | ≤ 640px | Single column, padding 24px, number gutters shrink |
 
+### Mobile nav (≤860px, `assets/nav-responsive.js`)
+- Logo on the left; language switcher and a 44×44px menu button on the right. The left links move into a slide-down panel.
+- ≤640px: GET ZENO APP leaves the bar and becomes a full-width gold button (ink text) in the panel.
+- The menu button sets `aria-expanded`, and Esc closes the panel.
+
+### Favicon
+`favicon.svg` (gold flame logomark only, no wordmark), `favicon-32.png` and `apple-touch-icon.png` (gold mark on `#090a0a`), with `theme-color` `#090a0a`.
+
 ### Signature layout patterns
 1. **Editorial split:** 5/7 or 1/1 columns, with the heading left and body or visual right. `.split-row` alternates `--bg` and `--bg2`; `.reverse` flips it.
 2. **Numbered hairline rows:** `01 / 02 / 03` index plus title and body between 1px rules. On hover a gold 8% tint fills left→right (`scaleX`). Used for insights, principles, values and Life at ZENO.

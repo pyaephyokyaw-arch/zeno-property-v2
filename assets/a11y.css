@@ -36,3 +36,14 @@ html body main :is(strong,b){font-weight:700}
 html body main :is(h1,h2,h3) *{font-size:inherit!important}
 html body main h3.ab-val-name{font-size:clamp(32px,4.4vw,60px)!important;line-height:1!important}
 html body .hero-sub{font-size:18px!important;line-height:1.5!important}
+
+/* Responsive guards: tablet ≤960, mobile ≤640 */
+html,body{overflow-x:clip}
+img,video,canvas,svg{max-width:100%}
+main{min-width:0}
+@media (max-width:960px){html body .offices-grid{grid-template-columns:1fr 1fr!important}}
+@media (max-width:640px){html body .offices-grid{grid-template-columns:1fr!important}html body .office-card{min-width:0}html body .office-card>*{min-width:0;overflow-wrap:anywhere}html body :is(.btn-primary,.btn-ghost,.btn){max-width:100%}html body :is(.hero-actions,.cta-actions,.hero-btns){flex-wrap:wrap}}
+@media (max-width:768px){html body .stats-grid{grid-template-columns:1fr 1fr!important}html body .stat-item:nth-child(2n){border-right:none!important}html body .stat-item{min-width:0}}
+@media (max-width:780px){html body .learnact-grid,html body .learnact-bottom{grid-template-columns:1fr!important}html body .learnact-card.dark{margin-top:0!important}html body .learnact-card{min-width:0}}
+@media (max-width:860px){html body footer .footer-links{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:32px 24px!important}}
+@media (max-width:640px){html body footer .footer-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}html body footer .footer-col{min-width:0}html body footer .footer-app-btns{flex-wrap:wrap}html body footer :is(.footer-legal-only,.footer-legal-links,.footer-bottom){flex-wrap:wrap;gap:12px 20px}}
