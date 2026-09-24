@@ -1,0 +1,53 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Spacing (16), Border radius (9), Opacity (13)
+   Length tokens carry px units so components use them directly.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Spacing scale */
+  --space-none: 0px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;   /* default internal padding */
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-xxxl: 40px;
+  --space-4xl: 48px;
+  --space-5xl: 56px;
+  --space-6xl: 64px;
+  --space-7xl: 72px;
+  --space-8xl: 84px;
+  --space-9xl: 96px;
+  --space-10xl: 120px;
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-s: 4px;
+  --radius-m: 8px;    /* default radius */
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 20px;
+  --radius-xxxl: 24px;
+  --radius-full: 9999px;
+
+  /* Opacity */
+  --opacity-0: 0;    /* @kind other */
+  --opacity-5: 0.05; /* @kind other */
+  --opacity-10: 0.1; /* @kind other */
+  --opacity-15: 0.15;/* @kind other */
+  --opacity-20: 0.2; /* @kind other */
+  --opacity-30: 0.3; /* @kind other */
+  --opacity-40: 0.4; /* @kind other */
+  --opacity-50: 0.5; /* @kind other */
+  --opacity-60: 0.6; /* @kind other */
+  --opacity-70: 0.7; /* @kind other */
+  --opacity-80: 0.8; /* @kind other */
+  --opacity-90: 0.9; /* @kind other */
+  --opacity-100: 1;  /* @kind other */
+
+  /* Touch target */
+  --touch-min: 44px;
+}

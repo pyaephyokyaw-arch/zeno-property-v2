@@ -1,0 +1,9 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Webfonts
+   Sora (headings), Nunito Sans (body/UI), Roboto Mono (code).
+   NOTE: No font binaries shipped with the Figma file, so these are
+   loaded from Google Fonts (exact families, matched weights).
+   Swap to self-hosted @font-face if offline use is required.
+   ───────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&family=Nunito+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");

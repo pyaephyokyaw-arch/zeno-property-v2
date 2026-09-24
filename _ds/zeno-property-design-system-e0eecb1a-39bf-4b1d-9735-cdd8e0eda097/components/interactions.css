@@ -1,0 +1,26 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Component interaction states
+   Hover / pressed / focus behaviours that can't live in inline JS.
+   ───────────────────────────────────────────────────────────── */
+
+/* Buttons: hover darkens, press shrinks slightly */
+.zeno-btn:not(:disabled):hover { filter: brightness(0.96); }
+.zeno-btn:not(:disabled):active { transform: scale(0.98); filter: brightness(0.92); }
+.zeno-btn:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
+
+/* Icon buttons */
+.zeno-icon-btn:not(:disabled):hover { filter: brightness(0.96); }
+.zeno-icon-btn:not(:disabled):active { transform: scale(0.94); }
+.zeno-icon-btn:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
+
+/* Chips */
+.zeno-chip:not([data-disabled="true"]):active { transform: scale(0.97); }
+
+/* Pressable list rows / sheet items */
+.zeno-pressable:active { background: var(--neutral-25); }
+
+/* Inputs */
+.zeno-input:focus { outline: none; }
+
+/* Tab / segmented items */
+.zeno-seg-item:active { transform: scale(0.98); }

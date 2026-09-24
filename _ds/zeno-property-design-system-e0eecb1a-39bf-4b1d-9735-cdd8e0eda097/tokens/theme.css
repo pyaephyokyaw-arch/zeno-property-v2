@@ -1,0 +1,155 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Theme (semantic, 45 tokens) + Components (29)
+   Light is the :root default. Dark resolves the same token NAMES
+   to flipped values — apply via [data-theme="dark"] or .dark.
+   Always bind component fills to THESE tokens, never primitives.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Surface */
+  --surface-page: var(--sky-white);
+  --surface-overlay: var(--sky-white);
+  --surface-inverse: var(--sky-light);
+
+  /* Content (text/icon) */
+  --content-primary: var(--ink-darkest);
+  --content-secondary: var(--ink-base);
+  --content-disabled: var(--sky-dark);
+  --content-on-brand: var(--sky-white);
+
+  /* Border */
+  --border-default: var(--sky-base);
+  --border-subtle: var(--sky-light);
+  --border-strong: var(--sky-dark);
+  --border-focus: var(--primary-base);
+  --border-disabled: var(--sky-lighter);
+
+  /* Brand aliases */
+  --brand-primary: var(--primary-base);
+  --brand-dark: var(--primary-dark);
+  --brand-light: var(--primary-light);
+  --brand-lighter: var(--primary-lighter);
+  --brand-lightest: var(--primary-lightest);
+
+  /* Neutral scale (resolves per mode) */
+  --neutral-25: var(--sky-lightest);
+  --neutral-50: var(--sky-lighter);
+  --neutral-100: var(--sky-light);
+  --neutral-200: var(--sky-base);
+  --neutral-300: var(--sky-dark);
+  --neutral-400: var(--ink-lighter);
+  --neutral-500: var(--ink-light);
+  --neutral-600: var(--ink-base);
+  --neutral-800: var(--ink-dark);
+  --neutral-900: var(--ink-darker);
+
+  /* Interactive */
+  --interactive-primary-bg: var(--primary-base);
+  --interactive-secondary-bg: var(--primary-lightest);
+  --interactive-on-primary: var(--sky-white);
+  --interactive-on-secondary: var(--primary-base);
+  --interactive-accent: var(--primary-base);
+
+  /* Feedback — Success / Error / Warning / Info */
+  --feedback-success-bg: var(--green-lightest);
+  --feedback-success-border: var(--green-base);
+  --feedback-success-content: var(--green-darkest);
+  --feedback-error-bg: var(--red-lightest);
+  --feedback-error-border: var(--red-base);
+  --feedback-error-content: var(--red-darkest);
+  --feedback-warning-bg: var(--yellow-lightest);
+  --feedback-warning-border: var(--yellow-base);
+  --feedback-warning-content: var(--yellow-darkest);
+  --feedback-info-bg: var(--blue-lightest);
+  --feedback-info-border: var(--blue-base);
+  --feedback-info-content: var(--blue-darkest);
+
+  /* Overlay */
+  --overlay-scrim: rgba(0, 0, 0, 0.5);
+  --overlay-skeleton: var(--sky-lighter);
+
+  /* ── Component tokens (29) ── */
+  --button-primary-bg: var(--interactive-primary-bg);
+  --button-primary-fg: var(--interactive-on-primary);
+  --button-secondary-bg: var(--interactive-secondary-bg);
+  --button-secondary-fg: var(--interactive-on-secondary);
+  --button-border: var(--border-default);
+  --button-ghost-fg: var(--content-primary);
+  --button-accent: var(--interactive-accent);
+  --button-disabled-bg: var(--neutral-100);
+  --button-disabled-fg: var(--content-disabled);
+
+  --input-bg: var(--surface-page);
+  --input-fg: var(--content-primary);
+  --input-placeholder: var(--neutral-300);
+  --input-border: var(--border-default);
+  --input-border-focus: var(--border-focus);
+  --input-border-error: var(--feedback-error-border);
+  --input-disabled-bg: var(--neutral-25);
+  --input-disabled-fg: var(--content-disabled);
+
+  --card-bg: var(--surface-page);
+  --card-border: var(--border-default);
+
+  --badge-success-bg: var(--feedback-success-bg);
+  --badge-success-fg: var(--feedback-success-content);
+  --badge-error-bg: var(--feedback-error-bg);
+  --badge-error-fg: var(--feedback-error-content);
+  --badge-warning-bg: var(--feedback-warning-bg);
+  --badge-warning-fg: var(--feedback-warning-content);
+  --badge-info-bg: var(--feedback-info-bg);
+  --badge-info-fg: var(--feedback-info-content);
+  --badge-neutral-bg: var(--neutral-50);
+  --badge-neutral-fg: var(--content-secondary);
+}
+
+/* ── Dark mode ── same token names, flipped resolved values ── */
+:root[data-theme="dark"], .dark {
+  --surface-page: var(--ink-darkest);
+  --surface-overlay: var(--ink-darkest);
+  --surface-inverse: var(--ink-darker);
+
+  --content-primary: var(--sky-lightest);
+  --content-secondary: var(--sky-dark);
+  --content-disabled: var(--ink-base);
+  --content-on-brand: var(--sky-white);
+
+  --border-default: var(--ink-base);
+  --border-subtle: var(--ink-dark);
+  --border-strong: var(--ink-light);
+  --border-focus: var(--primary-base);
+  --border-disabled: var(--ink-darker);
+
+  --neutral-25: var(--ink-darker);
+  --neutral-50: var(--ink-dark);
+  --neutral-100: var(--ink-base);
+  --neutral-200: var(--ink-light);
+  --neutral-300: var(--ink-lighter);
+  --neutral-400: var(--sky-dark);
+  --neutral-500: var(--sky-base);
+  --neutral-600: var(--sky-light);
+  --neutral-800: var(--sky-lighter);
+  --neutral-900: var(--sky-lightest);
+
+  --interactive-primary-bg: var(--primary-base);
+  --interactive-secondary-bg: var(--primary-lighter);
+  --interactive-on-primary: var(--sky-white);
+  --interactive-on-secondary: var(--primary-dark);
+  --interactive-accent: var(--primary-light);
+
+  --feedback-success-bg: var(--green-darkest);
+  --feedback-success-border: var(--green-darkest);
+  --feedback-success-content: var(--green-lighter);
+  --feedback-error-bg: var(--red-darkest);
+  --feedback-error-border: var(--red-darkest);
+  --feedback-error-content: var(--red-lighter);
+  --feedback-warning-bg: var(--yellow-darkest);
+  --feedback-warning-border: var(--yellow-darkest);
+  --feedback-warning-content: var(--yellow-light);
+  --feedback-info-bg: var(--blue-darkest);
+  --feedback-info-border: var(--blue-darkest);
+  --feedback-info-content: var(--blue-lighter);
+
+  --overlay-scrim: rgba(0, 0, 0, 0.6);
+  --overlay-skeleton: var(--ink-darker);
+}

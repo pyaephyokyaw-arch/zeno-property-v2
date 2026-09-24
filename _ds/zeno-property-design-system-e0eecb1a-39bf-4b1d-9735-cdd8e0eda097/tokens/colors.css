@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Color Primitives (Color collection, 52 tokens)
+   Source of truth for raw hex values. Components must NOT use these
+   directly — bind to Theme/Component semantic tokens instead.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand — Gold */
+  --primary-base: #d38d29;     /* 211,141,41  — brand/primary */
+  --primary-dark: #975614;     /* 151,86,20 */
+  --primary-light: #f1cb7c;    /* 241,203,124 */
+  --primary-lighter: #fae3a9;  /* 250,227,169 */
+  --primary-lightest: #fcf2d4; /* 252,242,212 */
+
+  /* Ink — dark neutrals */
+  --ink-black: #000000;
+  --ink-darkest: #090a0a;  /* 9,10,10 */
+  --ink-darker: #202325;   /* 32,35,37 */
+  --ink-dark: #303437;     /* 48,52,55 */
+  --ink-slate: #50555c;    /* 80,85,92 */
+  --ink-base: #404446;     /* 64,68,70 */
+  --ink-light: #6c7072;    /* 108,112,114 */
+  --ink-lighter: #72777a;  /* 114,119,122 */
+  --ink-lightest: #bec2c4; /* 190,194,196 */
+
+  /* Sky — light neutrals */
+  --sky-white: #ffffff;
+  --sky-lightest: #f7f9fa; /* 247,249,250 */
+  --sky-lighter: #f2f4f5;  /* 242,244,245 */
+  --sky-light: #e3e5e5;    /* 227,229,229 */
+  --sky-mid: #dadada;      /* 218,218,218 */
+  --sky-base: #cdcfd0;     /* 205,207,208 */
+  --sky-dark: #979c9e;     /* 151,156,158 */
+
+  /* Red */
+  --red-base: #ff5247;
+  --red-darkest: #d3180c;
+  --red-light: #ff6d6d;
+  --red-lighter: #ff9898;
+  --red-lightest: #ffe5e5;
+
+  /* Green */
+  --green-base: #23c16b;
+  --green-darkest: #198155;
+  --green-light: #4cd471;
+  --green-lighter: #7dde86;
+  --green-lightest: #ecfce5;
+
+  /* Blue */
+  --blue-base: #48a7f8;
+  --blue-darkest: #0065d0;
+  --blue-light: #6ec2fb;
+  --blue-lighter: #9bdcfd;
+  --blue-lightest: #c9f0ff;
+
+  /* Yellow */
+  --yellow-base: #ffae00;
+  --yellow-darkest: #b77100;
+  --yellow-light: #ffd866;
+  --yellow-lighter: #ffe899;
+  --yellow-lightest: #fff5cc;
+
+  /* Logo gradient stops */
+  --logo-light: #fcda4d;
+  --logo-mid: #ecbf5e;
+  --logo-base: #d38d29;
+}

@@ -1,0 +1,24 @@
+/* ─────────────────────────────────────────────────────────────
+   Zeno Property — Elevation & Effects
+   Drop shadows scale from XSmall (chips, badges) to XLarge (modals).
+   Background blur for frosted-glass surfaces.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --shadow-xs: 0 1px 2px 0 rgba(20, 20, 20, 0.04);
+  --shadow-sm: 0 2px 8px 0 rgba(20, 20, 20, 0.06);
+  --shadow-md: 0 4px 8px 2px rgba(20, 20, 20, 0.08);
+  --shadow-lg: 0 12px 24px 8px rgba(20, 20, 20, 0.10);
+  --shadow-xl: 0 24px 48px 16px rgba(20, 20, 20, 0.14);
+
+  --blur-frost: 12px;       /* frosted-glass surfaces */
+  --blur-frost-strong: 24px;
+}
+
+:root[data-theme="dark"], .dark {
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.40);
+  --shadow-sm: 0 2px 8px 0 rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 8px 2px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 12px 24px 8px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 48px 16px rgba(0, 0, 0, 0.60);
+}
