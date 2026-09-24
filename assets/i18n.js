@@ -121,7 +121,7 @@ function apply(lang){
     '.platform-card-title','.platform-card-desc','.platform-card-soon','.cta-sub','.qr-caption'];
   document.querySelectorAll(sel.join(',')).forEach(function(el){ walk(el, lang); });
   document.querySelectorAll('.lang-dropdown [data-lang]').forEach(function(b){
-    b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    b.classList.toggle('active', b.getAttribute('data-lang')===lang);b.setAttribute('aria-current', b.getAttribute('data-lang')===lang?'true':'false');
   });
   var label = document.querySelector('.lang-current');
   if (label) label.textContent = lang==='my' ? 'MY' : 'EN';
