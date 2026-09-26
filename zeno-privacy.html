@@ -195,7 +195,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
   <ul class="nav-right-group">
     <li><a href="zeno-careers.html" class="nav-link">CAREERS</a></li>
     <li><a href="zeno-contact.html" class="nav-link">CONTACT</a></li>
-    <li><a href="#" class="nav-cta-btn" style="border-radius:9px;">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
+    <li><a href="zeno-download.html" class="nav-cta-btn" style="border-radius:9px;">GET ZENO APP</a></li><li class="lang-dropdown"><button type="button" class="lang-trigger"><span class="lang-current">EN</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="lang-menu"><button type="button" data-lang="en" class="active">English</button><button type="button" data-lang="my">မြန်မာ</button></div></li>
   </ul>
 </nav>
 <main id="main" tabindex="-1">
@@ -310,6 +310,8 @@ document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
 var nb=document.getElementById('navbar');
 window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>40);});
 </script>
+<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="assets/store-qr.js"></script>
 <script src="assets/a11y.js"></script>
 </body>
 </html>
