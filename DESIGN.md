@@ -64,7 +64,7 @@ Every page defines these in `:root`. Use the tokens, never raw hex.
 
 | Role | Family | Weight |
 |---|---|---|
-| Headings H1–H4, display numbers/words | **Sora** `var(--font-display)` | 700 only |
+| Headings H1–H4, display numbers/words | **Baskervville** `var(--font-display)` | 700 only |
 | Body, UI, nav, buttons, forms, lists | **Nunito Sans** `var(--font-body)` | 400 / 500 / 700 |
 | Code | **Roboto Mono** `var(--font-mono)` | 400 / 500 |
 | Inter | Legacy: **do not use** | |
