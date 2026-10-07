@@ -42,7 +42,7 @@
   --nav-h:72px;
   --r:    16px; --r-sm:10px; --r-btn:9px;
 }
-/* Sora for all headings */
+/* Baskervville for all headings */
 h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
 /* Gold focus ring */
 a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
@@ -342,6 +342,36 @@ section{padding:96px 48px;}
 .ab-commit-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
 .ab-commit-cols p{font-size:18px;line-height:1.8;color:var(--border-strong);margin:0;text-wrap:pretty}
 .ab-commit-close{margin:48px 0 0;font-family:var(--font-display);font-weight:700;font-size:clamp(19px,1.9vw,24px);line-height:1.5;color:var(--pl);max-width:760px;text-wrap:pretty}
+/* asean v3 */
+.as-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end;padding-bottom:40px;border-bottom:1px solid var(--gb)}
+.as-head .overline{margin:0}
+.as-lead{margin:0;font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.4;color:var(--tp);text-wrap:pretty}
+.as-copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin:40px 0 64px}
+.as-copy p{margin:0;font-size:18px;line-height:1.75;color:var(--border-strong);text-wrap:pretty}
+.as-mosaic{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;gap:12px}
+.as-tile{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#15171a}
+.as-tile:nth-child(2),.as-tile:nth-child(5),.as-tile:nth-child(6){grid-column:span 2}
+.as-tile-lg{grid-column:span 2;grid-row:span 2}
+.as-tile figure{margin:0;position:absolute;inset:0}
+.as-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.as-tile:hover img{transform:scale(1.04)}
+.as-tile figcaption{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:24px;background:linear-gradient(180deg,rgba(9,10,10,0) 35%,rgba(9,10,10,.88) 100%)}
+.as-status{align-self:flex-start;margin-bottom:auto;padding:6px 12px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f7f9fa;background:rgba(9,10,10,.6);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px)}
+.as-status.is-live{color:#1a1206;background:#f1cb7c;border-color:#f1cb7c}
+.as-city{margin:0;font-family:var(--font-display);font-weight:700;font-size:32px;line-height:1.1;color:#f7f9fa}
+.as-tile-lg .as-city{font-size:clamp(40px,4.4vw,64px)}
+.as-country{margin:0;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f1cb7c}
+.as-foot{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:start;margin-top:64px;padding-top:40px;border-top:1px solid var(--gb)}
+.as-aim{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,32px);line-height:1.35;color:var(--tp);text-wrap:pretty}
+.as-legend{margin:0;display:grid;gap:20px}
+.as-legend dt{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tm)}
+.as-legend dt i{width:8px;height:8px;border-radius:50%;border:1px solid var(--tm)}
+.as-legend dt i.is-live{background:#f1cb7c;border-color:#f1cb7c}
+.as-legend dd{margin:6px 0 0 18px;font-size:16px;line-height:1.5;color:var(--tp)}
+@media(max-width:960px){.as-head,.as-foot{grid-template-columns:1fr;gap:24px}.as-copy{grid-template-columns:1fr;gap:20px;margin:32px 0 48px}.as-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}.as-tile:nth-child(n){grid-column:span 1;grid-row:auto}.as-tile-lg,.as-tile:nth-child(2){grid-column:span 2!important}.as-tile-lg{grid-row:span 2!important}}
+@media(max-width:640px){.as-mosaic{grid-auto-rows:168px;gap:8px}.as-tile figcaption{padding:16px}.as-city{font-size:22px}.as-tile-lg .as-city,.as-tile:nth-child(2) .as-city{font-size:32px}.as-country{font-size:12px}.as-lead{font-size:20px}.as-status{font-size:10px;padding:4px 10px}}
+@media(prefers-reduced-motion:reduce){.as-tile img{transition:none}}
+#asean.ab-alt{background:linear-gradient(180deg,#0d0f10,#111314)}html body main #asean .as-city{font-size:32px!important}html body main #asean .as-tile-lg .as-city{font-size:clamp(40px,4.4vw,64px)!important}@media(max-width:640px){html body main #asean .as-city{font-size:22px!important}html body main #asean .as-tile-lg .as-city,html body main #asean .as-tile:nth-child(2) .as-city{font-size:32px!important}}
 /* asean band */
 .ab-band{position:relative;height:clamp(320px,40vw,520px);overflow:hidden;margin:0 -48px -120px}
 .ab-band img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
@@ -1387,7 +1417,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
         About ZENO
       </div>
       <h1>Making Property Decisions <span class="swap" aria-label="Clearer. Smarter."><span class="swap-w is-on" data-style="solid">Clearer.</span><span class="swap-w" data-style="outline">Smarter.</span><span class="swap-bar"></span></span></h1>
-      <div class="hero-sub"><div>Property decisions involve more than finding a place to live. They involve understanding value, location, timing, risk, and the people you choose to work with.<br><br></div><div>ZENO was created to bring these elements together through technology, reliable information, and local market understanding. Starting in Myanmar and expanding across Southeast Asia, we are building a property platform that helps people search, compare, understand, and act with greater clarity.<br><br></div><div>We believe property technology should make decisions easier to understand, not make the process more complicated.</div></div>
+      <div class="hero-sub"><div>ZENO combines technology, reliable information, and local market knowledge to help people search, compare, understand, and make better-informed property decisions.</div><div><b>Built in Myanmar. Trusted by Myanmar</b></div></div>
     </div>
 
   </div>
@@ -1418,7 +1448,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
     </article>
     <article class="ab-card" style="--n:2">
       <div class="ab-card-side"><span class="ab-card-num">03<small>/04</small></span><div class="ab-card-label">OUR APPROACH</div><h3>Technology with a human perspective.</h3></div>
-      <div class="ab-card-body"><p>ZENO brings together three elements:</p><div class="ab-trio"><div><b>Information</b><span>Property details, market information, and useful insights help users understand what they are considering.</span></div><div><b>Intelligence</b><span>Digital tools and AI help users search, compare, calculate, and identify opportunities based on their needs.</span></div><div><b>People</b><span>Property professionals provide local knowledge and practical guidance when a digital platform alone is not enough.</span></div></div><p class="ab-em">Together, these create a property experience that is easier to navigate from discovery to decision.</p></div>
+      <div class="ab-card-body"><p>ZENO brings together three elements:</p><div class="ab-trio"><div><b>Information</b><span>Property details, market information, and useful insights help users understand what they are considering.</span></div><div><b>Intelligence</b><span>Digital tools and AI help users search, compare, calculate, and identify opportunities based on their needs.</span></div><div><b>People</b><span>Property professionals provide local knowledge and practical guidance when a digital platform alone is not enough.</span></div></div></div>
     </article>
     <article class="ab-card" style="--n:3">
       <div class="ab-card-side"><span class="ab-card-num">04<small>/04</small></span><div class="ab-card-label">OUR STANDARD</div><h3>Trust is built into the experience.</h3></div>
@@ -1527,21 +1557,13 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 <!-- ══════════════════════════
      10 ASEAN
 ══════════════════════════ -->
-<section id="asean" class="ab-sec ab-alt">
-  <div class="ab-wrap ab-split">
-    <div class="reveal"><div class="overline">Built for ASEAN</div><h2 class="ab-h2">Local understanding. <span class="quote-gradient">Regional ambition.</span></h2></div>
-    <div class="ab-copy reveal d1">
-      <p class="ab-em">ZENO began in Myanmar with a broader vision for Southeast Asia.</p>
-      <p>The region's property markets are different from one another, but they share a growing need for better digital access to information, stronger connections between market participants, and simpler ways to navigate property decisions.</p>
-      <p>Our journey begins with the markets we know and serve today, while our platform is being developed with a regional future in mind.</p>
-      <p>Our aim is to connect more markets, more properties, and more people through one evolving property ecosystem.</p>
-    </div>
-  </div>
-  <div class="ab-band reveal">
-    <img data-parallax src="uploads/image 2-df10015e.png" alt="Modern villa with pool in daylight">
-    <div class="ab-band-shade"></div>
-    <div class="ab-marquee" aria-label="Myanmar · Thailand · Singapore · Malaysia · Vietnam · Cambodia"><div class="ab-marquee-track" aria-hidden="true"><span>Myanmar</span><i>·</i><span>Thailand</span><i>·</i><span>Singapore</span><i>·</i><span>Malaysia</span><i>·</i><span>Vietnam</span><i>·</i><span>Cambodia</span><i>·</i><span>Myanmar</span><i>·</i><span>Thailand</span><i>·</i><span>Singapore</span><i>·</i><span>Malaysia</span><i>·</i><span>Vietnam</span><i>·</i><span>Cambodia</span><i>·</i></div></div>
-  </div>
+<section id="asean" class="ab-sec ab-alt" aria-labelledby="asean-h">
+<div class="ab-wrap">
+<header class="as-head reveal"><div><p class="overline">Built for ASEAN</p><h2 id="asean-h" class="ab-h2">Local understanding. <span class="quote-gradient">Regional ambition.</span></h2></div><p class="as-lead">ZENO began in Myanmar with a broader vision for Southeast Asia.</p></header>
+<div class="as-copy reveal d1"><p>The region's property markets are different from one another, but they share a growing need for better digital access to information, stronger connections between market participants, and simpler ways to navigate property decisions.</p><p>Our journey begins with the markets we know and serve today, while our platform is being developed with a regional future in mind.</p></div>
+<ol class="as-mosaic reveal" aria-label="Myanmar · Thailand · Singapore · Malaysia · Vietnam · Cambodia"><li class="as-tile as-tile-lg"><figure><img src="https://unsplash.com/photos/dlFVkthOlsY/download?w=1200" alt="Shwedagon Pagoda at sunset, Yangon" loading="lazy"><figcaption><span class="as-status is-live">Live market</span><h3 class="as-city">Yangon</h3><p class="as-country">Myanmar</p></figcaption></figure></li><li class="as-tile"><figure><img src="https://unsplash.com/photos/1sG6QJubO9Q/download?w=1200" alt="Bangkok skyline across the Chao Phraya River" loading="lazy"><figcaption><span class="as-status is-live">Live market</span><h3 class="as-city">Bangkok</h3><p class="as-country">Thailand</p></figcaption></figure></li><li class="as-tile"><figure><img src="https://unsplash.com/photos/CQhgno3yhv8/download?w=1200" alt="Marina Bay skyline at sunset, Singapore" loading="lazy"><figcaption><span class="as-status">On the roadmap</span><h3 class="as-city">Singapore</h3><p class="as-country">Singapore</p></figcaption></figure></li><li class="as-tile"><figure><img src="https://unsplash.com/photos/6U-sSfBV-gM/download?w=1200" alt="Petronas Twin Towers, Kuala Lumpur" loading="lazy"><figcaption><span class="as-status">On the roadmap</span><h3 class="as-city">Kuala Lumpur</h3><p class="as-country">Malaysia</p></figcaption></figure></li><li class="as-tile"><figure><img src="https://unsplash.com/photos/7ssU0B8LjIk/download?w=1200" alt="Saigon River skyline, Ho Chi Minh City" loading="lazy"><figcaption><span class="as-status">On the roadmap</span><h3 class="as-city">Ho Chi Minh City</h3><p class="as-country">Vietnam</p></figcaption></figure></li><li class="as-tile"><figure><img src="https://unsplash.com/photos/z0_qJKVqIfE/download?w=1200" alt="Phnom Penh riverside at night" loading="lazy"><figcaption><span class="as-status">On the roadmap</span><h3 class="as-city">Phnom Penh</h3><p class="as-country">Cambodia</p></figcaption></figure></li></ol>
+<div class="as-foot reveal"><p class="as-aim">Our aim is to connect more markets, more properties, and more people through one evolving property ecosystem.</p><dl class="as-legend"><div><dt><i class="is-live"></i>Live markets</dt><dd>Myanmar · Thailand</dd></div><div><dt><i></i>On the roadmap</dt><dd>Singapore · Malaysia · Vietnam · Cambodia</dd></div></dl></div>
+</div>
 </section>
 <section id="future">
   <div class="future-inner reveal">

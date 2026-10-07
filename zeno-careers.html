@@ -42,7 +42,7 @@
   --nav-h:72px;
   --r:    16px; --r-sm:10px; --r-btn:9px;
 }
-/* Sora for all headings */
+/* Baskervville for all headings */
 h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
 /* Gold focus ring */
 a:focus-visible, button:focus-visible { outline: 2px solid #d38d29; outline-offset: 2px; }
@@ -815,6 +815,21 @@ footer {
   .footer-legal-only { flex-direction: column; align-items: flex-start; }
 }
 
+.loc-head{margin-bottom:48px}.loc-head .overline{margin:0 0 8px}.loc-head h2{margin:0}
+.loc-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.loc-card{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--gb);background:#15171a;min-height:420px;display:flex}
+.loc-card figure{margin:0;position:absolute;inset:0}
+.loc-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.loc-card:hover img{transform:scale(1.04)}
+.loc-body{position:relative;z-index:1;margin-top:auto;width:100%;padding:32px;background:linear-gradient(180deg,rgba(9,10,10,0),rgba(9,10,10,.9) 55%);display:grid;gap:8px}
+html body main #locations .loc-label{margin:0;font-family:var(--font-body)!important;font-size:12px!important;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f1cb7c;line-height:1.4}
+.loc-city{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(32px,3.6vw,48px);line-height:1.1;color:#f7f9fa}
+html body main #locations .loc-city,html body main #locations .loc-city span{font-family:var(--font-display)!important}
+.loc-city span{color:rgba(247,249,250,.72)}
+.loc-region{margin:40px 0 0;display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tm)}
+.loc-region::before,.loc-region::after{content:'';flex:1;height:1px;background:var(--gb)}
+@media(max-width:768px){.loc-grid{grid-template-columns:1fr}.loc-card{min-height:300px}.loc-body{padding:24px}.loc-head{margin-bottom:32px}}
+@media(prefers-reduced-motion:reduce){.loc-card img{transition:none}}
 /* ── Zeno DS: font overrides ── */
 body { font-family:var(--font-body)!important; }
 h1,h2,h3,h4,h5,h6 { font-family:var(--font-display)!important; }
@@ -947,8 +962,8 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
         <span class="eyebrow-dot"></span>
         Careers at zeno
       </div>
-      <h1>Let’s Build Next Chapter,<br><em class="grad-em" style="-webkit-text-fill-color:transparent;font-style:normal;">Together</em></h1>
-      <p class="hero-sub">ZENO is building the next chapter of how people discover and navigate property across Southeast Asia. We look for people who enjoy solving difficult problems and turning good ideas into real products. Here, your work shapes how people search for property and make important decisions. Join us, and help write what comes next.</p>
+      <h1>Let’s Build the Next Chapter,<br><em class="grad-em" style="-webkit-text-fill-color:transparent;font-style:normal;">Together</em></h1>
+      <p class="hero-sub">ZENO is building the next chapter of how people discover and navigate property in Myanmar. We look for people who enjoy solving difficult problems and turning good ideas into real products. Here, your work shapes how people search for property and make important decisions. Join us and help write what comes next.</p>
       <div class="hero-btns">
         <a href="zeno-jobs.html" class="btn-primary">View Open Roles →</a>
         <a href="#means" class="btn-ghost">Life at Zeno</a>
@@ -1008,8 +1023,8 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
       <div class="overline">WHY JOIN ZENO</div>
       <h2 class="sec"><em class="grad-em" style="-webkit-text-fill-color:white;font-style:normal;">Build Your Career Around What Matters to You.</em></h2>
       <div class="split-text-body">
-        <p>We want people to grow with their work, not simply move from one position to another.<br>ZENO supports professional development through learning opportunities, mentorship, meaningful responsibilities, and the freedom to explore new areas of expertise.</p>
-        <p>Your career path does not have to follow a single direction. You may choose to deepen your current skills, explore another discipline, or take on greater responsibility as your experience develops.<br>What matters is that the more you learn, the more opportunities you get to contribute.</p>
+        <p>We invest in the whole person, not only the professional. We aim to create a supportive workplace with flexibility, opportunities to learn, and space to take on meaningful work.</p>
+        <p>Career growth can take many paths. Deepen your expertise, explore another discipline, or grow into leadership with support from your team.</p>
       </div>
     </div>
   </div>
@@ -1059,15 +1074,14 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
     <div class="means-lead reveal">
       <div class="overline">Being Part of ZENO</div>
       <h2 class="sec">More Than a Job Title.</h2>
-      <p class="means-intro">Working at ZENO means taking responsibility for the work you create and the people who use it.</p>
-      <p class="means-intro">We look for people who are curious about how things work, willing to learn, comfortable with change, and prepared to take ownership.</p>
+      <p class="means-intro">Being part of ZENO means bringing curiosity, integrity, ownership, and collaboration to the work. We value clear communication, thoughtful decisions, and respect for different points of view.</p>
+      <p class="means-intro">We work in a changing market, but we do not sacrifice clarity for speed. Team members are trusted to take responsibility, ask difficult questions, and help shape what we build.</p>
     </div>
     <ol class="val-list">
-<li class="val-row reveal d1"><span class="val-num">01</span><h3 class="val-title">Curiosity</h3><p class="val-desc">Ask questions. Explore new possibilities. Learn from different perspectives.</p></li>
-<li class="val-row reveal d2"><span class="val-num">02</span><h3 class="val-title">Integrity</h3><p class="val-desc">Be honest about what you know, what you do not know, and what needs to be improved.</p></li>
-<li class="val-row reveal d3"><span class="val-num">03</span><h3 class="val-title">Ownership</h3><p class="val-desc">Take responsibility for your work, your decisions, and the outcomes you help create.</p></li>
-<li class="val-row reveal d4"><span class="val-num">04</span><h3 class="val-title">Collaboration</h3><p class="val-desc">Good ideas become better when people build them together. We value open discussion and respect different points of view.</p></li>
-<li class="val-row reveal d4"><span class="val-num">05</span><h3 class="val-title">Impact</h3><p class="val-desc">Our work ultimately affects real people making real property decisions. We measure our progress by the value we create for them.</p></li>
+<li class="val-row reveal d1"><span class="val-num">01</span><h3 class="val-title">Curiosity</h3><p class="val-desc">Ask questions and explore new possibilities.</p></li>
+<li class="val-row reveal d2"><span class="val-num">02</span><h3 class="val-title">Integrity</h3><p class="val-desc">Be honest about what you know.</p></li>
+<li class="val-row reveal d3"><span class="val-num">03</span><h3 class="val-title">Ownership</h3><p class="val-desc">Take responsibility for your work.</p></li>
+<li class="val-row reveal d4"><span class="val-num">04</span><h3 class="val-title">Collaboration</h3><p class="val-desc">Share ideas openly and respect different points of view.</p></li>
     </ol>
   </div>
 </section>
@@ -1135,6 +1149,13 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
   </div>
 </section>
 
+<section id="locations" class="cs-sec" aria-labelledby="loc-h">
+<div class="cs-inner">
+<header class="loc-head reveal"><p class="overline">Our Locations</p><h2 id="loc-h" class="sec">Where ZENO Is Growing</h2></header>
+<ul class="loc-grid reveal d1"><li class="loc-card"><figure><img src="https://unsplash.com/photos/1sG6QJubO9Q/download?w=1200" alt="Bangkok skyline across the Chao Phraya River" loading="lazy"></figure><div class="loc-body"><h3 class="loc-label">Bangkok Headquarters</h3><p class="loc-city">Bangkok, <span>Thailand</span></p></div></li><li class="loc-card"><figure><img src="https://unsplash.com/photos/dlFVkthOlsY/download?w=1200" alt="Shwedagon Pagoda at sunset, Yangon" loading="lazy"></figure><div class="loc-body"><h3 class="loc-label">Yangon Office</h3><p class="loc-city">Yangon, <span>Myanmar</span></p></div></li></ul>
+<p class="loc-region reveal d2"><span>Southeast Asia</span></p>
+</div>
+</section>
 <!-- ══════════════════════════
      07 CTA BAND
 ══════════════════════════ -->
