@@ -386,19 +386,21 @@ h2.sec {
 .reg-cities span{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,6vw,88px);letter-spacing:-2px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(241,203,124,.55);transition:color .3s,-webkit-text-stroke-color .3s}
 .reg-cities span:hover{color:var(--pl);-webkit-text-stroke-color:var(--pl)}
 .reg-cities i{width:8px;height:8px;border-radius:50%;background:var(--pp);flex-shrink:0}
-#build{background:var(--bg2)}
-.build-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:80px;align-items:center}
-.build-grid .cs-body{margin-top:20px}
-.if-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
-.if-list li{font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.5px;color:var(--tp);padding:26px 28px;border:1px solid var(--gb);border-radius:12px;background:var(--bg);transition:border-color .2s,transform .2s;text-wrap:pretty}
-.if-list li:nth-child(2){margin-left:40px}.if-list li:nth-child(3){margin-left:80px}
-.if-list li:hover{border-color:var(--pb);transform:translateX(-4px)}
-.if-list b{color:var(--pl);font-weight:700}
+#build{background:var(--bg2);position:relative;overflow:hidden}
+.bw-mark{position:absolute;right:-2vw;bottom:-0.18em;font-family:var(--font-display);font-weight:700;font-size:clamp(160px,22vw,340px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(211,141,41,.14);pointer-events:none;user-select:none}
+.bw-inner{position:relative;z-index:1;display:grid;gap:64px}
+.bw-head{max-width:880px}.bw-head .overline{margin:0 0 12px}
+html body main #build .bw-h{margin:0;font-size:clamp(40px,5vw,72px)!important;line-height:1.08!important;letter-spacing:-1px;text-wrap:balance}
+.bw-h em{font-style:normal;color:var(--pl)}
+.bw-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;padding-top:40px;border-top:1px solid var(--pb);align-items:start}
+.bw-lead{margin:0;font-size:clamp(20px,1.8vw,24px);line-height:1.6;color:var(--tp);text-wrap:pretty}
+.bw-text{margin:0;font-size:17px;line-height:1.75;color:var(--tm);padding-left:32px;border-left:1px solid var(--gb);text-wrap:pretty}
+@media(max-width:960px){.bw-body{grid-template-columns:1fr;gap:24px}.bw-text{padding-left:0;border-left:0}.bw-inner{gap:40px}}
 .impact-inner{max-width:880px;margin:0 auto;text-align:center}
 .impact-h{font-size:clamp(32px,4.6vw,64px)!important;margin-bottom:32px}
 .impact-body p{font-size:18px;color:var(--tm);line-height:1.75;margin:0 auto 24px;max-width:680px;text-wrap:pretty}
 .impact-close{font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2vw,26px)!important;line-height:1.4!important;color:var(--pl)!important;margin-top:40px!important;padding-top:32px;border-top:1px solid var(--pb);max-width:620px!important}
-@media(max-width:960px){.cs-sec{padding:72px 32px}.reg-grid,.build-grid{grid-template-columns:1fr;gap:32px}.if-list li:nth-child(n){margin-left:0}}
+@media(max-width:960px){.cs-sec{padding:72px 32px}.reg-grid{grid-template-columns:1fr;gap:32px}}
 @media(max-width:640px){.cs-sec{padding:64px 24px}.reg-cities{flex-direction:column;align-items:flex-start;gap:12px}.reg-cities i{display:none}}
 /* ═══════════════════════════════
    05 WHAT IT MEANS
@@ -1099,21 +1101,17 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
   </div>
   <div class="reg-cities reveal d2" aria-hidden="true"><span>Bangkok</span><i></i><span>Yangon</span><i></i><span>Singapore</span></div>
 </section>
-<section id="build" class="cs-sec">
-  <div class="cs-inner build-grid">
-    <div class="reveal">
-      <div class="overline">Build With Us</div>
-      <h2 class="sec">Your Ideas Can Become Part of ZENO.</h2>
-      <div class="cs-body">
-        <p>Property technology is changing how people discover and understand real estate.<br>At ZENO, team members contribute to that change through technology, research, design, operations, property expertise, marketing, and customer experience.</p>
-        <p>You do not have to wait for a senior title to make a contribution.</p>
-      </div>
+<section id="build" class="cs-sec" aria-labelledby="build-h">
+  <span class="bw-mark" aria-hidden="true">Build</span>
+  <div class="cs-inner bw-inner">
+    <header class="bw-head reveal">
+      <p class="overline">Build With Us</p>
+      <h2 id="build-h" class="sec bw-h">Your <em>Ideas</em> Can Become Part of ZENO.</h2>
+    </header>
+    <div class="bw-body">
+      <p class="bw-lead reveal d1">We are building a property platform designed around the needs of people in Myanmar. Bring your ideas, experience, and curiosity to help make property discovery clearer and more useful.</p>
+      <p class="bw-text reveal d2">Our team has room to think big, try new approaches, and turn promising ideas into real products. Every role contributes to how people find a home, grow a business, or make a property decision.</p>
     </div>
-    <ul class="if-list">
-      <li class="reveal d1"><b>If</b> you see a problem, you can raise it.</li>
-      <li class="reveal d2"><b>If</b> you have an idea, you can share it.</li>
-      <li class="reveal d3"><b>If</b> you see a better way to do something, you can help build it.</li>
-    </ul>
   </div>
 </section>
 <section id="impact" class="cs-sec">
