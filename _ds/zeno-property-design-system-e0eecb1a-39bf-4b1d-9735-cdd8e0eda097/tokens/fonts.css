@@ -1,9 +1,12 @@
 /* ─────────────────────────────────────────────────────────────
    Zeno Property — Webfonts
-   Sora (headings), Nunito Sans (body/UI), Roboto Mono (code).
+   Baskervville (headings, self-hosted), Nunito Sans (body/UI), Roboto Mono (code).
    NOTE: No font binaries shipped with the Figma file, so these are
    loaded from Google Fonts (exact families, matched weights).
    Swap to self-hosted @font-face if offline use is required.
    ───────────────────────────────────────────────────────────── */
 
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&family=Nunito+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
+
+@font-face{font-family:"Baskervville";src:url("../assets/fonts/Baskervville-VariableFont_wght.ttf") format("truetype");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Baskervville";src:url("../assets/fonts/Baskervville-Italic-VariableFont_wght.ttf") format("truetype");font-weight:400 700;font-style:italic;font-display:swap}

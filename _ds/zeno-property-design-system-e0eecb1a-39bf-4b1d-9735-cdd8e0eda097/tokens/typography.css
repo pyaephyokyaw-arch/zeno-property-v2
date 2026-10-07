@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    Zeno Property — Typography
-   Sora Bold .............. Display, Title1–3 (headings only)
+   Baskervville Bold ...... Display, Title1–3 (headings only)
    Nunito Sans ............ all body & UI text (Regular/Medium/Bold)
    Roboto Mono ............ code / monospace
    (Inter in the source file is legacy — do NOT use.)
@@ -8,7 +8,7 @@
 
 :root {
   /* Families */
-  --font-display: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Baskervville", Georgia, "Times New Roman", serif;
   --font-body: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
@@ -22,7 +22,7 @@
   --leading-tight: 1.2;  /* Tight */
   --leading-normal: 1.5; /* Normal */
 
-  /* Display & Titles — Sora Bold */
+  /* Display & Titles — Baskervville Bold */
   --text-display: 64px;
   --text-title1: 48px;
   --text-title2: 32px;
